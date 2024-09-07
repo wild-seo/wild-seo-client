@@ -43,7 +43,7 @@
 		</section>
 	</section>
 	<section class="mx-auto my-10 grid max-w-6xl grid-cols-3 gap-4">
-		{#each services as { name, heroPoints, iconSrc, iconAlt, description }, index (id)}
+		{#each services as { name, heroPoints, iconSrc, iconAlt, description }}
 			<div class="bg-wild-darkgreen relative rounded-lg shadow-md">
 				<div class="gap-4">
 					<img
@@ -68,7 +68,10 @@
 
 	<!-- Sustainability Image section -->
 	<section>
-		<img src="https://s3.ap-southeast-1.wasabisys.com/wild-seo/siargao-wild-seo.jpg" />
+		<img
+			src="https://s3.ap-southeast-1.wasabisys.com/wild-seo/siargao-wild-seo.jpg"
+			alt="Stunning beach from drone view"
+		/>
 	</section>
 	<!-- Certificates section -->
 	<section></section>

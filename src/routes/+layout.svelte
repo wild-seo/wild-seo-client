@@ -15,10 +15,10 @@
 		</div>
 		<section class="grid grid-cols-2">
 			<div class="bg-wild-brown mr-2 content-center p-2">
-				<a href="/services">Services</a>
+				<a href="/">Services</a>
 			</div>
 			<div class="bg-wild-brown content-center p-2">
-				<a href="/services">Services</a>
+				<a href="/">Services</a>
 			</div>
 		</section>
 	</div>
