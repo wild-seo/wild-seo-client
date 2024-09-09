@@ -8,6 +8,7 @@ export default {
 		'./src/**/*.{html,js,svelte,ts}',
 		join(require.resolve('@skeletonlabs/skeleton'), '../**/*.{html,js,svelte,ts}')
 	],
+	darkMode: 'selector',
 	theme: {
 		extend: {
 			colors: {
