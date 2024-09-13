@@ -11,6 +11,13 @@ export default {
 	darkMode: 'selector',
 	theme: {
 		extend: {
+			fontFamily: {
+				scratchy: ['"Scratchy"', 'system-ui', 'sans-serif'],
+				bebas: ['"Bebas Neue"', 'system-ui', 'sans-serif'],
+				folks: ['"Folks"', 'system-ui', 'sans-serif'],
+				akira: ['"Akira"', 'system-ui', 'sans-serif'],
+				platNomor: ["'Plat Nomor'", 'system-ui', 'sans-serif']
+			},
 			colors: {
 				'wild-lightgreen': '#D5F785',
 				'wild-green': '#9BDD00',

@@ -1,5 +1,6 @@
 <script>
 	import '../app.css';
+	import WebLogo from '~icons/iconoir/internet';
 
 	let name = 'Coward';
 
@@ -33,45 +34,57 @@
 
 <div>
 	<section class="p-4 md:p-8">
-		<section class="mx-auto grid max-w-6xl items-center gap-8 p-4 md:grid-cols-2">
-			<div class="">
-				<h1 class="pb-2 text-5xl font-bold leading-tight">
-					Get
-					<span
-						class="bg-gradient-to-br from-blue-500 to-cyan-300 box-decoration-clone bg-clip-text text-transparent"
-					>
-						noticed
-					</span>
-					on the<br />
-					World <span class="underline"> Wild</span> Web
-				</h1>
-				<p class="mt-2 text-xl uppercase tracking-widest text-gray-400">
-					Organic, niche, cluster SEO
-				</p>
-			</div>
+		<section class="mx-auto grid max-w-5xl items-center gap-8 p-0 md:grid-cols-2 md:p-4">
 			<img
-				src="https://cdn.shopify.com/s/files/1/0518/4241/6818/files/Camp_with_Tree_Illustration.png?v=1725854183"
+				src="https://cdn.shopify.com/s/files/1/0518/4241/6818/files/Camping_Illustration.png?v=1726236736"
 				alt=""
 			/>
+			<div class="text-center md:text-start">
+				<h1 class="text-3xl font-bold leading-tight md:text-5xl">
+					<span class="font-['Scratchy'] tracking-wider">
+						Get
+						<span
+							class="bg-gradient-to-br from-green-400 to-cyan-700 box-decoration-clone bg-clip-text text-transparent"
+						>
+							noticed
+						</span>
+						on the<br />
+					</span>
+					<div class="mx-auto flex w-fit items-center gap-2 md:w-auto">
+						<span class="font-bebas">World <span class="underline"> Wild</span> Web</span>
+						<WebLogo class="h-10 w-10" />
+					</div>
+				</h1>
+				<p class="font-platNomor mt-2 text-sm uppercase tracking-widest text-black/70 md:text-xl">
+					Rank your website higher on Google
+				</p>
+				<div class="grid grid-cols-1 rounded-full p-4 shadow-md">
+					<span>Email:</span>
+					<input />
+					<button>Contact</button>
+				</div>
+			</div>
 		</section>
 	</section>
-	<section class="mx-auto my-10 grid max-w-6xl gap-4 md:grid-cols-3">
+	<section class="mx-auto my-10 grid max-w-5xl gap-3 p-4 md:grid-cols-3">
 		{#each services as { name, heroPoints, iconSrc, iconAlt, description }}
 			<div class="relative rounded-lg bg-wild-darkgreen shadow-md">
 				<div class="gap-4">
 					<img
 						src={iconSrc}
 						alt={iconAlt}
-						class="absolute -left-3 -top-5 h-32 w-32 rounded-full shadow-md transition ease-in-out hover:scale-110 hover:shadow-lg"
+						class="absolute -left-2 -top-2 h-24 w-24 rounded-full shadow-md transition ease-in-out hover:scale-110 hover:shadow-lg md:-left-3 md:-top-5 md:h-32 md:w-32"
 					/>
 					<div class="flex shadow-md">
-						<div class="h-28 w-28 rounded-md bg-wild-darkgreen"></div>
+						<div class="h-24 w-24 rounded-md bg-wild-darkgreen md:h-28 md:w-28"></div>
 						<div class="bg-wild-darkgreen p-5 text-white">
 							<h2 class="font-scratchy text-3xl tracking-wider">{name}</h2>
-							<p class="mt-1 text-sm uppercase tracking-widest">{heroPoints}</p>
+							<p class="font-platNomor mt-1 text-sm uppercase tracking-widest opacity-80">
+								{heroPoints}
+							</p>
 						</div>
 					</div>
-					<div class="bg-wild-mossgreen p-5 text-white">
+					<div class="rounded-b-lg bg-wild-mossgreen p-5 text-white">
 						<p>{description}</p>
 					</div>
 				</div>
@@ -87,7 +100,7 @@
 		/>
 		<div class="content-center">
 			<div class="mx-auto max-w-md">
-				<p class="text-5xl font-bold">Find a new ocean.</p>
+				<p class="font-bebas text-5xl font-bold">Find a new ocean.</p>
 			</div>
 		</div>
 	</section>
@@ -104,6 +117,6 @@
 
 <style>
 	h2 {
-		font-family: 'Scratchy';
+		font-family: 'Scratchy', 'sans-serif';
 	}
 </style>
