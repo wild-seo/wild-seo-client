@@ -1,5 +1,6 @@
 import { join } from 'path';
 import type { Config } from 'tailwindcss';
+import forms from '@tailwindcss/forms';
 
 import { skeleton } from '@skeletonlabs/tw-plugin';
 
@@ -33,6 +34,7 @@ export default {
 	},
 
 	plugins: [
+		forms,
 		require('@tailwindcss/typography'),
 		skeleton({
 			themes: { preset: [] }

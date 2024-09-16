@@ -8,8 +8,9 @@
 	import SEOIcon from '~icons/icon-park-solid/seo';
 	import SunIcon from '~icons/fluent-emoji-high-contrast/sun-with-face';
 	import MoonIcon from '~icons/ri/moon-clear-fill';
-	import DuckIcon from '~icons/noto/duck';
-	import LadybirdIcon from '~icons/noto/lady-beetle';
+	import DuckIcon from '~icons/pixelarticons/heart';
+	import LadybirdIcon from '~icons/pixelarticons/bug';
+	import { page } from '$app/stores';
 
 	let currentTile = 0;
 
@@ -31,85 +32,90 @@
 		<!-- For desktop -->
 		<AppRail
 			background="bg-wild-beige"
-			class="sticky top-0 hidden h-screen w-fit px-2 md:block"
+			class="sticky top-0 hidden h-screen w-fit flex-none px-2 md:block"
 			regionLead="mt-4"
 		>
 			<svelte:fragment slot="lead">
 				<div class="mb-4">
-					<img src={coloredLogo} alt="" class="w-48" />
+					<img src={coloredLogo} alt="" class="w-32 p-2" />
 				</div>
 			</svelte:fragment>
 
-			<AppRailTile
-				bind:group={currentTile}
-				name="tile-1"
-				value={0}
-				title="tile-1"
-				class="md rounded text-wild-natural transition-all hover:bg-wild-brown/20 hover:text-white"
+			<AppRailAnchor
+				href="/"
+				title="Home"
+				selected={$page.url.pathname === '/'}
+				active="bg-wild-brown/60 rounded-md transition-all ease-in"
+				hover="bg-transparent"
+				class="rounded-md text-wild-natural transition-all hover:text-white"
 			>
 				<HomeIcon class="mx-auto mb-1 h-8 w-8" />
 				<span class="font-bebas text-sm">Home</span>
-			</AppRailTile>
+			</AppRailAnchor>
 
-			<AppRailTile
-				bind:group={currentTile}
-				name="tile-2"
-				value={1}
-				title="tile-2"
-				class="md rounded text-wild-natural transition-all hover:bg-wild-brown/20 hover:text-white"
+			<AppRailAnchor
+				href="/services"
+				title="Services"
+				selected={$page.url.pathname === '/services'}
+				active="bg-wild-brown/60 rounded-md transition-all ease-in"
+				hover="bg-transparent"
+				class="rounded-md text-wild-natural transition-all hover:text-white"
 			>
 				<svelte:fragment slot="lead">
 					<SEOIcon class="mx-auto mb-1 h-8 w-8" />
 				</svelte:fragment>
 				<span class="font-bebas text-sm">Services</span>
-			</AppRailTile>
+			</AppRailAnchor>
 
 			<svelte:fragment slot="trail">
-				<AppRailTile
-					bind:group={currentTile}
-					name="tile-3"
-					value={0}
-					title="tile-3"
-					class="md rounded text-wild-natural transition-all hover:bg-wild-brown/20 hover:text-white"
+				<AppRailAnchor
+					href="/about-us"
+					title="About Us"
+					selected={$page.url.pathname === '/about-us'}
+					active="bg-wild-brown/60 rounded-md transition-all ease-in"
+					hover="bg-transparent"
+					class="rounded-md text-wild-natural transition-all hover:text-white"
 				>
 					<svelte:fragment slot="lead">
 						<DuckIcon class="mx-auto mb-1 h-8 w-8" />
 					</svelte:fragment>
 					<span class="font-bebas text-sm">About Us</span>
-				</AppRailTile>
-				<AppRailTile
-					bind:group={currentTile}
-					name="tile-3"
-					value={0}
-					title="tile-3"
-					class="md rounded text-wild-natural transition-all hover:bg-wild-brown/20 hover:text-white"
+				</AppRailAnchor>
+
+				<AppRailAnchor
+					href="/contact-us"
+					title="Contact Us"
+					selected={$page.url.pathname === '/contact-us'}
+					active="bg-wild-brown/60 rounded-md transition-all ease-in"
+					hover="bg-transparent"
+					class="rounded-md text-wild-natural transition-all hover:text-white"
 				>
 					<svelte:fragment slot="lead">
 						<LadybirdIcon class="mx-auto mb-1 h-8 w-8" />
 					</svelte:fragment>
 					<span class="font-bebas text-sm">Contact Us</span>
-				</AppRailTile>
+				</AppRailAnchor>
 			</svelte:fragment>
 		</AppRail>
 
 		<!-- <nav class="sticky top-0 z-10 border-wild-brown bg-wild-beige text-white shadow-md">
-		<div class="mx-auto flex max-w-6xl gap-4">
-			<div class="content-center bg-wild-brown p-2">
-				<a href="/">Home</a>
-			</div>
-			<div class="flex-grow">
-				
-			</div>
-			<section class="grid grid-cols-2">
-				<div class="mr-2 content-center bg-wild-brown p-2">
-					<a href="/">Services</a>
-				</div>
+			<div class="mx-auto flex max-w-6xl gap-4">
 				<div class="content-center bg-wild-brown p-2">
-					<a href="/">Services</a>
+					<a href="/">Home</a>
 				</div>
-			</section>
-		</div>
-	</nav> -->
+				<div class="flex-grow">
+					
+				</div>
+				<section class="grid grid-cols-2">
+					<div class="mr-2 content-center bg-wild-brown p-2">
+						<a href="/">Services</a>
+					</div>
+					<div class="content-center bg-wild-brown p-2">
+						<a href="/">Services</a>
+					</div>
+				</section>
+			</div>
+		</nav> -->
 
 		<slot></slot>
 	</section>
