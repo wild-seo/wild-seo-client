@@ -12,10 +12,19 @@ export default {
 	darkMode: 'selector',
 	theme: {
 		extend: {
+			animation: {
+				gradient: 'gradient 3s linear infinite'
+			},
+			keyframes: {
+				gradient: {
+					to: { 'background-position': '200% center' }
+				}
+			},
 			fontFamily: {
 				scratchy: ['"Scratchy"', 'system-ui', 'sans-serif'],
 				bebas: ['"Bebas Neue"', 'system-ui', 'sans-serif'],
 				folks: ['"Folks"', 'system-ui', 'sans-serif'],
+				courier: ['"Courier Prime"', 'system-ui', 'sans-serif'],
 				akira: ['"Akira"', 'system-ui', 'sans-serif'],
 				platNomor: ["'Plat Nomor'", 'system-ui', 'sans-serif']
 			},

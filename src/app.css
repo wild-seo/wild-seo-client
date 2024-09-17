@@ -50,3 +50,27 @@
 	font-weight: 500;
 	src: url('./fonts/folks/FolksShades.ttf');
 }
+@font-face {
+	font-family: 'Courier Prime';
+	font-style: normal;
+	font-weight: 400;
+	src: url('./fonts/Courier_Prime/CourierPrime-Regular.ttf');
+}
+@font-face {
+	font-family: 'Courier Prime';
+	font-style: bold;
+	font-weight: 600;
+	src: url('./fonts/Courier_Prime/CourierPrime-Bold.ttf');
+}
+@font-face {
+	font-family: 'Courier Prime';
+	font-style: italic;
+	font-weight: 400;
+	src: url('./fonts/Courier_Prime/CourierPrime-Italic.ttf');
+}
+@font-face {
+	font-family: 'Courier Prime';
+	font-style: italic;
+	font-weight: 600;
+	src: url('./fonts/Courier_Prime/CourierPrime-BoldItalic.ttf');
+}

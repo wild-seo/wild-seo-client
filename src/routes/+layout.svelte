@@ -37,7 +37,7 @@
 		>
 			<svelte:fragment slot="lead">
 				<div class="mb-4">
-					<img src={coloredLogo} alt="" class="w-32 p-2" />
+					<img src={whiteLogo} alt="" class="w-32 p-2" />
 				</div>
 			</svelte:fragment>
 

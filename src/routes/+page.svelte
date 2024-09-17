@@ -14,7 +14,7 @@
 			description: 'Conduct'
 		},
 		{
-			name: "Spectacled Bear's",
+			name: "Andean Bear's",
 			heroPoints: 'Keyword Forage',
 			iconSrc:
 				'https://cdn.shopify.com/s/files/1/0518/4241/6818/files/spectacled_bear_package.png?v=1725853925',
@@ -58,30 +58,31 @@
 				<p class="font-platNomor mt-2 text-sm uppercase tracking-widest text-black/70 md:text-xl">
 					Rank your website higher on Google
 				</p>
-				<div class="paper-bg mt-3 grid grid-cols-1 rounded-lg p-4 shadow-md">
+				<div class="mb-3 mt-2 border-t border-wild-beige"></div>
+				<div class="grid grid-cols-1">
 					{#if form?.missing}
 						<p class="error">The email field is required</p>
 					{/if}
 					<form action="?/enquire">
-						<p class="mb-2 text-xs font-semibold uppercase tracking-widest">Your Site</p>
+						<p class="font-folks mb-2 text-xs font-semibold uppercase tracking-widest">Your Site</p>
 						<div
-							class="input-group input-group-divider flex rounded-lg border-2 border-wild-brown bg-white"
+							class="input-group input-group-divider mb-1 flex rounded-lg border-2 border-wild-brown bg-white"
 						>
 							<div
-								class="input-group-shim max-w-fit bg-slate-50 p-2 text-sm text-black/80 shadow-lg"
+								class="font-courier input-group-shim max-w-fit bg-slate-50 p-2 text-sm text-black/80 shadow-lg"
 							>
 								https://
 							</div>
 							<input
 								name="website"
 								type="url"
-								class="w-full text-sm"
+								class="font-courier w-full text-sm"
 								placeholder="www.example.com"
 							/>
 						</div>
 
 						<button
-							class="mx-auto mt-2 w-1/3 rounded-md bg-emerald-700 py-2 text-xs font-semibold uppercase tracking-wider text-white shadow-md"
+							class="mx-auto mt-2 w-1/3 rounded-md bg-emerald-700 py-2 text-xs font-semibold uppercase tracking-wider text-white shadow-md transition-all duration-75 ease-out hover:border-l-4 hover:border-r-4 hover:border-wild-green hover:bg-emerald-800"
 						>
 							Connect
 						</button>
@@ -173,23 +174,10 @@
 			</div>
 		</div>
 	</section>
-	<!-- Certificates section -->
-	<section>
-		<div class="mx-auto mb-8 grid max-w-4xl p-4 md:grid-cols-2">
-			<img
-				src="https://cdn.shopify.com/s/files/1/0518/4241/6818/files/Equipment_Illustration_NEW.png?v=1726375762"
-				alt=""
-			/>
-			<div></div>
-		</div>
-	</section>
 </div>
 
 <style>
 	h2 {
 		font-family: 'Scratchy', 'sans-serif';
-	}
-	.paper-bg {
-		background-image: url('https://cdn.shopify.com/s/files/1/0518/4241/6818/files/paper-texture-bg.png?v=1726473014');
 	}
 </style>
