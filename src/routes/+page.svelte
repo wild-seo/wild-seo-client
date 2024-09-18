@@ -89,7 +89,7 @@
 					</span>
 					<div class="mx-auto flex w-fit items-center gap-2 tracking-wide md:w-auto">
 						<span class="font-bebas">World <span class="underline"> Wild</span> Web</span>
-						<WebLogo class="h-10 w-10" />
+						<WebLogo class="h-8 w-8" />
 					</div>
 				</h1>
 				<p class="font-platNomor mt-2 text-sm uppercase tracking-widest text-black/70 md:text-xl">
@@ -121,9 +121,11 @@
 					>
 						<p class="font-folks mb-2 text-xs font-semibold uppercase tracking-widest">Your Site</p>
 						<div
-							class="input-group input-group-divider mb-1 flex rounded-lg border border-wild-brown bg-white"
+							class="input-group input-group-divider mb-1 flex rounded-lg border border-wild-brown bg-white focus-within:border-wild-funblue"
 						>
-							<div class="font-courier max-w-fit bg-stone-100 p-2 text-sm text-black/80 shadow-lg">
+							<div
+								class="font-courier pointer-events-none max-w-fit bg-stone-100 p-2 text-sm text-black/80 shadow-lg"
+							>
 								https://
 							</div>
 							<input

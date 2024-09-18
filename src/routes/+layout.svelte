@@ -1,18 +1,24 @@
 <script>
 	import '../app.css';
+	// Assets
 	import mascot from '$assets/mascot.png';
 	import coloredLogo from '$assets/logo_colored_shadow.png';
 	import whiteLogo from '$assets/logo_white.png';
 	import blackLogo from '$assets/logo_black.png';
-	import { AppRail, AppRailTile, AppRailAnchor, AppBar } from '@skeletonlabs/skeleton';
+	// Icons
 	import HomeIcon from '~icons/pixelarticons/home';
 	import SEOIcon from '~icons/icon-park-solid/seo';
 	import SunIcon from '~icons/fluent-emoji-high-contrast/sun-with-face';
 	import MoonIcon from '~icons/ri/moon-clear-fill';
-	import DuckIcon from '~icons/pixelarticons/heart';
-	import LadybirdIcon from '~icons/pixelarticons/bug';
-	import { page } from '$app/stores';
+	import HeartIcon from '~icons/pixelarticons/heart';
+	import PixelBugIcon from '~icons/pixelarticons/bug';
+	import PrivacyIcon from '~icons/fluent-mdl2/lifesaver-lock';
+	import CodeTreeIcon from '~icons/grommet-icons/tree';
+	// Skeleton
 	import { initializeStores, Modal } from '@skeletonlabs/skeleton';
+	import { AppRail, AppRailTile, AppRailAnchor, AppBar } from '@skeletonlabs/skeleton';
+	// Svelte
+	import { page } from '$app/stores';
 
 	initializeStores();
 
@@ -83,7 +89,7 @@
 					class="rounded-md text-wild-natural transition-all hover:text-white"
 				>
 					<svelte:fragment slot="lead">
-						<DuckIcon class="mx-auto mb-1 h-8 w-8" />
+						<HeartIcon class="mx-auto mb-1 h-8 w-8" />
 					</svelte:fragment>
 					<span class="font-bebas text-base">About Us</span>
 				</AppRailAnchor>
@@ -97,7 +103,7 @@
 					class="rounded-md text-wild-natural transition-all hover:text-white"
 				>
 					<svelte:fragment slot="lead">
-						<LadybirdIcon class="mx-auto mb-1 h-8 w-8" />
+						<PixelBugIcon class="mx-auto mb-1 h-8 w-8" />
 					</svelte:fragment>
 					<span class="font-bebas text-base">Contact Us</span>
 				</AppRailAnchor>
@@ -127,25 +133,63 @@
 	</section>
 
 	<div class="bottom-0 left-0 w-full bg-wild-seriousblue">
-		<div class="grid grid-cols-1 md:grid-cols-4">
-			<div>
-				<div class="mx-auto w-fit">
+		<div class="mx-auto grid grid-cols-1 p-6 md:grid-cols-2">
+			<div class="col-span-1 flex">
+				<a href="https://cassiebrock.com/whale-shark/" target="_blank">
+					<img
+						class="w-1/2"
+						src="https://cdn.shopify.com/s/files/1/0518/4241/6818/files/whale-shark-illustration.png?v=1726629625"
+					/>
+				</a>
+				<div class="w-fit">
 					<div class="py-4">
 						<img src={whiteLogo} alt="Wild SEO white logo" class="mb-2 w-32 flex-none" />
 					</div>
 				</div>
 			</div>
-			<div>
-				<div class="card variant-ghost mb-3 text-center font-semibold text-white">
-					<header class="card-header">About Us</header>
-					<section class="p-4">Contact</section>
-					<footer class="card-footer">Terms & Conditions</footer>
-					<footer class="card-footer">Privacy Policy</footer>
+			<div class="flex gap-6">
+				<div
+					class="card variant-filled-tertiary mb-3 h-fit flex-grow rounded-lg p-4 text-center font-semibold text-white shadow-md"
+				>
+					<nav class="list-nav">
+						<ul class="">
+							<li>
+								<a href="/about-us">
+									<HeartIcon class="text-white" />
+									<span class="font-bebas">About Us</span>
+								</a>
+							</li>
+							<li>
+								<a href="/contact-us">
+									<PixelBugIcon class="text-white" />
+									<span class="font-bebas">Contact Us</span>
+								</a>
+							</li>
+							<li>
+								<a href="/terms-and-conditions">
+									<CodeTreeIcon class="text-white" />
+									<span class="font-bebas">Terms & Conditions</span>
+								</a>
+							</li>
+							<li>
+								<a href="/privacy-policy">
+									<PrivacyIcon class="text-white" />
+									<span class="font-bebas">Privacy Policy</span>
+								</a>
+							</li>
+						</ul>
+					</nav>
 				</div>
+				<a href="https://cassiebrock.com/blue-ring-octopus/" target="_blank">
+					<img
+						src="https://cdn.shopify.com/s/files/1/0518/4241/6818/files/blue-ring-octopus-illustration.png?v=1726630393"
+						class="h-1/2"
+					/>
+				</a>
 			</div>
 			<div></div>
 			<div></div>
-			<div>
+			<div class="col-span-2">
 				<div class="mx-auto w-5/6 border-t border-white/60"></div>
 				<p class="my-2 text-center text-xs text-white/60">
 					Copyright © 2024 Wild SEO. All Rights Reserved.
