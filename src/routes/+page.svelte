@@ -1,8 +1,45 @@
 <script>
 	import '../app.css';
 	import WebLogo from '~icons/iconoir/internet';
+	import OctopusLogo from '~icons/unjs/ungh';
+	import BugLogo from '~icons/gravity-ui/bug';
+	import { Modal, getModalStore } from '@skeletonlabs/skeleton';
+	import { enhance } from '$app/forms';
+	import { ConicGradient } from '@skeletonlabs/skeleton';
+	import { fade, blur } from 'svelte/transition';
 
 	export let form;
+	let connecting = false;
+
+	const modalStore = getModalStore();
+
+	function getModal(formData) {
+		const data = formData;
+
+		const modal = {
+			type: 'confirm',
+			title: data,
+			body: '<div><p>hello</p></div>',
+			response: (r) => console.log('response:', r)
+		};
+
+		modalStore.trigger(modal);
+	}
+
+	const conicStops = [
+		{ color: 'transparent', start: 0, end: 10 },
+		{ color: 'rgb(var(--color-success-50))', start: 10, end: 20 },
+		{ color: 'transparent', start: 20, end: 30 },
+		{ color: 'rgb(var(--color-success-100))', start: 30, end: 40 },
+		{ color: 'transparent', start: 40, end: 50 },
+		{ color: 'rgb(var(--color-success-200))', start: 50, end: 60 },
+		{ color: 'transparent', start: 60, end: 70 },
+		{ color: 'rgb(var(--color-success-300))', start: 70, end: 80 },
+		{ color: 'transparent', start: 80, end: 85 },
+		{ color: 'rgb(var(--color-success-400))', start: 85, end: 90 },
+		{ color: 'transparent', start: 90, end: 95 },
+		{ color: 'rgb(var(--color-success-500))', start: 95, end: 100 }
+	];
 
 	let services = [
 		{
@@ -50,7 +87,7 @@
 						</span>
 						on the<br />
 					</span>
-					<div class="mx-auto flex w-fit items-center gap-2 md:w-auto">
+					<div class="mx-auto flex w-fit items-center gap-2 tracking-wide md:w-auto">
 						<span class="font-bebas">World <span class="underline"> Wild</span> Web</span>
 						<WebLogo class="h-10 w-10" />
 					</div>
@@ -60,33 +97,76 @@
 				</p>
 				<div class="mb-3 mt-2 border-t border-wild-beige"></div>
 				<div class="grid grid-cols-1">
-					{#if form?.missing}
-						<p class="error">The email field is required</p>
+					{#if form?.warning}
+						<p
+							class="font-courier mb-2 flex max-w-fit items-center bg-rose-600 pl-2 text-xs text-white"
+							transition:fade
+						>
+							{form?.message ?? 'Please do not leave the field empty'}
+							<span class="mr-2"></span>
+							<OctopusLogo class="h-7 w-7 bg-white p-0.5" />
+						</p>
 					{/if}
-					<form action="?/enquire">
+					<form
+						action="?/enquire"
+						method="POST"
+						use:enhance={() => {
+							connecting = true;
+							return async ({ result, update }) => {
+								console.log(result);
+								connecting = false;
+								update();
+							};
+						}}
+					>
 						<p class="font-folks mb-2 text-xs font-semibold uppercase tracking-widest">Your Site</p>
 						<div
-							class="input-group input-group-divider mb-1 flex rounded-lg border-2 border-wild-brown bg-white"
+							class="input-group input-group-divider mb-1 flex rounded-lg border border-wild-brown bg-white"
 						>
-							<div
-								class="font-courier input-group-shim max-w-fit bg-slate-50 p-2 text-sm text-black/80 shadow-lg"
-							>
+							<div class="font-courier max-w-fit bg-stone-100 p-2 text-sm text-black/80 shadow-lg">
 								https://
 							</div>
 							<input
 								name="website"
-								type="url"
 								class="font-courier w-full text-sm"
 								placeholder="www.example.com"
 							/>
 						</div>
 
 						<button
-							class="mx-auto mt-2 w-1/3 rounded-md bg-emerald-700 py-2 text-xs font-semibold uppercase tracking-wider text-white shadow-md transition-all duration-75 ease-out hover:border-l-4 hover:border-r-4 hover:border-wild-green hover:bg-emerald-800"
+							type="submit"
+							class="mt-2 flex w-1/3 items-center justify-center rounded-md bg-emerald-700 py-2 text-xs font-semibold uppercase tracking-wider text-white shadow-md transition-all duration-75 ease-out hover:border-l-4 hover:border-r-4 hover:border-wild-green hover:bg-emerald-800"
 						>
-							Connect
+							{#if connecting}
+								<div in:blur>
+									<ConicGradient stops={conicStops} spin width="w-6" class="mr-2" />
+								</div>
+							{/if}
+							{#if !connecting}
+								<span class="font-folks" in:blur>Connect</span>
+							{/if}
 						</button>
 					</form>
+					<!-- <div class="m-2 grid grid-cols-3 gap-1 rounded-md border-wild-green shadow-md">
+						<div class="col-span-1 h-full border-r border-wild-seriousblue">
+							<img src={form?.image ?? ''} class="h-full object-cover" />
+						</div>
+						<div class="col-span-2">
+							<p class="font-courier bg-wild-brown px-2 py-1 text-sm text-white">
+								{form?.url ?? ''}
+							</p>
+							<div class="bg-white px-4 py-2">
+								<p
+									class="font-bebas mb-1 text-xl font-semibold text-wild-funblue underline underline-offset-2"
+								>
+									{form?.title ?? ''}
+								</p>
+								<p class="font-courier text-sm tracking-wide text-zinc-500">
+									{form?.description ?? ''}
+								</p>
+							</div>
+						</div>
+					</div> -->
 				</div>
 			</div>
 		</section>

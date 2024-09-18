@@ -1,7 +1,7 @@
 import { join } from 'path';
 import type { Config } from 'tailwindcss';
 import forms from '@tailwindcss/forms';
-
+// import { wildSeoTheme } from './wild-seo-theme';
 import { skeleton } from '@skeletonlabs/tw-plugin';
 
 export default {
@@ -46,7 +46,7 @@ export default {
 		forms,
 		require('@tailwindcss/typography'),
 		skeleton({
-			themes: { preset: [] }
+			themes: { preset: ['vintage'] }
 		})
 	]
 } as Config;

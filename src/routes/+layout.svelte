@@ -3,6 +3,7 @@
 	import mascot from '$assets/mascot.png';
 	import coloredLogo from '$assets/logo_colored_shadow.png';
 	import whiteLogo from '$assets/logo_white.png';
+	import blackLogo from '$assets/logo_black.png';
 	import { AppRail, AppRailTile, AppRailAnchor, AppBar } from '@skeletonlabs/skeleton';
 	import HomeIcon from '~icons/pixelarticons/home';
 	import SEOIcon from '~icons/icon-park-solid/seo';
@@ -11,6 +12,9 @@
 	import DuckIcon from '~icons/pixelarticons/heart';
 	import LadybirdIcon from '~icons/pixelarticons/bug';
 	import { page } from '$app/stores';
+	import { initializeStores, Modal } from '@skeletonlabs/skeleton';
+
+	initializeStores();
 
 	let currentTile = 0;
 
@@ -20,6 +24,8 @@
 		placement: 'top'
 	};
 </script>
+
+<Modal />
 
 <div class="bg-wild-natural">
 	<div
@@ -37,7 +43,7 @@
 		>
 			<svelte:fragment slot="lead">
 				<div class="mb-4">
-					<img src={whiteLogo} alt="" class="w-32 p-2" />
+					<img src={coloredLogo} alt="" class="w-32 p-2" />
 				</div>
 			</svelte:fragment>
 
@@ -50,7 +56,7 @@
 				class="rounded-md text-wild-natural transition-all hover:text-white"
 			>
 				<HomeIcon class="mx-auto mb-1 h-8 w-8" />
-				<span class="font-bebas text-sm">Home</span>
+				<span class="font-bebas text-base">Home</span>
 			</AppRailAnchor>
 
 			<AppRailAnchor
@@ -64,7 +70,7 @@
 				<svelte:fragment slot="lead">
 					<SEOIcon class="mx-auto mb-1 h-8 w-8" />
 				</svelte:fragment>
-				<span class="font-bebas text-sm">Services</span>
+				<span class="font-bebas text-base">Services</span>
 			</AppRailAnchor>
 
 			<svelte:fragment slot="trail">
@@ -79,7 +85,7 @@
 					<svelte:fragment slot="lead">
 						<DuckIcon class="mx-auto mb-1 h-8 w-8" />
 					</svelte:fragment>
-					<span class="font-bebas text-sm">About Us</span>
+					<span class="font-bebas text-base">About Us</span>
 				</AppRailAnchor>
 
 				<AppRailAnchor
@@ -93,7 +99,7 @@
 					<svelte:fragment slot="lead">
 						<LadybirdIcon class="mx-auto mb-1 h-8 w-8" />
 					</svelte:fragment>
-					<span class="font-bebas text-sm">Contact Us</span>
+					<span class="font-bebas text-base">Contact Us</span>
 				</AppRailAnchor>
 			</svelte:fragment>
 		</AppRail>
