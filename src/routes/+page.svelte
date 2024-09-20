@@ -7,8 +7,12 @@
 	import { enhance } from '$app/forms';
 	import { ConicGradient } from '@skeletonlabs/skeleton';
 	import { fade, blur } from 'svelte/transition';
+	import services from './serviceData.js';
+	import ServiceFactCard from './ServiceFactCard.svelte';
+	import CertificationMarquee from './CertificationMarquee.svelte';
 
 	export let form;
+
 	let connecting = false;
 
 	const modalStore = getModalStore();
@@ -40,33 +44,6 @@
 		{ color: 'transparent', start: 90, end: 95 },
 		{ color: 'rgb(var(--color-success-500))', start: 95, end: 100 }
 	];
-
-	let services = [
-		{
-			name: "Heron Eye's",
-			heroPoints: 'Competitor Analysis',
-			iconSrc:
-				'https://cdn.shopify.com/s/files/1/0518/4241/6818/files/grey_heron_package.png?v=1725853925',
-			iconAlt: '',
-			description: 'Conduct'
-		},
-		{
-			name: "Andean Bear's",
-			heroPoints: 'Keyword Forage',
-			iconSrc:
-				'https://cdn.shopify.com/s/files/1/0518/4241/6818/files/spectacled_bear_package.png?v=1725853925',
-			iconAlt: '',
-			description: 'Utilize SEMRush, manual'
-		},
-		{
-			name: "Pygmy Marmoset's",
-			heroPoints: 'Site Sweep',
-			iconSrc:
-				'https://cdn.shopify.com/s/files/1/0518/4241/6818/files/pygmy_marmoset_package.png?v=1725853925',
-			iconAlt: '',
-			description: 'cross check, take out your bugs'
-		}
-	];
 </script>
 
 <div>
@@ -74,7 +51,8 @@
 		<section class="mx-auto grid max-w-5xl items-center gap-8 p-0 md:grid-cols-2 md:p-4">
 			<img
 				src="https://cdn.shopify.com/s/files/1/0518/4241/6818/files/Camping_Illustration.png?v=1726236736"
-				alt=""
+				alt="Wild SEO Campsite with Tree Illustration with Google, Amazon, Youtube, Bing, and Yahoo! logos hanging out together"
+				class="animate-wind transform-gpu transition-all duration-300 ease-in"
 			/>
 			<div class="text-center md:text-start">
 				<h1 class="text-3xl font-bold leading-tight md:text-5xl">
@@ -88,18 +66,35 @@
 						on the<br />
 					</span>
 					<div class="mx-auto flex w-fit items-center gap-2 tracking-wide md:w-auto">
-						<span class="font-bebas">World <span class="underline"> Wild</span> Web</span>
-						<WebLogo class="h-8 w-8" />
+						<span class="font-bebas">
+							<span
+								class="relative before:absolute before:bottom-0 before:left-0 before:h-1 before:w-full before:origin-right before:scale-x-0 before:bg-wild-green before:transition-transform before:duration-300 hover:before:origin-left hover:before:scale-x-100"
+							>
+								World
+							</span>
+							<span
+								class="relative underline transition-all before:absolute before:bottom-0 before:left-0 before:h-1 before:w-full before:origin-right before:scale-x-0 before:bg-wild-green before:transition-transform before:duration-300 hover:decoration-wild-seriousblue hover:before:origin-left hover:before:scale-x-100"
+							>
+								Wild</span
+							>
+							<span
+								class="relative before:absolute before:bottom-0 before:left-0 before:h-1 before:w-full before:origin-right before:scale-x-0 before:bg-wild-green before:transition-transform before:duration-300 hover:before:origin-left hover:before:scale-x-100"
+								>Web</span
+							></span
+						>
+						<WebLogo
+							class="h-8 w-8 rounded-full from-wild-green via-wild-seriousblue to-wild-darkgreen transition-all duration-100 hover:scale-[1.15] hover:bg-gradient-to-tr hover:p-1 hover:text-white"
+						/>
 					</div>
 				</h1>
-				<p class="font-platNomor mt-2 text-sm uppercase tracking-widest text-black/70 md:text-xl">
+				<p class="mt-2 font-platNomor text-sm uppercase tracking-widest text-black/70 md:text-xl">
 					Rank your website higher on Google
 				</p>
 				<div class="mb-3 mt-2 border-t border-wild-beige"></div>
 				<div class="grid grid-cols-1">
 					{#if form?.warning}
 						<p
-							class="font-courier mb-2 flex max-w-fit items-center bg-rose-600 pl-2 text-xs text-white"
+							class="mb-2 flex max-w-fit items-center bg-rose-600 pl-2 font-courier text-xs text-white"
 							transition:fade
 						>
 							{form?.message ?? 'Please do not leave the field empty'}
@@ -119,18 +114,18 @@
 							};
 						}}
 					>
-						<p class="font-folks mb-2 text-xs font-semibold uppercase tracking-widest">Your Site</p>
+						<p class="mb-2 font-folks text-xs font-semibold uppercase tracking-widest">Your Site</p>
 						<div
 							class="input-group input-group-divider mb-1 flex rounded-lg border border-wild-brown bg-white focus-within:border-wild-funblue"
 						>
 							<div
-								class="font-courier pointer-events-none max-w-fit bg-stone-100 p-2 text-sm text-black/80 shadow-lg"
+								class="pointer-events-none max-w-fit bg-stone-100 p-2 font-courier text-sm text-black/80 shadow-lg"
 							>
 								https://
 							</div>
 							<input
 								name="website"
-								class="font-courier w-full text-sm"
+								class="w-full font-courier text-sm"
 								placeholder="www.example.com"
 							/>
 						</div>
@@ -173,63 +168,39 @@
 			</div>
 		</section>
 	</section>
-	<section class="mx-auto my-10 grid max-w-5xl gap-3 p-4 md:grid-cols-3">
-		{#each services as { name, heroPoints, iconSrc, iconAlt, description }}
-			<div class="relative rounded-lg bg-wild-darkgreen shadow-md">
-				<div class="gap-4">
-					<img
-						src={iconSrc}
-						alt={iconAlt}
-						class="absolute -left-2 -top-2 h-24 w-24 rounded-full shadow-md transition ease-in-out hover:scale-110 hover:shadow-lg md:-left-3 md:-top-5 md:h-32 md:w-32"
-					/>
-					<div class="flex shadow-md">
-						<div class="h-24 w-24 rounded-md bg-wild-darkgreen md:h-28 md:w-28"></div>
-						<div class="bg-wild-darkgreen p-5 text-white">
-							<h2 class="font-scratchy text-3xl tracking-wider">{name}</h2>
-							<p class="font-platNomor mt-1 text-sm uppercase tracking-widest opacity-80">
-								{heroPoints}
-							</p>
-						</div>
-					</div>
-					<div class="rounded-b-lg bg-wild-mossgreen p-5 text-white">
-						<p>{description}</p>
-					</div>
-				</div>
-			</div>
-		{/each}
-	</section>
+	<ServiceFactCard />
 
 	<!-- Sustainability Image section -->
-	<section class="my-8 grid md:grid-cols-2">
+	<section class="mt-8 grid md:grid-cols-2">
 		<img
 			src="https://cdn.shopify.com/s/files/1/0518/4241/6818/files/siargao-wild-seo.jpg?v=1725720499"
 			alt="Stunning beach from drone view"
 		/>
-		<div class="content-center">
-			<div class="mx-auto grid max-w-lg grid-cols-3 items-center justify-between gap-6 p-6">
-				<div>
-					<img
-						src="https://cdn.shopify.com/s/files/1/0518/4241/6818/files/uc-davis-seo-capstone-project-logo.png?v=1726391178"
-					/>
-				</div>
-				<div>
-					<img
-						src="https://cdn.shopify.com/s/files/1/0518/4241/6818/files/mda-cert.png?v=1726416453"
-					/>
-				</div>
-				<div>
-					<img
-						src="https://cdn.shopify.com/s/files/1/0518/4241/6818/files/SEMRush-Cert.png?v=1726416643"
-					/>
-				</div>
+		<div class="relative content-center overflow-clip bg-black">
+			<!-- COLOR DOT ANIMATIONS -->
+			<div
+				class="animate-blurify absolute -right-14 -top-16 h-[12rem] w-[12rem] rounded-full bg-wild-green/60 blur-sm"
+			></div>
+			<div
+				class="absolute -right-14 -top-16 z-0 h-44 w-44 animate-[ping_3s_ease-out_infinite] rounded-full bg-wild-lightgreen/70 blur-md duration-200"
+			></div>
+			<div
+				class="absolute -bottom-36 -left-14 z-0 h-52 w-52 animate-[bounce_5s_ease-in-out_infinite] rounded-full bg-wild-funblue/80 blur-2xl"
+			></div>
+			<!-- END -->
+			<div class="mx-auto grid max-w-xl grid-flow-row gap-4 p-6">
+				<p class="z-10 text-3xl font-bold text-white">e-commerce = more visibility*</p>
+				<p class="z-10 text-3xl font-bold text-white">e-commerce = more visibility*</p>
+				<p class="z-10 text-3xl font-bold text-white">e-commerce = more visibility*</p>
 			</div>
 		</div>
 	</section>
+	<CertificationMarquee />
 	<section>
-		<p class="font-bebas mx-auto max-w-md text-center text-5xl font-bold">
+		<p class="mx-auto max-w-md text-center font-bebas text-5xl font-bold">
 			Transform your current search to something better
 		</p>
-		<p class="font-scratchy mx-auto max-w-xl text-center text-3xl tracking-wider">
+		<p class="mx-auto max-w-xl text-center font-scratchy text-3xl tracking-wider">
 			Add schemas, alt tags, all the juicy morsels to level up your search
 		</p>
 		<div class="mx-auto my-10 grid max-w-6xl gap-6 p-4 md:grid-cols-2">

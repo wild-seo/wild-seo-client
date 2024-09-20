@@ -35,12 +35,14 @@
 	];
 </script>
 
-<div class="my-4 grid grid-cols-1 gap-4 shadow-md">
+<div class="mb-4 grid grid-cols-1 gap-4">
 	{#each services as { name, animal, packageHighlight, imgUrl, imgSrc, price, credit }}
-		<div class="grid grid-cols-2 shadow-md transition-all hover:shadow-xl">
+		<div
+			class="grid grid-cols-2 overflow-clip shadow-md transition-all duration-[420ms] ease-out hover:scale-[.985] hover:rounded-lg hover:shadow-xl"
+		>
 			<div class="relative">
 				<img src={imgUrl} class="relative" />
-				<p class="font-platNomor absolute left-2 top-2 text-sm text-white">© {credit}</p>
+				<p class="absolute left-2 top-2 font-platNomor text-sm text-white">© {credit}</p>
 				<div
 					class="absolute bottom-0 left-0 w-full bg-wild-darkgreen/20 px-4 py-1.5 text-end tracking-widest text-white backdrop-blur-md"
 				>
@@ -72,7 +74,7 @@
 				<section class="p-4">okay..!</section>
 				<footer class="card-footer flex items-center justify-between">
 					<button
-						class="font-bebas w-1/4 border-2 border-wild-funblue p-2 text-2xl tracking-wider text-wild-funblue transition-all duration-150 ease-in hover:border-l-4 hover:border-r-4 hover:border-blue-300 hover:border-b-blue-400 hover:border-t-blue-400 hover:bg-blue-600 hover:text-white hover:shadow-md"
+						class="w-1/4 border-2 border-wild-funblue p-2 font-bebas text-2xl tracking-wider text-wild-funblue transition-all duration-150 ease-in hover:border-l-4 hover:border-r-4 hover:border-blue-300 hover:border-b-blue-400 hover:border-t-blue-400 hover:bg-blue-600 hover:text-white hover:shadow-md"
 					>
 						ORDER
 					</button>
