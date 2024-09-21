@@ -8,7 +8,7 @@
 	// Icons
 	import HomeIcon from '~icons/pixelarticons/home';
 	import SEOIcon from '~icons/icon-park-solid/seo';
-	import SunIcon from '~icons/fluent-emoji-high-contrast/sun-with-face';
+	// import SunIcon from '~icons/fluent-emoji-high-contrast/sun-with-face';
 	import MoonIcon from '~icons/ri/moon-clear-fill';
 	import HeartIcon from '~icons/pixelarticons/heart';
 	import PixelBugIcon from '~icons/pixelarticons/bug';
@@ -34,17 +34,17 @@
 <Modal />
 
 <div class="bg-wild-natural">
-	<div
+	<!-- <div
 		class="fixed right-5 top-5 flex h-12 w-12 cursor-pointer items-center rounded-full border-2 border-yellow-500 bg-white shadow-md transition hover:shadow-lg md:h-16 md:w-16"
 	>
-		<SunIcon class="mx-auto h-8 w-8 text-yellow-500 md:h-10 md:w-10" />
-	</div>
+		<SunIcon class="z-50 mx-auto h-8 w-8 text-yellow-500 md:h-10 md:w-10" />
+	</div> -->
 
 	<section class="block md:flex">
 		<!-- For desktop -->
 		<AppRail
 			background="bg-wild-beige"
-			class="sticky top-0 hidden h-screen w-fit flex-none px-2 md:block"
+			class="sticky top-0 z-20 hidden h-screen w-fit flex-none px-2 md:block"
 			regionLead="mt-4"
 		>
 			<svelte:fragment slot="lead">
@@ -207,7 +207,7 @@
 		<svelte:fragment slot="lead">
 			<div class="flex flex-col">
 				<HomeIcon class="mx-auto h-6 w-6 text-white" />
-				<p class="font-bebas mt-2 text-center text-xs font-medium text-white">Home</p>
+				<p class="mt-2 text-center font-bebas text-xs font-medium text-white">Home</p>
 			</div>
 		</svelte:fragment>
 
@@ -216,7 +216,7 @@
 		<svelte:fragment slot="trail">
 			<div class="flex flex-col">
 				<SEOIcon class="mx-auto h-6 w-6 text-white" />
-				<p class="font-bebas mt-2 text-center text-xs font-medium text-white">Services</p>
+				<p class="mt-2 text-center font-bebas text-xs font-medium text-white">Services</p>
 			</div>
 		</svelte:fragment>
 	</AppBar>

@@ -38,9 +38,9 @@
 <div class="mb-4 grid grid-cols-1 gap-4">
 	{#each services as { name, animal, packageHighlight, imgUrl, imgSrc, price, credit }}
 		<div
-			class="grid grid-cols-2 overflow-clip shadow-md transition-all duration-[420ms] ease-out hover:scale-[.985] hover:rounded-lg hover:shadow-xl"
+			class="grid grid-cols-2 overflow-clip border border-black shadow-md transition-all duration-[420ms] ease-out hover:scale-[.985] hover:rounded-lg hover:border-2 hover:shadow-xl"
 		>
-			<div class="relative">
+			<div class="relative border-r-2 border-black">
 				<img src={imgUrl} class="relative" />
 				<p class="absolute left-2 top-2 font-platNomor text-sm text-white">© {credit}</p>
 				<div

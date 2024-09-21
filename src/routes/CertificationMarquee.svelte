@@ -1,5 +1,6 @@
 <script>
 	let mouseHovering;
+	export let minified;
 
 	const certifications = [
 		{
@@ -48,14 +49,28 @@
 	];
 </script>
 
-<div class="relative mb-8 flex overflow-x-hidden border-b-2 border-t-2 border-black bg-white">
+<div
+	class="relative mb-8 flex overflow-clip overflow-x-hidden border-b-2 border-t-2 border-black bg-white"
+>
 	<div
 		class="animate-marquee flex w-full items-center gap-8 whitespace-nowrap py-2"
 		class:stopAnimation={mouseHovering}
 	>
-		{#each certifications as { src }}
-			<img {src} class="w-1/12 transition-all duration-75 ease-in hover:scale-105" />
-		{/each}
+		{#if minified}
+			{#each certifications.slice(0, 7) as { src }}
+				<img
+					{src}
+					class="w-1/12 transition-all duration-75 ease-in hover:-rotate-6 hover:scale-110"
+				/>
+			{/each}
+		{:else}
+			{#each certifications as { src }}
+				<img
+					{src}
+					class="w-1/12 transition-all duration-75 ease-in hover:-rotate-6 hover:scale-110"
+				/>
+			{/each}
+		{/if}
 	</div>
 
 	<div
@@ -63,7 +78,7 @@
 		class:stopAnimation={mouseHovering}
 	>
 		{#each certifications as { src }}
-			<img {src} class="w-1/12 transition-all duration-75 ease-in hover:scale-105" />
+			<img {src} class="w-1/12 transition-all duration-75 ease-in hover:rotate-6 hover:scale-110" />
 		{/each}
 	</div>
 </div>

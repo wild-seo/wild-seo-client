@@ -2,7 +2,7 @@ import { fail } from '@sveltejs/kit';
 export function load({}) {}
 
 export const actions = {
-	create: async ({ cookies, request }) => {
+	contact: async ({ cookies, request }) => {
 		const data = await request.formData();
 
 		await new Promise((fulfil) => setTimeout(fulfil, 1000));

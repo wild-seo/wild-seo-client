@@ -1,18 +1,26 @@
 <script>
 	import '../app.css';
+	// Icons
 	import WebLogo from '~icons/iconoir/internet';
 	import OctopusLogo from '~icons/unjs/ungh';
 	import BugLogo from '~icons/gravity-ui/bug';
+	import UpArrowIcon from '~icons/pixelarticons/arrow-up';
+	import PlusIcon from '~icons/bx/plus';
+	import StarIcon from '~icons/meteocons/star-fill';
+	// Skeleton
 	import { Modal, getModalStore } from '@skeletonlabs/skeleton';
 	import { enhance } from '$app/forms';
 	import { ConicGradient } from '@skeletonlabs/skeleton';
 	import { fade, blur } from 'svelte/transition';
+	// Data
 	import services from './serviceData.js';
+	// Components
 	import ServiceFactCard from './ServiceFactCard.svelte';
 	import CertificationMarquee from './CertificationMarquee.svelte';
 
 	export let form;
 
+	let mouseHovering = false;
 	let connecting = false;
 
 	const modalStore = getModalStore();
@@ -176,26 +184,68 @@
 			src="https://cdn.shopify.com/s/files/1/0518/4241/6818/files/siargao-wild-seo.jpg?v=1725720499"
 			alt="Stunning beach from drone view"
 		/>
-		<div class="relative content-center overflow-clip bg-black">
+		<div
+			class="group relative content-center overflow-clip bg-black"
+			on:mouseleave={() => {
+				mouseHovering = false;
+			}}
+			on:mouseover={() => {
+				mouseHovering = true;
+			}}
+		>
 			<!-- COLOR DOT ANIMATIONS -->
 			<div
 				class="animate-blurify absolute -right-14 -top-16 h-[12rem] w-[12rem] rounded-full bg-wild-green/60 blur-sm"
+				class:stopAnimation={mouseHovering}
 			></div>
 			<div
 				class="absolute -right-14 -top-16 z-0 h-44 w-44 animate-[ping_3s_ease-out_infinite] rounded-full bg-wild-lightgreen/70 blur-md duration-200"
+				class:stopAnimation={mouseHovering}
 			></div>
 			<div
-				class="absolute -bottom-36 -left-14 z-0 h-52 w-52 animate-[bounce_5s_ease-in-out_infinite] rounded-full bg-wild-funblue/80 blur-2xl"
+				class="animate-pulseScale absolute -right-2 -top-6 h-20 w-20 rounded-bl-full bg-white/10 shadow-lg backdrop-blur-md"
 			></div>
+			<div
+				class="absolute -bottom-2 -left-6 h-16 w-28 animate-[bounce_3s_ease-in_infinite] rounded-t-full bg-white/15 shadow-md backdrop-blur-md"
+			></div>
+			<div
+				class="absolute -bottom-36 -left-16 z-0 h-52 w-52 animate-[bounce_5s_ease-in-out_infinite] rounded-full bg-wild-funblue/80 blur-lg"
+				class:stopAnimation={mouseHovering}
+			></div>
+
 			<!-- END -->
-			<div class="mx-auto grid max-w-xl grid-flow-row gap-4 p-6">
-				<p class="z-10 text-3xl font-bold text-white">e-commerce = more visibility*</p>
-				<p class="z-10 text-3xl font-bold text-white">e-commerce = more visibility*</p>
-				<p class="z-10 text-3xl font-bold text-white">e-commerce = more visibility*</p>
+			<div class="mx-auto grid max-w-fit grid-flow-row gap-4 p-6">
+				<section>
+					<p class="mb-1 font-courier text-sm tracking-wider text-white">
+						HOW CAN SEO HELP YOUR BUSINESS ?
+					</p>
+					<div class="h-1 w-full border-b border-white/70"></div>
+				</section>
+				<p class="z-10 flex gap-1 text-3xl font-bold text-white">
+					<span class="cursor-cell transition-all hover:scale-105">e-commerce</span>
+					<span class="font-normal">=</span>
+					<UpArrowIcon />
+					<span class="cursor-cell transition-all hover:scale-110">conversions</span>
+				</p>
+				<p class="z-10 flex gap-1 text-3xl font-bold text-white">
+					<span class="cursor-cell transition-all hover:scale-105">blogger</span>
+
+					<span class="font-normal">=</span>
+					<span class="flex"><PlusIcon class="h-6 w-6" /><PlusIcon /></span>
+					<span class="cursor-cell transition-all hover:scale-110">traffic</span>
+					<PlusIcon class="h-5 w-5" />
+				</p>
+				<p class="z-10 flex gap-1 text-3xl font-bold text-white">
+					<span class="cursor-cell transition-all hover:scale-105">new brand</span>
+
+					<span class="font-normal">=</span>
+					<StarIcon />
+					<span class="cursor-cell transition-all hover:scale-110">visibility</span>
+				</p>
 			</div>
 		</div>
 	</section>
-	<CertificationMarquee />
+	<CertificationMarquee minified={false} />
 	<section>
 		<p class="mx-auto max-w-md text-center font-bebas text-5xl font-bold">
 			Transform your current search to something better
@@ -232,5 +282,8 @@
 <style>
 	h2 {
 		font-family: 'Scratchy', 'sans-serif';
+	}
+	.stopAnimation {
+		animation-play-state: paused;
 	}
 </style>
