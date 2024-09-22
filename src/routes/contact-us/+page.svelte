@@ -11,10 +11,11 @@
 	let sendButtonHover = false;
 </script>
 
-<section class="no-scrollbar grid h-screen grid-cols-2 overflow-scroll">
+<section class="no-scrollbar grid h-screen overflow-scroll md:grid-cols-2">
 	<div class="sticky top-0 grid h-screen w-full grid-flow-row grid-rows-2">
 		<div class="border-b-2 border-r-2 border-black bg-wild-funblue shadow-md">
 			<p class="p-8 font-bebas text-3xl text-white">What we will cover:</p>
+			<p class="p-8 font-bebas text-3xl text-white">Checklist:</p>
 		</div>
 		<img
 			src="https://imagedelivery.net/usYhDnhJIpKLEgUtJMbggw/8d9c9216-9a04-4ed5-d3e7-b3b173f7a900/public"
@@ -22,7 +23,7 @@
 		/>
 	</div>
 	<!-- Right SECTION -->
-	<div class="z-0">
+	<div class="z-0 bg-wild-natural">
 		<section class="h-full">
 			<div
 				class=" border-b border-wild-brown bg-white/60 shadow-sm transition-all duration-500 hover:shadow-md"

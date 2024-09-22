@@ -1,6 +1,8 @@
 <script>
 	import services from './serviceData.js';
 	import FlipIcon from '~icons/mdi/rotate-360';
+	import OpenBookIcon from '~icons/gis/map-book';
+	import ClosedBookIcon from '~icons/game-icons/secret-book';
 
 	let serviceSelected;
 	let factShowing = false;
@@ -18,7 +20,7 @@
 
 <div>
 	<section class="mx-auto my-10 grid max-w-6xl grid-cols-1 gap-3 p-4 md:grid-cols-3">
-		{#each services as { id, name, heroPoints, iconSrc, iconAlt, bullets, description, animalFact }}
+		{#each services as { id, name, actionWord, heroPoints, iconSrc, iconAlt, bullets, description, animalFact }}
 			<div class="relative self-start rounded-lg bg-wild-darkgreen shadow-md">
 				<div class="gap-4">
 					<img
@@ -39,11 +41,13 @@
 					<div
 						class="rounded-b-lg border border-wild-darkgreen bg-wild-mossgreen p-5 font-courier text-white"
 					>
-						<p class="text-base font-bold text-wild-darkgreen/70">{description}</p>
+						<p class="text-base text-wild-darkgreen">
+							<span class="font-bold">{actionWord} </span>{description}
+						</p>
 
 						<div class="my-2 border-t border-dashed border-white/70"></div>
 						<!-- FLIP CARD -->
-						<section class="perspective flip-box h-32 w-full bg-transparent">
+						<section class="perspective flip-box h-40 w-full bg-transparent">
 							<!-- FLIP CARD INNER -->
 							<div
 								class="flip-card-inner preserveTransformStyle relative flex h-full w-full transform-gpu items-center transition-all"
@@ -53,39 +57,51 @@
 								<div
 									class="flip-card-front absolute h-full w-full rounded-lg bg-wild-natural/50 p-3"
 								>
-									{#if bullets}
-										{#each bullets as bullet, i}
-											<ol class="list-none">
-												<li>
-													<span class="">{i + 1} -</span>
-													<span class="text-wild-darkgreen/60">{bullet}</span>
-												</li>
-											</ol>
-										{/each}
-									{/if}
+									<div class="relative">
+										{#if bullets}
+											<div class="mb-1 flex justify-between">
+												<p class="text-sm text-wild-darkgreen/70">to:</p>
+												<ClosedBookIcon
+													class="text-wild-darkgreen/70 transition-all duration-100 ease-in hover:-rotate-[16deg]"
+												/>
+											</div>
+											{#each bullets as bullet}
+												<ol class="list-none text-base">
+													<li>
+														<span class="tracking-wider text-wild-darkgreen">{bullet}</span>
+													</li>
+												</ol>
+											{/each}
+										{/if}
+									</div>
 								</div>
 								<!-- Flip card BACK -->
 								<div
-									class="flip-card-back absolute h-full w-full rounded-lg bg-white/50 p-3 font-folks text-black"
+									class="flip-card-back absolute grid h-full w-full items-center rounded-lg bg-white/50 p-3 pt-1 font-folks text-black"
 								>
-									<div class="mx-auto flex w-fit items-center">
-										<p class="w-[6.5rem] text-end text-sm text-wild-darkgreen">
-											{animalFact.primaryFact}
-										</p>
-										<div class="mx-3 h-10 border-r border-dashed border-wild-darkgreen"></div>
-										<p
-											class="w-28 text-xl font-bold underline decoration-wild-green underline-offset-4"
-										>
-											{animalFact.primaryStar}
-										</p>
-									</div>
-									<div class="mx-auto mt-1 flex w-fit items-end gap-2">
-										<p class="text-3xl font-bold">
-											{animalFact.number}<span class="text-xl">{animalFact.identifier}</span>
-										</p>
-										<p class="text-sm tracking-wider text-wild-darkgreen">
-											{animalFact.secondaryFact}
-										</p>
+									<OpenBookIcon
+										class="absolute left-0 top-0 m-3 -rotate-6 text-wild-darkgreen/70 transition-all duration-150 ease-in hover:-rotate-[16deg]"
+									/>
+									<div class="relative">
+										<div class="mx-auto flex w-fit items-center">
+											<p class="w-[7rem] text-end text-sm text-wild-darkgreen">
+												{animalFact.primaryFact}
+											</p>
+											<div class="mx-3 h-10 border-r border-dashed border-wild-darkgreen"></div>
+											<p
+												class="w-28 text-xl font-bold underline decoration-wild-green underline-offset-4"
+											>
+												{animalFact.primaryStar}
+											</p>
+										</div>
+										<div class="mx-auto flex w-fit items-end gap-2">
+											<p class="text-3xl font-bold">
+												{animalFact.number}<span class="text-xl">{animalFact.identifier}</span>
+											</p>
+											<p class="text-sm tracking-wider text-wild-darkgreen">
+												{animalFact.secondaryFact}
+											</p>
+										</div>
 									</div>
 								</div>
 							</div>

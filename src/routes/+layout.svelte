@@ -44,7 +44,7 @@
 		<!-- For desktop -->
 		<AppRail
 			background="bg-wild-beige"
-			class="sticky top-0 z-20 hidden h-screen w-fit flex-none px-2 md:block"
+			class="sticky top-0 z-20 hidden h-screen w-fit flex-none border-r border-black px-2 md:block"
 			regionLead="mt-4"
 		>
 			<svelte:fragment slot="lead">

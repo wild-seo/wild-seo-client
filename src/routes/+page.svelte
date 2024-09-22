@@ -7,6 +7,8 @@
 	import UpArrowIcon from '~icons/pixelarticons/arrow-up';
 	import PlusIcon from '~icons/bx/plus';
 	import StarIcon from '~icons/meteocons/star-fill';
+	import LeafIcon from '~icons/ph/leaf-light';
+	import FlowerIcon from '~icons/streamline/flower';
 	// Skeleton
 	import { Modal, getModalStore } from '@skeletonlabs/skeleton';
 	import { enhance } from '$app/forms';
@@ -21,6 +23,9 @@
 	export let form;
 
 	let mouseHovering = false;
+	let colorDotsMouseHover = false;
+	let colorDotsMouseHoverSale = false;
+
 	let connecting = false;
 
 	const modalStore = getModalStore();
@@ -54,13 +59,13 @@
 	];
 </script>
 
-<div>
+<div class="overflow-clip">
 	<section class="p-4 md:p-8">
 		<section class="mx-auto grid max-w-5xl items-center gap-8 p-0 md:grid-cols-2 md:p-4">
 			<img
 				src="https://cdn.shopify.com/s/files/1/0518/4241/6818/files/Camping_Illustration.png?v=1726236736"
 				alt="Wild SEO Campsite with Tree Illustration with Google, Amazon, Youtube, Bing, and Yahoo! logos hanging out together"
-				class="animate-wind transform-gpu transition-all duration-300 ease-in"
+				class="animate-wind transform-gpu transition-all duration-300"
 			/>
 			<div class="text-center md:text-start">
 				<h1 class="text-3xl font-bold leading-tight md:text-5xl">
@@ -69,7 +74,7 @@
 						<span
 							class="bg-gradient-to-br from-green-400 to-cyan-700 box-decoration-clone bg-clip-text text-transparent"
 						>
-							noticed
+							discovered
 						</span>
 						on the<br />
 					</span>
@@ -180,10 +185,18 @@
 
 	<!-- Sustainability Image section -->
 	<section class="mt-8 grid md:grid-cols-2">
-		<img
-			src="https://cdn.shopify.com/s/files/1/0518/4241/6818/files/siargao-wild-seo.jpg?v=1725720499"
-			alt="Stunning beach from drone view"
-		/>
+		<div class="relative">
+			<img
+				src="https://cdn.shopify.com/s/files/1/0518/4241/6818/files/siargao-wild-seo.jpg?v=1725720499"
+				alt="Stunning beach from drone view"
+				class="relative h-full object-cover"
+			/>
+			<p
+				class="absolute bottom-0 left-0 m-2 bg-black/40 p-2 font-courier text-sm text-white shadow-md"
+			>
+				<span class="font-bold">*SEO</span> = Search Engine Optimisation
+			</p>
+		</div>
 		<div
 			class="group relative content-center overflow-clip bg-black"
 			on:mouseleave={() => {
@@ -246,36 +259,212 @@
 		</div>
 	</section>
 	<CertificationMarquee minified={false} />
-	<section>
-		<p class="mx-auto max-w-md text-center font-bebas text-5xl font-bold">
-			Transform your current search to something better
-		</p>
-		<p class="mx-auto max-w-xl text-center font-scratchy text-3xl tracking-wider">
-			Add schemas, alt tags, all the juicy morsels to level up your search
-		</p>
-		<div class="mx-auto my-10 grid max-w-6xl gap-6 p-4 md:grid-cols-2">
-			<img
-				src="https://cdn.shopify.com/s/files/1/0518/4241/6818/files/Old_Market_SEO_Designed.png?v=1726388025"
-				alt=""
-			/>
-			<div class="relative">
+	<section class="border-b border-black">
+		<div class="h-6 w-full border-b border-black bg-wild-brown shadow-md"></div>
+		<div class="mx-auto max-w-6xl pb-6">
+			<div class="grid items-center gap-8 py-20 md:grid-cols-2">
+				<div class=" font-folks tracking-wide">
+					<div class="mb-2 flex gap-3">
+						<p class="font-bebas text-3xl font-bold leading-tight tracking-wide md:text-5xl">
+							What We Do
+						</p>
+						<LeafIcon class="animate-wind h-10 w-10 text-wild-darkgreen" />
+					</div>
+					<div class="mb-4 w-3/4 border border-dashed border-wild-brown"></div>
+					<div class="leading-[1.6] tracking-wider">
+						<div class="max-w-lg">
+							<p class="my-2">
+								At <span class="font-scratchy text-3xl text-wild-darkgreen">Wild SEO</span>, we
+								believe your website
+								<span class="font-courier"> [+ how accessible it is to your customers]</span>
+								is a crucial representation of your business.
+							</p>
+							<p class="my-2">
+								Instead of including paid metrics in <span class="underline underline-offset-2"
+									>our pricing</span
+								>, we focus on:
+							</p>
+						</div>
+						<div class="my-6 grid grid-cols-3 gap-1 font-semibold">
+							<div class="flex items-center gap-2 capitalize">
+								<FlowerIcon class="text-pink-500" />
+								<p>organic growth</p>
+							</div>
+							<div class="flex items-center gap-2 capitalize">
+								<FlowerIcon class="text-pink-500" />
+								<p>long-term traffic</p>
+							</div>
+							<div class="flex items-center gap-2 capitalize">
+								<FlowerIcon class="text-pink-500" />
+								<p>SEO accessibility</p>
+							</div>
+						</div>
+						<div class="max-w-lg">
+							<p class="my-3">
+								Rooted in a
+								<span class="font-semibold underline decoration-double underline-offset-[3px]">
+									100% confidence
+								</span>
+								of your unique business bringing results. Our pricing is one-time with
+								<b>no maintanence costs.</b>
+							</p>
+							<p>We operate with a love for niche, unconventional keywords.</p>
+						</div>
+						<section class="mt-4 flex gap-6">
+							<a
+								href="/services"
+								class="whiteMinimalButton border-2 border-wild-brown bg-transparent tracking-wider text-wild-brown duration-150 ease-in hover:-translate-y-1 hover:bg-white hover:text-black"
+								class:amberShadow={colorDotsMouseHover}
+								on:mouseleave={() => {
+									colorDotsMouseHover = false;
+								}}
+								on:mouseover={() => {
+									colorDotsMouseHover = true;
+								}}
+							>
+								View Services
+							</a>
+							<a
+								href="/contact-us"
+								class="whiteMinimalButton border-2 border-wild-brown bg-transparent tracking-wider text-wild-brown duration-150 ease-in hover:-translate-y-1 hover:bg-white hover:text-black"
+								class:pinkShadow={colorDotsMouseHoverSale}
+								on:mouseleave={() => {
+									colorDotsMouseHoverSale = false;
+								}}
+								on:mouseover={() => {
+									colorDotsMouseHoverSale = true;
+								}}
+							>
+								Contact Sales
+							</a>
+						</section>
+					</div>
+				</div>
+				<div>
+					<div
+						class="relative flex flex-col rounded-lg border border-wild-brown bg-white shadow-lg transition-all duration-150 hover:shadow-xl"
+					>
+						<div class="relative flex-shrink-0 border-r border-black p-6">
+							<p class="font-platNomor text-2xl tracking-wider">Wild SEO's Core Strategy:</p>
+							<div class="mb-4 mt-2 border-t border-wild-brown"></div>
+							<ul class="list-inside list-disc font-courier leading-loose tracking-wider">
+								<li>Local SEO</li>
+								<li>Rising trends</li>
+								<li>No paid backlinks</li>
+							</ul>
+						</div>
+						<div>
+							<img
+								src="https://imagedelivery.net/usYhDnhJIpKLEgUtJMbggw/531533df-4ff8-478f-89ac-7a10440baf00/public"
+								class="h-full object-cover"
+							/>
+						</div>
+					</div>
+					<div class="mt-8">
+						<p class="my-2 font-courier">How to we get your site to appear in the wild ?</p>
+						<div class="my-2 w-full border-t border-wild-brown"></div>
+						<p class="mt-4 font-folks text-3xl font-semibold">loooooooooong tail words</p>
+					</div>
+				</div>
+			</div>
+			<p class="font-courier">
+				*Your brand / business is one-of-a-kind. Your SEO efforts should reflect that a <span
+					class="font-semibold underline decoration-double underline-offset-4"
+				>
+					100%</span
+				>
+			</p>
+		</div>
+	</section>
+	<!-- SEO Example -->
+	<section class="">
+		<section class="grid md:grid-cols-2">
+			<div class="flex items-center justify-center bg-white/50 shadow-lg">
+				<div class="text-center">
+					<p class="font-courier">How does your site look on Google ?</p>
+					<div class="mx-auto mb-3 mt-1 w-4/6 border-b border-wild-brown"></div>
+					<p class="font-akira text-2xl text-black">Suki owns a wet market.</p>
+					<p
+						class="mx-auto mb-2 mt-1 max-w-xl text-center font-scratchy text-3xl italic tracking-wider text-wild-funblue"
+					>
+						Her links compete with every type of market ever (!)
+					</p>
+				</div>
+			</div>
+			<div class="grid grid-cols-2 items-stretch">
 				<img
-					src="https://cdn.shopify.com/s/files/1/0518/4241/6818/files/Suki_Wet_Market_Designed.png?v=1726388025"
-					alt=""
-					class="relative z-10"
+					src="https://imagedelivery.net/usYhDnhJIpKLEgUtJMbggw/a7c331b4-bbc6-482e-7caf-572339916700/public"
+					class="object-cover transition-all duration-200 hover:z-10 hover:scale-110 hover:shadow-lg"
 				/>
 				<img
-					src="https://cdn.shopify.com/s/files/1/0518/4241/6818/files/SukiWet_Complementary01.png?v=1726388027"
-					alt=""
-					class="absolute -bottom-[6.5rem] -left-10 z-0 w-72 transition-all hover:scale-125"
-				/>
-				<img
-					src="https://cdn.shopify.com/s/files/1/0518/4241/6818/files/SukiWet_Complementary02.png?v=1726388025"
-					alt=""
-					class="absolute -right-10 -top-32 z-0 w-60 transition-all hover:scale-125"
+					src="https://imagedelivery.net/usYhDnhJIpKLEgUtJMbggw/309e112a-144e-4539-796a-599857a70100/public"
+					class="object-cover transition-all duration-200 hover:z-10 hover:scale-110 hover:shadow-lg"
 				/>
 			</div>
+		</section>
+		<div
+			class=""
+			style="background-image: url('https://imagedelivery.net/usYhDnhJIpKLEgUtJMbggw/e294ecc5-3e3b-4553-a168-23516c88dd00/public');"
+		>
+			<section class="text-white">
+				<div class="grid h-[80vh] items-center md:h-[55vh] md:grid-cols-2">
+					<div class="grid h-full w-full items-center justify-center bg-black/40 backdrop-blur-sm">
+						<div class="relative p-5 md:p-10">
+							<p
+								class="text-center font-folks text-xl font-bold tracking-widest underline underline-offset-4"
+							>
+								BEFORE
+							</p>
+							<img
+								src="https://cdn.shopify.com/s/files/1/0518/4241/6818/files/Old_Market_SEO_Designed.png?v=1726388025"
+								alt=""
+								class=""
+							/>
+						</div>
+					</div>
+					<div class="relative grid h-full w-full items-center justify-center bg-black/40">
+						<div class="relative p-5 md:p-10">
+							<p
+								class="z-20 text-center font-folks text-xl font-bold tracking-widest underline underline-offset-4"
+							>
+								AFTER
+							</p>
+							<p class="relative z-10 text-center font-scratchy text-xl tracking-wider md:text-3xl">
+								+ Schemas, Alt Tags, OGs, and more !
+							</p>
+							<img
+								src="https://cdn.shopify.com/s/files/1/0518/4241/6818/files/Suki_Wet_Market_Designed.png?v=1726388025"
+								alt=""
+								class="relative z-10"
+							/>
+							<img
+								src="https://imagedelivery.net/usYhDnhJIpKLEgUtJMbggw/7d7617a9-471a-4bc4-eee9-e9721d002900/public"
+								alt=""
+								class="absolute -bottom-[3rem] -left-[1rem] z-0 w-32 -rotate-6 md:-bottom-[5rem] md:w-64"
+							/>
+							<img
+								src="https://imagedelivery.net/usYhDnhJIpKLEgUtJMbggw/382024eb-60e6-47f4-833c-5325cbba5f00/public"
+								alt=""
+								class="absolute -right-5 top-2 z-0 w-32 rotate-6 md:-right-0 md:-top-10 md:w-60"
+							/>
+						</div>
+					</div>
+				</div>
+			</section>
 		</div>
+		<div class="border-b border-t border-black bg-white px-4 py-2 font-courier">
+			<p>
+				<b>70%</b> of marketers say SEO provides more consistent results than paid advertising.
+			</p>
+			<!-- <p>
+				SEO leads have a 14.6% higher closing rate compared to 1.7% of outbound leads (direct mail
+				or cold calls)
+			</p> -->
+		</div>
+		<section class="grid grid-cols-2">
+			<p>Drop us your email</p>
+			<input type="submit" />
+		</section>
 	</section>
 </div>
 
@@ -285,5 +474,29 @@
 	}
 	.stopAnimation {
 		animation-play-state: paused;
+	}
+	.whiteMinimalButton {
+		z-index: 10;
+		padding: 16px;
+		margin-top: 10px;
+		font-size: 1.3rem;
+		border-radius: 8px;
+		font-family: 'Bebas Neue', 'sans';
+	}
+	.amberShadow {
+		box-shadow:
+			rgba(245, 158, 11, 0.4) 5px 5px,
+			rgba(245, 158, 11, 0.3) 10px 10px,
+			rgba(245, 158, 11, 0.2) 15px 15px,
+			rgba(245, 158, 11, 0.1) 20px 20px,
+			rgba(245, 158, 11, 0.05) 25px 25px;
+	}
+	.pinkShadow {
+		box-shadow:
+			rgba(240, 46, 170, 0.4) 5px 5px,
+			rgba(240, 46, 170, 0.3) 10px 10px,
+			rgba(240, 46, 170, 0.2) 15px 15px,
+			rgba(240, 46, 170, 0.1) 20px 20px,
+			rgba(240, 46, 170, 0.05) 25px 25px;
 	}
 </style>

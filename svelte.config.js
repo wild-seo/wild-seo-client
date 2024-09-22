@@ -14,7 +14,8 @@ const config = {
 		// See https://kit.svelte.dev/docs/adapters for more information about adapters.
 		adapter: adapter(),
 		alias: {
-			$assets: './src/lib/assets'
+			$assets: './src/lib/assets',
+			$cloudfareCDN: 'https://imagedelivery.net/usYhDnhJIpKLEgUtJMbggw'
 		}
 	},
 

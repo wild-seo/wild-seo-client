@@ -6,10 +6,11 @@ export const services = [
 		iconSrc:
 			'https://cdn.shopify.com/s/files/1/0518/4241/6818/files/grey_heron_package.png?v=1725853925',
 		iconAlt: '',
-		description: 'GET strategic analytics on your competitor(s)',
+		actionWord: 'GET',
+		description: 'strategic analytics on your competitor(s)',
 		bullets: [
-			'How many businesses are linking to their website ?',
-			'What keywords they use to identify themselves ?'
+			'Differentiate your brand OR find new competitors ',
+			'+ explore new rising trends in the industry'
 		],
 		animalFact: {
 			primaryFact: "Grey Heron's have",
@@ -26,11 +27,9 @@ export const services = [
 		iconSrc:
 			'https://cdn.shopify.com/s/files/1/0518/4241/6818/files/spectacled_bear_package.png?v=1725853925',
 		iconAlt: '',
-		description: 'ADD relevant keywords that directly impact your website',
-		bullets: [
-			'How many businesses are linking to their website ?',
-			'What keywords they use to identify themselves ?'
-		],
+		actionWord: 'ADD',
+		description: 'brand-related keywords that directly impact your website',
+		bullets: ['Meet more relevant customers', '+ make it simpler to get your brand discovered'],
 		animalFact: {
 			primaryFact: "Spec Bear's forage in",
 			primaryStar: 'Andes Mountains',
@@ -46,17 +45,15 @@ export const services = [
 		iconSrc:
 			'https://cdn.shopify.com/s/files/1/0518/4241/6818/files/pygmy_marmoset_package.png?v=1725853925',
 		iconAlt: '',
-		description: 'FIND error links & backlinks to fix crawling bugs.',
-		bullets: [
-			'How many businesses are linking to their website ?',
-			'What keywords they use to identify themselves ?'
-		],
+		actionWord: 'FIND',
+		description: 'site errors & backlinks to invite crawling bugs.',
+		bullets: ['Get Googlebots to favor us', '+ organically climb search result ranks'],
 		animalFact: {
-			primaryFact: "Andean Bear's live in the ",
-			primaryStar: 'Andes',
-			number: 3,
-			identifier: 'x',
-			secondaryFact: 'better eyesight than humans'
+			primaryFact: "Pygmy's hand compared to humans",
+			primaryStar: '10x smaller',
+			number: 80,
+			identifier: '+',
+			secondaryFact: 'bugs squashed and eaten in a day'
 		}
 	}
 ];

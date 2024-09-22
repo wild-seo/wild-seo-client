@@ -5,8 +5,12 @@ export const actions = {
 	contact: async ({ cookies, request }) => {
 		const data = await request.formData();
 
-		await new Promise((fulfil) => setTimeout(fulfil, 1000));
+		let email = data.get('email');
+		let organization = data.get('organization');
+		let website = data.get('website');
 
+		let enquiryData = { email, organization, website };
+		console.log(enquiryData);
 		try {
 			data.get('email');
 			return { message: 'success' };

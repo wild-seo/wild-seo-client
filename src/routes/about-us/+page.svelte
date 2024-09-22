@@ -1,44 +1,72 @@
 <script>
 	import LinkedInLogo from '~icons/logos/linkedin-icon';
+	import CompassIcon from '~icons/line-md/compass-twotone-loop';
+
 	let mouseHovering = false;
 </script>
 
 <div class="grid overflow-clip md:grid-cols-2">
-	<section class="p-6">
+	<section class="border-r border-black">
 		<div
-			class="group relative flex h-48 w-48 items-center justify-center rounded-lg border border-wild-brown bg-white/50 transition-all duration-[350ms] hover:border-[0.5px] hover:bg-white/40"
-			on:mouseover={() => {
-				mouseHovering = true;
-			}}
-			on:mouseleave={() => {
-				mouseHovering = false;
-			}}
-			class:insideShadow={mouseHovering}
+			class=" border-b border-wild-brown bg-white/60 shadow-sm transition-all duration-500 hover:shadow-md"
 		>
-			<h1
-				class="group-hover:animate-wind font-bebas text-4xl tracking-wide duration-300 group-hover:opacity-80"
-			>
-				About Us
-			</h1>
+			<div class="flex items-center gap-1 bg-wild-brown px-4">
+				<p class="text-[0.6rem] font-bold tracking-[0.3em] text-white">NAVIGATION</p>
+				<CompassIcon class="h-4 w-4 text-white" />
+			</div>
 
-			<LinkedInLogo class="absolute right-0 top-3 h-10 w-10 translate-x-10 bg-white" />
+			<ol class="breadcrumb items-center px-4 py-[0.3rem] font-akira text-xs">
+				<li class="crumb">
+					<a
+						class="anchor relative text-wild-funblue no-underline before:absolute before:-bottom-[0.3rem] before:left-0 before:h-[3px] before:w-full before:origin-right before:scale-x-0 before:bg-wild-funblue before:transition-transform before:duration-300 hover:before:origin-left hover:before:scale-x-100"
+						href="/">Home</a
+					>
+				</li>
+				<li class="crumb-separator text-base font-bold text-emerald-700" aria-hidden="true">
+					&rsaquo;
+				</li>
+				<li>About Us</li>
+			</ol>
 		</div>
+		<section class="p-6">
+			<div
+				class="group relative flex h-48 w-48 items-center justify-center rounded-lg border border-wild-brown bg-white/50 transition-all duration-[350ms] hover:border-[0.5px] hover:bg-white/40"
+				on:mouseover={() => {
+					mouseHovering = true;
+				}}
+				on:mouseleave={() => {
+					mouseHovering = false;
+				}}
+				class:insideShadow={mouseHovering}
+			>
+				<h1
+					class="group-hover:animate-wind group-hover:opacity-9 anchor relative font-bebas text-4xl tracking-wide no-underline transition-all duration-1000 before:absolute before:-bottom-[0.3rem] before:left-0 before:h-[3px] before:w-full before:origin-right before:scale-x-0 before:bg-wild-brown before:transition-transform before:duration-300 group-hover:before:origin-left group-hover:before:scale-x-100"
+				>
+					About <br />
+					Wild SEO
+				</h1>
+
+				<LinkedInLogo
+					class="absolute right-0 top-3 h-10 w-10 translate-x-10 rounded-sm bg-white shadow-sm"
+				/>
+			</div>
+		</section>
 	</section>
 	<section class="p-6">
 		<div class="relative h-full w-full">
 			<div
-				class="animate-randomSoftLightOne animateOnce absolute left-0 top-0 h-44 w-44 rounded-full bg-wild-green/80"
+				class="animate-randomSoftLightOne animateOnce absolute -left-5 -top-9 h-24 w-24 rounded-full bg-wild-green/80 md:-left-10 md:-top-14 md:h-44 md:w-44"
 			></div>
 			<div
-				class="animate-randomSoftLightTwo animateOnce absolute right-0 top-1/3 h-20 w-20 rounded-full bg-wild-funblue/70"
+				class="animate-randomSoftLightTwo animateOnce absolute right-11 top-[36%] h-10 w-10 rounded-full bg-wild-funblue/70 md:right-20 md:top-[28%] md:h-20 md:w-20"
 			></div>
 			<div
-				class="animate-randomSoftLightThree animateOnce absolute bottom-12 left-0 h-32 w-32 rounded-full bg-yellow-500/60"
+				class="animate-randomSoftLightThree animateOnce absolute -bottom-5 left-0 h-16 w-16 rounded-full bg-yellow-500/60 md:bottom-20 md:h-32 md:w-32"
 			></div>
 			<img
 				src="https://cdn.shopify.com/s/files/1/0518/4241/6818/files/Equipment_Illustration_NEW.png?v=1726375762"
 				alt=""
-				class="animate-wind relative z-10"
+				class="animate-wind relative"
 			/>
 		</div>
 	</section>

@@ -50,7 +50,7 @@
 </script>
 
 <div
-	class="relative mb-8 flex overflow-clip overflow-x-hidden border-b-2 border-t-2 border-black bg-white"
+	class="relative flex overflow-clip overflow-x-hidden border-b-2 border-t-2 border-black bg-white"
 >
 	<div
 		class="animate-marquee flex w-full items-center gap-8 whitespace-nowrap py-2"
