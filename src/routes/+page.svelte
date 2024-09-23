@@ -340,10 +340,11 @@
 						</section>
 					</div>
 				</div>
-				<div>
-					<div
-						class="relative flex flex-col rounded-lg border border-wild-brown bg-white shadow-lg transition-all duration-150 hover:shadow-xl md:flex-row"
-					>
+
+				<section
+					class="rounded-lg border border-wild-brown bg-white shadow-lg transition-all duration-150 hover:shadow-xl"
+				>
+					<div class="relative flex flex-col md:flex-row">
 						<div class="relative flex-shrink-0 border-r border-black p-6">
 							<p class="font-platNomor text-2xl tracking-wider">Wild SEO's Core Strategy:</p>
 							<div class="mb-4 mt-2 border-t border-wild-brown"></div>
@@ -353,19 +354,25 @@
 								<li>No paid backlinks</li>
 							</ul>
 						</div>
-						<div>
+						<div class="">
 							<img
 								src="https://imagedelivery.net/usYhDnhJIpKLEgUtJMbggw/531533df-4ff8-478f-89ac-7a10440baf00/public"
-								class="h-full object-cover"
+								class=" h-full object-cover"
 							/>
 						</div>
+						<p
+							class="absolute right-0 top-0 h-8 w-full max-w-fit -translate-y-8 rounded-t-md border border-b-0 border-wild-brown bg-wild-brown/80 p-2 font-courier text-sm leading-tight tracking-wider text-white transition-all ease-in hover:h-9 hover:-translate-y-9 hover:bg-wild-brown"
+						>
+							How can you tell <span class="underline underline-offset-2">when</span> a site is WILD
+							?
+						</p>
 					</div>
-					<div class="mt-8">
-						<p class="my-2 font-courier">How to we get your site to appear in the wild ?</p>
-						<div class="my-2 w-full border-t border-wild-brown"></div>
-						<p class="mt-4 font-folks text-3xl font-semibold">loooooooooong tail words</p>
+					<div class="h-10 w-full bg-wild-brown">
+						<p class="p-2 text-end font-courier text-xl tracking-wider text-white">
+							loooooooooong tail words
+						</p>
 					</div>
-				</div>
+				</section>
 			</div>
 			<p class="font-courier">
 				*Your brand / business is one-of-a-kind. Your SEO efforts should reflect that a <span

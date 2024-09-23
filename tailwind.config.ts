@@ -23,38 +23,9 @@ export default {
 				marquee2: 'marquee2 20s linear infinite',
 				wind: 'gustRight 10s ease-in-out alternate infinite',
 				blurify: 'blurMeOut 8s ease-in-out alternate infinite',
-				pulseScale: 'pulseScale 3s ease-in alternate infinite',
-				randomSoftLightOne: 'insertRandomly 3s ease-out forwards',
-				randomSoftLightTwo: 'insertRandomlyTwo 4s ease-out forwards',
-				randomSoftLightThree: 'insertRandomlyThree 5s ease-out forwards'
+				pulseScale: 'pulseScale 3s ease-in alternate infinite'
 			},
 			keyframes: {
-				insertRandomly: {
-					from: {
-						transform: 'translate(30vw,30vh) scale(0.5)'
-					},
-					to: {
-						transform: 'translate(' + randomInt(0, 100) + '%,' + randomInt(0, 100) + '%) scale(1)'
-					}
-				},
-				insertRandomlyTwo: {
-					from: {
-						transform: 'translate(100vw,-100vh) scale(0.5)'
-					},
-					to: {
-						transform:
-							'-translate(' + randomInt(90, 100) + '%,' + randomInt(50, 100) + '%) scale(1)'
-					}
-				},
-				insertRandomlyThree: {
-					from: {
-						transform: 'translate(50vw,0) scale(0.5)'
-					},
-					to: {
-						transform:
-							'translate(' + randomInt(0, 100) + '%, -' + randomInt(90, 100) + '%) scale(1)'
-					}
-				},
 				gradient: {
 					to: { 'background-position': '200% center' }
 				},

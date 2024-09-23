@@ -44,6 +44,7 @@
 	},
 	"type": "module",
 	"dependencies": {
+		"@iconify/svelte": "^4.0.2",
 		"is-url-http": "^2.3.8"
 	}
 }
