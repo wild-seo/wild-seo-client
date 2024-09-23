@@ -1,7 +1,8 @@
 <script>
 	import LinkedInLogo from '~icons/logos/linkedin-icon';
 	import CompassIcon from '~icons/line-md/compass-twotone-loop';
-
+	import SvelteIcon from '~icons/devicon/svelte';
+	import TailwindIcon from '~icons/devicon/tailwindcss';
 	let mouseHovering = false;
 </script>
 
@@ -50,12 +51,32 @@
 					class="absolute right-0 top-3 h-10 w-10 translate-x-10 rounded-sm bg-white shadow-sm"
 				/>
 			</div>
+			<p class="mb-3 mt-2 text-center">Happily made with:</p>
+			<div class="logo-cloud grid-cols-1 gap-1 lg:!grid-cols-3">
+				<a class="logo-item variant-soft-tertiary flex flex-col gap-2" href="/">
+					<div>
+						<img
+							src="https://imagedelivery.net/usYhDnhJIpKLEgUtJMbggw/0c99424b-f78c-443f-636d-8b09dc3df800/small"
+							class="mx-auto w-1/2"
+						/>
+					</div>
+					<span>Cloudfare</span>
+				</a>
+				<a class="logo-item variant-soft-tertiary flex flex-col gap-2" href="/">
+					<SvelteIcon />
+					<span>SvelteKit</span>
+				</a>
+				<a class="logo-item variant-soft-tertiary flex flex-col gap-2" href="/">
+					<TailwindIcon />
+					<span>Tailwind CSS</span>
+				</a>
+			</div>
 		</section>
 	</section>
 	<section class="p-6">
 		<div class="relative h-full w-full">
 			<div
-				class="animate-randomSoftLightOne animateOnce absolute -left-5 -top-9 h-24 w-24 rounded-full bg-wild-green/80 md:-left-10 md:-top-14 md:h-44 md:w-44"
+				class="animate-randomSoftLightOne animateOnce absolute -left-5 -top-9 h-24 w-24 rounded-full bg-wild-green/80 md:-top-14 md:left-10 md:h-44 md:w-44"
 			></div>
 			<div
 				class="animate-randomSoftLightTwo animateOnce absolute right-11 top-[36%] h-10 w-10 rounded-full bg-wild-funblue/70 md:right-20 md:top-[28%] md:h-20 md:w-20"
@@ -80,5 +101,8 @@
 	}
 	.animateOnce {
 		animation-iteration-count: 1;
+	}
+	span {
+		font-size: 10px;
 	}
 </style>
