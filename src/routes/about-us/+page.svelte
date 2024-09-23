@@ -6,7 +6,7 @@
 	let mouseHovering = false;
 </script>
 
-<div class="grid overflow-clip md:grid-cols-2">
+<div class="grid overflow-clip lg:!grid-cols-2">
 	<section class="border-r border-black">
 		<div
 			class=" border-b border-wild-brown bg-white/60 shadow-sm transition-all duration-500 hover:shadow-md"
@@ -76,13 +76,13 @@
 	<section class="p-6">
 		<div class="relative h-full w-full">
 			<div
-				class="animate-randomSoftLightOne animateOnce absolute -left-5 -top-9 h-24 w-24 rounded-full bg-wild-green/80 md:-top-14 md:left-10 md:h-44 md:w-44"
+				class="animate-randomSoftLightOne animateOnce absolute -left-5 -top-9 h-24 w-24 rounded-full bg-wild-green/80 lg:!-top-14 lg:!left-10 lg:!h-44 lg:!w-44"
 			></div>
 			<div
-				class="animate-randomSoftLightTwo animateOnce absolute right-11 top-[36%] h-10 w-10 rounded-full bg-wild-funblue/70 md:right-20 md:top-[28%] md:h-20 md:w-20"
+				class="animate-randomSoftLightTwo animateOnce absolute right-11 top-[36%] h-10 w-10 rounded-full bg-wild-funblue/70 lg:!right-20 lg:!top-[28%] lg:!h-20 lg:!w-20"
 			></div>
 			<div
-				class="animate-randomSoftLightThree animateOnce absolute -bottom-5 left-0 h-16 w-16 rounded-full bg-yellow-500/60 md:bottom-20 md:h-32 md:w-32"
+				class="animate-randomSoftLightThree animateOnce absolute -bottom-5 left-0 h-16 w-16 rounded-full bg-yellow-500/60 lg:!bottom-20 lg:!h-32 lg:!w-32"
 			></div>
 			<img
 				src="https://cdn.shopify.com/s/files/1/0518/4241/6818/files/Equipment_Illustration_NEW.png?v=1726375762"

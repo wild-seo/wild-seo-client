@@ -60,15 +60,15 @@
 </script>
 
 <div class="overflow-clip">
-	<section class="p-4 md:p-8">
-		<section class="mx-auto grid max-w-5xl items-center gap-8 p-0 md:grid-cols-2 md:p-4">
+	<section class="p-4 lg:!p-8">
+		<section class="mx-auto grid max-w-5xl items-center gap-8 p-0 lg:!grid-cols-2 lg:!p-4">
 			<img
 				src="https://cdn.shopify.com/s/files/1/0518/4241/6818/files/Camping_Illustration.png?v=1726236736"
 				alt="Wild SEO Campsite with Tree Illustration with Google, Amazon, Youtube, Bing, and Yahoo! logos hanging out together"
 				class="animate-wind transform-gpu transition-all duration-300"
 			/>
-			<div class="text-center md:text-start">
-				<h1 class="text-3xl font-bold leading-tight md:text-5xl">
+			<div class="text-center lg:!text-start">
+				<h1 class="text-3xl font-bold leading-tight lg:!text-5xl">
 					<span class="font-['Scratchy'] tracking-wider">
 						Get
 						<span
@@ -78,7 +78,7 @@
 						</span>
 						on the<br />
 					</span>
-					<div class="mx-auto flex w-fit items-center gap-2 tracking-wide md:w-auto">
+					<div class="mx-auto flex w-fit items-center gap-2 tracking-wide lg:!w-auto">
 						<span class="font-bebas">
 							<span
 								class="relative before:absolute before:bottom-0 before:left-0 before:h-1 before:w-full before:origin-right before:scale-x-0 before:bg-wild-green before:transition-transform before:duration-300 hover:before:origin-left hover:before:scale-x-100"
@@ -100,7 +100,7 @@
 						/>
 					</div>
 				</h1>
-				<p class="mt-2 font-platNomor text-sm uppercase tracking-widest text-black/70 md:text-xl">
+				<p class="mt-2 font-platNomor text-sm uppercase tracking-widest text-black/70 lg:!text-xl">
 					Rank your website higher on Google
 				</p>
 				<div class="mb-3 mt-2 border-t border-wild-beige"></div>
@@ -184,7 +184,7 @@
 	<ServiceFactCard />
 
 	<!-- Sustainability Image section -->
-	<section class="mt-8 grid md:grid-cols-2">
+	<section class="mt-8 grid lg:!grid-cols-2">
 		<div class="relative">
 			<img
 				src="https://cdn.shopify.com/s/files/1/0518/4241/6818/files/siargao-wild-seo.jpg?v=1725720499"
@@ -262,10 +262,10 @@
 	<section class="border-b border-black">
 		<div class="h-6 w-full border-b border-black bg-wild-brown shadow-md"></div>
 		<div class="mx-auto max-w-6xl pb-6">
-			<div class="grid items-center gap-8 py-20 md:grid-cols-2">
+			<div class="grid items-center gap-8 py-20 lg:!grid-cols-2">
 				<div class=" font-folks tracking-wide">
 					<div class="mb-2 flex gap-3">
-						<p class="font-bebas text-3xl font-bold leading-tight tracking-wide md:text-5xl">
+						<p class="font-bebas text-3xl font-bold leading-tight tracking-wide lg:!text-5xl">
 							What We Do
 						</p>
 						<LeafIcon class="animate-wind h-10 w-10 text-wild-darkgreen" />
@@ -342,7 +342,7 @@
 				</div>
 				<div>
 					<div
-						class="relative flex flex-col rounded-lg border border-wild-brown bg-white shadow-lg transition-all duration-150 hover:shadow-xl"
+						class="relative flex flex-col rounded-lg border border-wild-brown bg-white shadow-lg transition-all duration-150 hover:shadow-xl md:flex-row"
 					>
 						<div class="relative flex-shrink-0 border-r border-black p-6">
 							<p class="font-platNomor text-2xl tracking-wider">Wild SEO's Core Strategy:</p>
@@ -378,7 +378,7 @@
 	</section>
 	<!-- SEO Example -->
 	<section class="">
-		<section class="grid md:grid-cols-2">
+		<section class="grid lg:!grid-cols-2">
 			<div class="flex items-center justify-center bg-white/50 shadow-lg">
 				<div class="text-center">
 					<p class="font-courier">How does your site look on Google ?</p>
@@ -407,9 +407,9 @@
 			style="background-image: url('https://imagedelivery.net/usYhDnhJIpKLEgUtJMbggw/e294ecc5-3e3b-4553-a168-23516c88dd00/public');"
 		>
 			<section class="text-white">
-				<div class="grid h-[80vh] items-center md:h-[55vh] md:grid-cols-2">
+				<div class="grid h-[80vh] items-center lg:!h-[55vh] lg:!grid-cols-2">
 					<div class="grid h-full w-full items-center justify-center bg-black/40 backdrop-blur-sm">
-						<div class="relative p-5 md:p-10">
+						<div class="relative p-5 lg:!p-10">
 							<p
 								class="text-center font-folks text-xl font-bold tracking-widest underline underline-offset-4"
 							>
@@ -423,13 +423,15 @@
 						</div>
 					</div>
 					<div class="relative grid h-full w-full items-center justify-center bg-black/40">
-						<div class="relative p-5 md:p-10">
+						<div class="relative p-5 lg:!p-10">
 							<p
 								class="z-20 text-center font-folks text-xl font-bold tracking-widest underline underline-offset-4"
 							>
 								AFTER
 							</p>
-							<p class="relative z-10 text-center font-scratchy text-xl tracking-wider md:text-3xl">
+							<p
+								class="relative z-10 text-center font-scratchy text-xl tracking-wider lg:!text-3xl"
+							>
 								+ Schemas, Alt Tags, OGs, and more !
 							</p>
 							<img
@@ -440,12 +442,12 @@
 							<img
 								src="https://imagedelivery.net/usYhDnhJIpKLEgUtJMbggw/7d7617a9-471a-4bc4-eee9-e9721d002900/public"
 								alt=""
-								class="absolute -bottom-[3rem] -left-[1rem] z-0 w-32 -rotate-6 md:-bottom-[5rem] md:w-64"
+								class="absolute -bottom-[3rem] -left-[1rem] z-0 w-32 -rotate-6 lg:!-bottom-[5rem] lg:!w-64"
 							/>
 							<img
 								src="https://imagedelivery.net/usYhDnhJIpKLEgUtJMbggw/382024eb-60e6-47f4-833c-5325cbba5f00/public"
 								alt=""
-								class="absolute -right-5 top-2 z-0 w-32 rotate-6 md:-right-0 md:-top-10 md:w-60"
+								class="absolute -right-5 top-2 z-0 w-32 rotate-6 lg:!-right-0 lg:!-top-10 lg:!w-60"
 							/>
 						</div>
 					</div>

@@ -19,18 +19,18 @@
 </script>
 
 <div>
-	<section class="mx-auto my-10 grid max-w-6xl grid-cols-1 gap-3 p-4 md:grid-cols-3">
+	<section class="mx-auto my-10 grid max-w-6xl grid-cols-1 gap-3 p-4 lg:!grid-cols-3">
 		{#each services as { id, name, actionWord, heroPoints, iconSrc, iconAlt, bullets, description, animalFact }}
 			<div class="relative self-start rounded-lg bg-wild-darkgreen shadow-md">
 				<div class="gap-4">
 					<img
 						src={iconSrc}
 						alt={iconAlt}
-						class="absolute -left-2 -top-2 h-24 w-24 rounded-full shadow-md transition ease-in-out hover:scale-110 hover:shadow-lg md:-left-3 md:-top-5 md:h-32 md:w-32"
+						class="absolute -left-2 -top-2 h-24 w-24 rounded-full shadow-md transition ease-in-out hover:scale-110 hover:shadow-lg lg:!-left-3 lg:!-top-5 lg:!h-32 lg:!w-32"
 					/>
 					<div class="flex shadow-md">
 						<!-- Placeholder for image -->
-						<div class="h-24 w-24 rounded-md bg-wild-darkgreen md:h-28 md:w-28"></div>
+						<div class="h-24 w-24 rounded-md bg-wild-darkgreen lg:!h-28 lg:!w-28"></div>
 						<div class="rounded-lg bg-wild-darkgreen p-5 text-white">
 							<h2 class="font-scratchy text-3xl tracking-wider">{name}</h2>
 							<p class="mt-1 font-platNomor text-sm uppercase tracking-widest opacity-80">

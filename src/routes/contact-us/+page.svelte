@@ -11,7 +11,7 @@
 	let sendButtonHover = false;
 </script>
 
-<section class="no-scrollbar grid h-screen overflow-scroll md:grid-cols-2">
+<section class="no-scrollbar grid h-screen overflow-scroll lg:!grid-cols-2">
 	<div class="sticky top-0 grid h-screen w-full grid-flow-row grid-rows-2">
 		<div class="border-b-2 border-r-2 border-black bg-wild-funblue shadow-md">
 			<p class="p-8 font-bebas text-3xl text-white">What we will cover:</p>

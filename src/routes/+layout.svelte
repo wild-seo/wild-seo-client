@@ -35,16 +35,16 @@
 
 <div class="bg-wild-natural">
 	<!-- <div
-		class="fixed right-5 top-5 flex h-12 w-12 cursor-pointer items-center rounded-full border-2 border-yellow-500 bg-white shadow-md transition hover:shadow-lg md:h-16 md:w-16"
+		class="fixed right-5 top-5 flex h-12 w-12 cursor-pointer items-center rounded-full border-2 border-yellow-500 bg-white shadow-md transition hover:shadow-lg lg:!h-16 lg:!w-16"
 	>
-		<SunIcon class="z-50 mx-auto h-8 w-8 text-yellow-500 md:h-10 md:w-10" />
+		<SunIcon class="z-50 mx-auto h-8 w-8 text-yellow-500 lg:!h-10 lg:!w-10" />
 	</div> -->
 
-	<section class="block md:flex">
+	<section class="block lg:!flex">
 		<!-- For desktop -->
 		<AppRail
 			background="bg-wild-beige"
-			class="sticky top-0 z-20 hidden h-screen w-fit flex-none border-r border-black px-2 md:block"
+			class="sticky top-0 z-20 hidden h-screen w-fit flex-none border-r border-black px-2 lg:!block"
 			regionLead="mt-4"
 		>
 			<svelte:fragment slot="lead">
@@ -133,7 +133,7 @@
 	</section>
 
 	<div class="bottom-0 left-0 w-full bg-wild-seriousblue">
-		<div class="mx-auto grid grid-cols-1 p-6 md:grid-cols-2">
+		<div class="mx-auto grid grid-cols-1 p-6 lg:!grid-cols-2">
 			<div class="col-span-1 flex">
 				<a href="https://cassiebrock.com/whale-shark/" target="_blank">
 					<img
@@ -202,7 +202,7 @@
 	<AppBar
 		background="bg-white/20"
 		gridColumns="grid-cols-3"
-		class="backdrop-blur-safari sticky bottom-0 left-0 grid h-fit w-screen backdrop-blur-xl md:hidden"
+		class="backdrop-blur-safari sticky bottom-0 left-0 grid h-fit w-screen backdrop-blur-xl lg:!hidden"
 	>
 		<svelte:fragment slot="lead">
 			<div class="flex flex-col">
