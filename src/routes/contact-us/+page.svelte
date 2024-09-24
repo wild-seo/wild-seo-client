@@ -9,13 +9,36 @@
 
 	let sending = false;
 	let sendButtonHover = false;
+
+	const customerChecklist = [
+		'Your own website',
+		'Clear business direction',
+		'Clear target audience',
+		'Do you get sales or leads from your website ?',
+		'How often do you visit your website',
+		'Which part of the customer journey are you interested in ?',
+		'What is the most important metric for you'
+	];
 </script>
 
 <section class="no-scrollbar grid h-screen overflow-scroll lg:!grid-cols-2">
 	<div class="sticky top-0 grid h-screen w-full grid-flow-row grid-rows-2">
 		<div class="border-b-2 border-r-2 border-black bg-wild-funblue shadow-md">
-			<p class="p-8 font-bebas text-3xl text-white">What we will cover:</p>
+			<p class="p-8 font-bebas text-3xl text-white"></p>
 			<p class="p-8 font-bebas text-3xl text-white">Checklist:</p>
+			<ul>
+				<li>Your own website</li>
+			</ul>
+			<p>
+				Wild SEO will help you reach your target audience. We are all about the missing people that
+				would love to hear about you and we just want you to get discovered.
+			</p>
+			<p>We are embarking on a project now, us and you. Let's get wild!</p>
+			<p>
+				For every service we do, we provide a free backlink disavow service. Websites that you do
+				not want linking to yours will be unindexed from Google
+			</p>
+			<p>If nothing is found on your website, no charge !</p>
 		</div>
 		<img
 			src="https://imagedelivery.net/usYhDnhJIpKLEgUtJMbggw/8d9c9216-9a04-4ed5-d3e7-b3b173f7a900/public"
@@ -43,7 +66,7 @@
 					<li class="crumb-separator text-base font-bold text-emerald-700" aria-hidden="true">
 						&rsaquo;
 					</li>
-					<li>Contact Us</li>
+					<li class="text-black">Contact Us</li>
 				</ol>
 			</div>
 			<div

@@ -45,7 +45,7 @@
 				<li class="crumb-separator text-base font-bold text-emerald-700" aria-hidden="true">
 					&rsaquo;
 				</li>
-				<li>About Us</li>
+				<li class="text-black">About Us</li>
 			</ol>
 		</div>
 		<section class="">

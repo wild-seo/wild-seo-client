@@ -23,8 +23,6 @@
 	export let form;
 
 	let mouseHovering = false;
-	let colorDotsMouseHover = false;
-	let colorDotsMouseHoverSale = false;
 
 	let connecting = false;
 
@@ -313,27 +311,13 @@
 						<section class="mt-4 flex gap-6">
 							<a
 								href="/services"
-								class="whiteMinimalButton border-2 border-wild-brown bg-transparent tracking-wider text-wild-brown duration-150 ease-in hover:-translate-y-1 hover:bg-white hover:text-black"
-								class:amberShadow={colorDotsMouseHover}
-								on:mouseleave={() => {
-									colorDotsMouseHover = false;
-								}}
-								on:mouseover={() => {
-									colorDotsMouseHover = true;
-								}}
+								class="amberShadow whiteMinimalButton border-2 border-wild-brown bg-transparent tracking-wider text-wild-brown duration-150 ease-in hover:-translate-y-1 hover:bg-white hover:text-black"
 							>
 								View Services
 							</a>
 							<a
 								href="/contact-us"
-								class="whiteMinimalButton border-2 border-wild-brown bg-transparent tracking-wider text-wild-brown duration-150 ease-in hover:-translate-y-1 hover:bg-white hover:text-black"
-								class:pinkShadow={colorDotsMouseHoverSale}
-								on:mouseleave={() => {
-									colorDotsMouseHoverSale = false;
-								}}
-								on:mouseover={() => {
-									colorDotsMouseHoverSale = true;
-								}}
+								class="pinkShadow whiteMinimalButton border-2 border-wild-brown bg-transparent tracking-wider text-wild-brown duration-150 ease-in hover:-translate-y-1 hover:bg-white hover:text-black"
 							>
 								Contact Sales
 							</a>
@@ -342,7 +326,7 @@
 				</div>
 
 				<section
-					class="rounded-lg border border-wild-brown bg-white shadow-lg transition-all duration-150 hover:shadow-xl"
+					class="rounded-lg border border-wild-brown bg-white/80 shadow-lg transition-all duration-150 hover:shadow-xl"
 				>
 					<div class="relative flex flex-col md:flex-row">
 						<div class="relative flex-shrink-0 border-r border-black p-6">
