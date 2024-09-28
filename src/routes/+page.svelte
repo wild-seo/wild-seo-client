@@ -19,6 +19,9 @@
 	// Components
 	import ServiceFactCard from './ServiceFactCard.svelte';
 	import CertificationMarquee from './CertificationMarquee.svelte';
+	import SearchPattern from './SearchPattern.svelte';
+	import MiniContactUs from './MiniContactUs.svelte';
+	import LogoColoredShadow from '$assets/logo_colored_shadow.png';
 
 	export let form;
 
@@ -63,7 +66,7 @@
 			<img
 				src="https://cdn.shopify.com/s/files/1/0518/4241/6818/files/Camping_Illustration.png?v=1726236736"
 				alt="Wild SEO Campsite with Tree Illustration with Google, Amazon, Youtube, Bing, and Yahoo! logos hanging out together"
-				class="animate-wind transform-gpu transition-all duration-300"
+				class="transform-gpu animate-wind transition-all duration-300"
 			/>
 			<div class="text-center lg:!text-start">
 				<h1 class="text-3xl font-bold leading-tight lg:!text-5xl">
@@ -206,7 +209,7 @@
 		>
 			<!-- COLOR DOT ANIMATIONS -->
 			<div
-				class="animate-blurify absolute -right-14 -top-16 h-[12rem] w-[12rem] rounded-full bg-wild-green/60 blur-sm"
+				class="absolute -right-14 -top-16 h-[12rem] w-[12rem] animate-blurify rounded-full bg-wild-green/60 blur-sm"
 				class:stopAnimation={mouseHovering}
 			></div>
 			<div
@@ -214,7 +217,7 @@
 				class:stopAnimation={mouseHovering}
 			></div>
 			<div
-				class="animate-pulseScale absolute -right-2 -top-6 h-20 w-20 rounded-bl-full bg-white/10 shadow-lg backdrop-blur-md"
+				class="absolute -right-2 -top-6 h-20 w-20 animate-pulseScale rounded-bl-full bg-white/10 shadow-lg backdrop-blur-md"
 			></div>
 			<div
 				class="absolute -bottom-2 -left-6 h-16 w-28 animate-[bounce_3s_ease-in_infinite] rounded-t-full bg-white/15 shadow-md backdrop-blur-md"
@@ -225,20 +228,21 @@
 			></div>
 
 			<!-- END -->
-			<div class="mx-auto grid max-w-fit grid-flow-row gap-4 p-6">
+			<div class="mx-auto grid grid-flow-row gap-4 p-6 md:max-w-fit">
 				<section>
-					<p class="mb-1 font-courier text-sm tracking-wider text-white">
+					<p class="mb-1 font-courier text-xs tracking-wider text-white md:text-sm">
 						HOW CAN SEO HELP YOUR BUSINESS ?
 					</p>
 					<div class="h-1 w-full border-b border-white/70"></div>
 				</section>
-				<p class="z-10 flex gap-1 text-3xl font-bold text-white">
+				<p class="z-10 flex flex-wrap gap-1 text-xl font-bold text-white md:text-3xl">
 					<span class="cursor-cell transition-all hover:scale-105">e-commerce</span>
 					<span class="font-normal">=</span>
+
 					<UpArrowIcon />
 					<span class="cursor-cell transition-all hover:scale-110">conversions</span>
 				</p>
-				<p class="z-10 flex gap-1 text-3xl font-bold text-white">
+				<p class="z-10 flex gap-1 text-xl font-bold text-white md:text-3xl">
 					<span class="cursor-cell transition-all hover:scale-105">blogger</span>
 
 					<span class="font-normal">=</span>
@@ -246,7 +250,7 @@
 					<span class="cursor-cell transition-all hover:scale-110">traffic</span>
 					<PlusIcon class="h-5 w-5" />
 				</p>
-				<p class="z-10 flex gap-1 text-3xl font-bold text-white">
+				<p class="z-10 flex gap-1 text-xl font-bold text-white md:text-3xl">
 					<span class="cursor-cell transition-all hover:scale-105">new brand</span>
 
 					<span class="font-normal">=</span>
@@ -259,54 +263,61 @@
 	<CertificationMarquee minified={false} />
 	<section class="border-b border-black">
 		<div class="h-6 w-full border-b border-black bg-wild-brown shadow-md"></div>
-		<div class="mx-auto max-w-6xl pb-6">
-			<div class="grid items-center gap-8 py-20 lg:!grid-cols-2">
-				<div class=" font-folks tracking-wide">
-					<div class="mb-2 flex gap-3">
+		<div class="mx-auto max-w-6xl px-6 pb-6 md:px-12">
+			<div class="grid items-center gap-8 py-6 md:py-20 lg:!grid-cols-2">
+				<div class="font-folks tracking-wide">
+					<div class="mb-2 flex items-center gap-2 md:items-start md:gap-3">
 						<p class="font-bebas text-3xl font-bold leading-tight tracking-wide lg:!text-5xl">
 							What We Do
 						</p>
-						<LeafIcon class="animate-wind h-10 w-10 text-wild-darkgreen" />
+						<LeafIcon class="h-6 w-6 animate-wind text-wild-darkgreen md:h-10 md:w-10" />
 					</div>
 					<div class="mb-4 w-3/4 border border-dashed border-wild-brown"></div>
-					<div class="leading-[1.6] tracking-wider">
+					<div class="leading-[1.6] tracking-wide">
 						<div class="max-w-lg">
 							<p class="my-2">
-								At <span class="font-scratchy text-3xl text-wild-darkgreen">Wild SEO</span>, we
-								believe your website
-								<span class="font-courier"> [+ how accessible it is to your customers]</span>
+								At <span class="inline-block font-scratchy text-3xl text-wild-darkgreen">
+									<img src={LogoColoredShadow} class="h-6 select-none" />
+								</span>
+								we believe your website<br />
+								<span class="font-courier">
+									[+ how accessible it is to <span class="font-bold"> ALL </span>
+									your customers]</span
+								><br />
 								is a crucial representation of your business.
 							</p>
-							<p class="my-2">
-								Instead of including paid metrics in <span class="underline underline-offset-2"
-									>our pricing</span
-								>, we focus on:
-							</p>
+							<p class="my-2">So, searching for it - should be a breeze 🍃</p>
 						</div>
-						<div class="my-6 grid grid-cols-3 gap-1 font-semibold">
-							<div class="flex items-center gap-2 capitalize">
-								<FlowerIcon class="text-pink-500" />
-								<p>organic growth</p>
+						<p
+							class="max-w-fit rounded-full border border-wild-darkgreen px-2 py-1 text-sm font-medium tracking-[0.5em] text-wild-darkgreen"
+						>
+							GOALS
+						</p>
+						<div class="mb-6 mt-2 grid grid-cols-1 gap-2 font-semibold md:grid-cols-3 md:gap-1">
+							<div
+								class="goalCard group flex items-center gap-2 capitalize transition-all hover:rounded-xl md:flex-col md:items-start md:rounded-lg md:bg-wild-darkgreen md:p-4 md:text-white md:shadow-md"
+							>
+								<FlowerIcon
+									class="text-pink-500 transition-all  md:text-wild-green group-hover:md:text-white"
+								/>
+								<p class="transition-all md:group-hover:text-wild-green">Page 1 on Google</p>
 							</div>
-							<div class="flex items-center gap-2 capitalize">
-								<FlowerIcon class="text-pink-500" />
-								<p>long-term traffic</p>
+							<div
+								class="goalCard group flex items-center gap-2 capitalize transition-all hover:rounded-xl md:flex-col md:items-start md:rounded-lg md:bg-wild-darkgreen md:p-4 md:text-white md:shadow-md"
+							>
+								<FlowerIcon
+									class="text-pink-500 transition-all md:text-wild-green group-hover:md:text-white"
+								/>
+								<p class="transition-all md:group-hover:text-wild-green">On niche search spaces</p>
 							</div>
-							<div class="flex items-center gap-2 capitalize">
-								<FlowerIcon class="text-pink-500" />
-								<p>SEO accessibility</p>
+							<div
+								class="goalCard group flex items-center gap-2 capitalize transition-all hover:rounded-xl md:flex-col md:items-start md:rounded-lg md:bg-wild-darkgreen md:p-4 md:text-white md:shadow-md"
+							>
+								<FlowerIcon
+									class="text-pink-500 transition-all md:text-wild-green group-hover:md:text-white"
+								/>
+								<p class="transition-all md:group-hover:text-wild-green">Grow with New Trends</p>
 							</div>
-						</div>
-						<div class="max-w-lg">
-							<p class="my-3">
-								Rooted in a
-								<span class="font-semibold underline decoration-double underline-offset-[3px]">
-									100% confidence
-								</span>
-								of your unique business bringing results. Our pricing is one-time with
-								<b>no maintanence costs.</b>
-							</p>
-							<p>We operate with a love for niche, unconventional keywords.</p>
 						</div>
 						<section class="mt-4 flex gap-6">
 							<a
@@ -326,43 +337,81 @@
 				</div>
 
 				<section
-					class="rounded-lg border border-wild-brown bg-white/80 shadow-lg transition-all duration-150 hover:shadow-xl"
+					class="rounded-lg rounded-tr-none border border-wild-brown bg-white/80 shadow-lg transition-all duration-150 hover:shadow-xl"
 				>
 					<div class="relative flex flex-col md:flex-row">
-						<div class="relative flex-shrink-0 border-r border-black p-6">
-							<p class="font-platNomor text-2xl tracking-wider">Wild SEO's Core Strategy:</p>
-							<div class="mb-4 mt-2 border-t border-wild-brown"></div>
-							<ul class="list-inside list-disc font-courier leading-loose tracking-wider">
-								<li>Local SEO</li>
-								<li>Rising trends</li>
-								<li>No paid backlinks</li>
-							</ul>
+						<div class="flex-grow">
+							<div class="relative py-5 pl-6 pr-4">
+								<p class="font-platNomor text-2xl font-semibold tracking-wider">
+									SEO Core Strategy:
+								</p>
+								<div class="mb-4 mt-2 border-t border-wild-brown"></div>
+
+								<ul
+									class="list-inside list-decimal font-courier leading-relaxed tracking-wide marker:text-wild-brown"
+								>
+									<li class="mb-2">
+										Keywords <span class="text-xs font-bold text-wild-funblue">!important</span>
+									</li>
+									<li class="my-2">
+										<span class="font-platNomor text-xs uppercase tracking-wider">
+											+ Commercially Guided
+										</span>
+										<br />Word Pairings
+										<span class="text-xs opacity-80">(where to buy _, top 10 best _, etc.)</span>
+									</li>
+									<li class="my-2">
+										<span class="font-platNomor text-xs">Site headers - </span>add Schemas + OG tags
+										<span class="text-xs underline decoration-wild-funblue underline-offset-4"
+											>make Googlebots happy [•ᴗ•]
+										</span>
+									</li>
+								</ul>
+							</div>
+							<div
+								class="border-b border-t border-blue-800 bg-wild-funblue p-4 font-courier text-white"
+							>
+								<p class="text-sm tracking-normal">
+									Guaranteed
+									<span class="font-semibold underline underline-offset-2">15 - 30% </span>
+									<span class="text-xs uppercase">
+										increase <span class="lowercase">in </span></span
+									>
+									<span>website traffic </span>
+								</p>
+							</div>
 						</div>
-						<div class="">
-							<img
-								src="https://imagedelivery.net/usYhDnhJIpKLEgUtJMbggw/531533df-4ff8-478f-89ac-7a10440baf00/public"
-								class=" h-full object-cover"
-							/>
+						<div class="grid flex-shrink grid-cols-2 content-end items-end md:block">
+							<div
+								class="h-full w-full -skew-x-3 self-center md:mr-2"
+								style="filter: drop-shadow(7px 5px 0px rgba(0,0,0,0.9));"
+							>
+								<img
+									src="https://imagedelivery.net/usYhDnhJIpKLEgUtJMbggw/531533df-4ff8-478f-89ac-7a10440baf00/public"
+									class="h-full object-contain duration-100 ease-in hover:-skew-x-2 hover:-skew-y-3 md:w-full"
+								/>
+							</div>
+							<p
+								class="ml-4 border border-b-0 border-wild-brown bg-wild-brown/80 p-2 font-courier text-xs leading-tight tracking-wider text-white transition-all ease-in hover:h-9 hover:-translate-y-9 hover:bg-wild-brown md:absolute md:right-0 md:top-0 md:ml-0 md:h-8 md:w-full md:max-w-fit md:-translate-y-8 md:rounded-t-md md:text-sm"
+							>
+								How to show up on niche search results ?
+							</p>
 						</div>
-						<p
-							class="absolute right-0 top-0 h-8 w-full max-w-fit -translate-y-8 rounded-t-md border border-b-0 border-wild-brown bg-wild-brown/80 p-2 font-courier text-sm leading-tight tracking-wider text-white transition-all ease-in hover:h-9 hover:-translate-y-9 hover:bg-wild-brown"
-						>
-							How can you tell <span class="underline underline-offset-2">when</span> a site is WILD
-							?
-						</p>
 					</div>
-					<div class="h-10 w-full bg-wild-brown">
-						<p class="p-2 text-end font-courier text-xl tracking-wider text-white">
+					<div class="w-full bg-wild-brown md:h-10">
+						<p
+							class="p-2 text-end font-courier text-lg font-bold tracking-wider text-white md:text-xl md:font-normal"
+						>
 							loooooooooong tail words
 						</p>
 					</div>
 				</section>
 			</div>
-			<p class="font-courier">
-				*Your brand / business is one-of-a-kind. Your SEO efforts should reflect that a <span
-					class="font-semibold underline decoration-double underline-offset-4"
-				>
-					100%</span
+			<p class="font-courier text-xs md:text-sm">
+				<b>TL;DR</b> - We tweak your site's wording to match your brand's vibe, fix any broken links
+				or search issues, and make sure curious searchers can easily
+				<span class="font-semibold underline decoration-double underline-offset-4">
+					find you 👀</span
 				>
 			</p>
 		</div>
@@ -370,13 +419,13 @@
 	<!-- SEO Example -->
 	<section class="">
 		<section class="grid lg:!grid-cols-2">
-			<div class="flex items-center justify-center bg-white/50 shadow-lg">
-				<div class="text-center">
-					<p class="font-courier">How does your site look on Google ?</p>
+			<div class="flex items-center justify-center bg-white/50 p-3 shadow-lg">
+				<div class="pt-6 text-center md:pt-0">
+					<p class="font-courier text-sm md:text-base">How does your site look on Google ?</p>
 					<div class="mx-auto mb-3 mt-1 w-4/6 border-b border-wild-brown"></div>
-					<p class="font-akira text-2xl text-black">Suki owns a wet market.</p>
+					<p class="font-akira text-lg text-black md:text-2xl">Suki owns a wet market.</p>
 					<p
-						class="mx-auto mb-2 mt-1 max-w-xl text-center font-scratchy text-3xl italic tracking-wider text-wild-funblue"
+						class="mx-auto mb-2 mt-1 max-w-xl text-center font-scratchy text-xl italic tracking-wider text-wild-funblue md:text-3xl"
 					>
 						Her links compete with every type of market ever (!)
 					</p>
@@ -393,6 +442,7 @@
 				/>
 			</div>
 		</section>
+		<SearchPattern />
 		<div
 			class=""
 			style="background-image: url('https://imagedelivery.net/usYhDnhJIpKLEgUtJMbggw/e294ecc5-3e3b-4553-a168-23516c88dd00/public');"
@@ -445,19 +495,24 @@
 				</div>
 			</section>
 		</div>
-		<div class="border-b border-t border-black bg-white px-4 py-2 font-courier">
-			<p>
-				<b>70%</b> of marketers say SEO provides more consistent results than paid advertising.
-			</p>
-			<!-- <p>
+		<div
+			class="w-full overflow-clip border-b border-t border-black bg-white px-4 py-2 font-courier"
+		>
+			<div class="z-0 mx-auto w-[85vw] overflow-clip">
+				<p class="textMarquee text-nowrap text-sm">
+					<b>70%</b> of marketers say SEO provides more consistent results than paid advertising.
+					SEO leads have an
+					<b>8.5x</b>
+					higher closing rate compared to other forms of lead generation (flyers, newsletters, youtube
+					ads, television ads)
+				</p>
+				<!-- <p>
 				SEO leads have a 14.6% higher closing rate compared to 1.7% of outbound leads (direct mail
 				or cold calls)
 			</p> -->
+			</div>
 		</div>
-		<section class="grid grid-cols-2">
-			<p>Drop us your email</p>
-			<input type="submit" />
-		</section>
+		<MiniContactUs />
 	</section>
 </div>
 
@@ -491,5 +546,17 @@
 			rgba(240, 46, 170, 0.2) 15px 15px,
 			rgba(240, 46, 170, 0.1) 20px 20px,
 			rgba(240, 46, 170, 0.05) 25px 25px;
+	}
+	.goalCard:hover {
+		filter: drop-shadow(4px 4px 0px #9bdd00);
+	}
+	.textMarquee {
+		animation: moveToLeft 18s alternate linear infinite;
+		animation-delay: 2s;
+	}
+	@keyframes moveToLeft {
+		to {
+			transform: translateX(-100%);
+		}
 	}
 </style>

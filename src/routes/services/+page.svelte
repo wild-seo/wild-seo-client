@@ -1,54 +1,14 @@
 <script>
 	import CompassIcon from '~icons/line-md/compass-twotone-loop';
+	import GoogleMeetIcon from '~icons/logos/google-meet';
+	import LightningIcon from '~icons/ph/lightning-fill';
+	import BubbleIcon from '~icons/mingcute/bubble-fill';
+	import SemrushIcon from '~icons/simple-icons/semrush';
+	import detailServices from './detailServices.js';
 	import RotatingService from './RotatingService.svelte';
 	import { onMount } from 'svelte';
-	let innerWidth;
 
-	export const detailServices = [
-		{
-			name: 'Keyword Forage',
-			animalId: 'andean-bear',
-			animal: 'Andean Bear',
-			packageHighlight: [
-				'20+ Optimised Keywords',
-				'FREE Site-wide application',
-				'Lock-in goal rankings'
-			],
-			price: 800,
-			imgUrl:
-				'https://cdn.shopify.com/s/files/1/0518/4241/6818/files/andean-bear-services.png?v=1726475196',
-			imgSrc:
-				'https://www.nationalgeographic.com/animals/article/andean-paddington-bears-poached-in-peru',
-			credit: 'Kevin Schafer'
-		},
-		{
-			name: 'Site Audit Sweep',
-			animalId: 'pygmy-marmoset',
-			animal: 'Pygmy Marmoset',
-			packageHighlight: ['Catch 100% error links', '1-on-1 debrief', 'Faster website speeds'],
-			price: 300,
-			imgUrl:
-				'https://cdn.shopify.com/s/files/1/0518/4241/6818/files/pygmy-marmoset-services.png?v=1726475196',
-			imgSrc: 'https://www.bbc.com/news/articles/cl7l1vk5exeo',
-			credit: 'Lee Bottomley'
-		},
-		{
-			name: 'Competitor Analysis',
-			animalId: 'gray-heron',
-			animal: 'Gray Heron',
-			packageHighlight: [
-				'Full-sweep identical keywords',
-				'Identify mutuals',
-				'Rank ahead of your peers'
-			],
-			price: 500,
-			imgUrl:
-				'https://cdn.shopify.com/s/files/1/0518/4241/6818/files/gray-heron-services.png?v=1726475196',
-			imgSrc:
-				'https://www.nationalgeographic.com/animals/article/gray-heron-sighting-united-states-expanding-range',
-			credit: 'Skyler Kardell'
-		}
-	];
+	let innerWidth;
 
 	onMount(async () => {});
 </script>
@@ -120,7 +80,7 @@
 	</section>
 
 	<div class="mb-4 grid grid-cols-1 gap-2 lg:!gap-4">
-		{#each detailServices as { name, animalId, animal, packageHighlight, imgUrl, imgSrc, price, credit }}
+		{#each detailServices as { name, titleType, roadmapItems, finishedProductItems, animalId, animal, packageHighlight, imgUrl, imgSrc, price, credit }}
 			<div
 				class="grid scale-95 overflow-clip rounded-md border border-black shadow-md transition-all duration-[380ms] ease-in hover:rounded-lg hover:border-2 hover:shadow-xl md:grid-cols-2 lg:!scale-100 lg:!rounded-none hover:lg:!scale-[.965]"
 				id={animalId}
@@ -172,12 +132,75 @@
 				<div class="card flex h-full w-full flex-col justify-between border-b bg-white">
 					<header class="card-header">
 						<div>
-							<p class="font-platNomor text-4xl">{name}</p>
+							<div class="flex items-center justify-between">
+								<p class="font-platNomor text-2xl md:text-4xl">{name}</p>
+								<p>/hour</p>
+							</div>
 							<div class="my-2 border-t border-dashed border-wild-brown"></div>
-							<p class="font-courier text-xl">{packageHighlight}</p>
+							<div class="flex flex-col justify-between gap-6 lg:!flex-row lg:!gap-1">
+								<section>
+									{#if titleType.keywordForageTitle}
+										<p class="font-akira text-base">
+											SEO Boost <LightningIcon
+												class="inline text-amber-500 transition-all hover:-skew-y-12 hover:scale-110"
+											/> Roadmap
+										</p>
+									{/if}
+									{#if titleType.siteAuditTitle}
+										<p class="font-akira text-base">
+											Spotless Site <BubbleIcon class="inline text-cyan-500" /> Roadmap
+										</p>
+									{/if}
+									{#if titleType.heronAnalysisTitle}
+										<p class="font-akira text-base">
+											SEO Boost <LightningIcon class="inline text-cyan-500" /> Roadmap
+										</p>
+									{/if}
+									<div class="my-2"></div>
+									<ul class="rightArrowList list-inside">
+										{#each roadmapItems as { item, hours, hour, minutes, showGoogleMeetIcon, showSemrushIcon }}
+											<li>
+												<div class="ml-2 inline-block max-h-fit gap-2 text-sm">
+													{#if hours}
+														<span class="font-semibold">{hours} hours+</span>
+													{/if}
+													{#if hour}
+														<span class="font-semibold">{hour} hour</span>
+													{/if}
+													{#if minutes}
+														<span class="font-semibold">{minutes} mins</span>
+													{/if}
+													<p class="inline leading-[2]">{item}</p>
+													{#if showGoogleMeetIcon}
+														<GoogleMeetIcon
+															class="mb-[3px] ml-1 inline h-3 transition-all hover:-rotate-12 hover:scale-125"
+														/>
+													{/if}
+													{#if showSemrushIcon}
+														<SemrushIcon
+															class="mb-[3px] ml-1 inline h-5 text-[#ff642d] transition-all hover:rotate-12 hover:scale-125"
+														/>
+													{/if}
+												</div>
+											</li>
+										{/each}
+									</ul>
+								</section>
+								<section class="mb-6 text-end lg:!mb-0">
+									<p class="font-akira text-base">What's Included</p>
+									<div class="my-2"></div>
+									<div class="text-sm leading-8 lg:!leading-10">
+										{#each finishedProductItems as { item, number }}
+											<p class="capitalize">
+												<span class="font-semibold lowercase">{number}x </span>
+												{item}
+											</p>
+										{/each}
+									</div>
+								</section>
+							</div>
 						</div>
 					</header>
-					<section class="p-4">okay..!</section>
 					<footer class="card-footer flex items-center justify-between">
 						<button
 							class="w-1/4 border-2 border-wild-funblue p-2 font-bebas text-2xl tracking-wider text-wild-funblue transition-all duration-150 ease-in hover:border-l-4 hover:border-r-4 hover:border-blue-300 hover:border-b-blue-400 hover:border-t-blue-400 hover:bg-blue-600 hover:text-white hover:shadow-md"
@@ -195,3 +218,9 @@
 		{/each}
 	</div>
 </section>
+
+<style>
+	.rightArrowList {
+		list-style-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1.2em' height='1.2em' viewBox='0 0 48 48'%3E%3Cpath fill='%2398dd00' d='M44 29L30 17.3v23.4z'/%3E%3Cpath fill='%2398dd00' d='M6 21V8h8v13c0 2.2 1.8 4 4 4h17v8H18c-6.6 0-12-5.4-12-12'/%3E%3C/svg%3E");
+	}
+</style>

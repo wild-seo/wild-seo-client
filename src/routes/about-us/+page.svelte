@@ -50,27 +50,37 @@
 		</div>
 		<section class="">
 			<div class="flex justify-between p-6">
-				<div
-					class="group relative flex h-24 w-36 flex-col items-center justify-center rounded-lg border border-wild-brown bg-white/50 shadow-sm transition-all duration-[350ms] hover:border-[2px] hover:bg-white/40 lg:!h-32 lg:!w-48"
-					on:mouseover={() => {
-						mouseHovering = true;
-					}}
-					on:mouseleave={() => {
-						mouseHovering = false;
-					}}
-					class:insideShadow={mouseHovering}
-				>
-					<span class="text-center font-platNomor text-sm tracking-widest">About Us</span>
-					<h1
-						class="group-hover:animate-wind group-hover:opacity-9 anchor relative flex flex-col font-bebas text-3xl tracking-wide no-underline transition-all duration-1000 before:absolute before:-bottom-[0.3rem] before:left-0 before:h-[3px] before:w-full before:origin-right before:scale-x-0 before:bg-wild-brown before:transition-transform before:duration-300 group-hover:before:origin-left group-hover:before:scale-x-100 lg:!text-4xl"
-					>
-						Wild SEO
-					</h1>
-
-					<LinkedInLogo
-						class="absolute right-0 top-3 h-10 w-10 translate-x-10 rounded-sm bg-white shadow-sm"
+				<section class="relative ml-6 pb-8">
+					<img
+						src="https://imagedelivery.net/usYhDnhJIpKLEgUtJMbggw/a2937393-14a2-43bd-1949-42db9ac0de00/public"
+						class="relative w-1/2 rounded-md shadow-md saturate-150 transition-all hover:scale-105 hover:shadow-lg"
 					/>
-				</div>
+					<div class="absolute -left-4 -top-3">
+						<div
+							class="group relative flex h-16 w-24 flex-col items-center justify-center rounded-lg border border-wild-brown bg-white/50 shadow-sm backdrop-blur-md transition-all duration-[350ms] hover:border-[2px] hover:bg-white/90 lg:!h-24 lg:!w-40"
+							on:mouseover={() => {
+								mouseHovering = true;
+							}}
+							on:mouseleave={() => {
+								mouseHovering = false;
+							}}
+							class:insideShadow={mouseHovering}
+						>
+							<span class="text-center font-platNomor text-sm font-bold tracking-widest"
+								>About Us</span
+							>
+							<h1
+								class="group-hover:opacity-9 anchor relative flex flex-col font-bebas text-3xl tracking-wide no-underline transition-all duration-1000 before:absolute before:-bottom-[0.1rem] before:left-0 before:h-[3px] before:w-full before:origin-right before:scale-x-0 before:bg-wild-brown before:transition-transform before:duration-300 group-hover:animate-wind group-hover:before:origin-left group-hover:before:scale-x-100 lg:!text-4xl"
+							>
+								Wild SEO
+							</h1>
+
+							<LinkedInLogo
+								class="absolute right-0 top-1 h-8 w-8 translate-x-8 rounded-sm bg-white shadow-sm"
+							/>
+						</div>
+					</div>
+				</section>
 				<div class="flex flex-col items-end text-end text-sm">
 					<p class="font-courier">Established 2024</p>
 					<p class="font-courier">Kuala Lumpur</p>
@@ -79,9 +89,7 @@
 					<p class="font-courier">Chinese</p>
 				</div>
 			</div>
-			<section class="p-8">
-				<p>Hello</p>
-			</section>
+
 			<div class="h-[50vh] bg-wild-darkgreen p-6 text-white">
 				<p class="mb-4 mt-2 text-center text-xs font-semibold uppercase tracking-widest">
 					Happily made with
@@ -162,7 +170,7 @@
 			<img
 				src="https://cdn.shopify.com/s/files/1/0518/4241/6818/files/Equipment_Illustration_NEW.png?v=1726375762"
 				alt=""
-				class="animate-wind relative w-full"
+				class="relative w-full animate-wind"
 			/>
 		</div>
 		<div class="p-6 pt-0">

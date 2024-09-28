@@ -19,25 +19,34 @@
 </script>
 
 <div>
-	<section class="mx-auto my-10 grid max-w-6xl grid-cols-1 gap-3 p-4 lg:!grid-cols-3">
-		{#each services as { id, name, actionWord, heroPoints, iconSrc, iconAlt, bullets, description, animalFact }}
-			<div class="relative self-start rounded-lg bg-wild-darkgreen shadow-md">
+	<section class="mx-auto my-10 grid max-w-6xl grid-cols-1 gap-10 p-4 md:gap-5 lg:!grid-cols-3">
+		{#each services as { id, name, actionWord, heroPoints, iconSrc, iconAlt, bullets, description, animalFact, price, hours }, index}
+			<div
+				class="relative self-start rounded-lg bg-wild-darkgreen shadow-md"
+				class:lg:!scale-[1.08]={index === 1}
+			>
 				<div class="gap-4">
 					<img
 						src={iconSrc}
 						alt={iconAlt}
-						class="absolute -left-2 -top-2 h-24 w-24 rounded-full shadow-md transition ease-in-out hover:scale-110 hover:shadow-lg lg:!-left-3 lg:!-top-5 lg:!h-32 lg:!w-32"
+						class="nicheShadow absolute -left-2 -top-2 z-10 h-24 w-24 rounded-full shadow-md transition ease-in-out hover:scale-110 hover:shadow-lg lg:!-left-3 lg:!-top-5 lg:!h-32 lg:!w-32"
 					/>
-					<div class="flex shadow-md">
-						<!-- Placeholder for image -->
-						<div class="h-24 w-24 rounded-md bg-wild-darkgreen lg:!h-28 lg:!w-28"></div>
-						<div class="rounded-lg bg-wild-darkgreen p-5 text-white">
-							<h2 class="font-scratchy text-3xl tracking-wider">{name}</h2>
-							<p class="mt-1 font-platNomor text-sm uppercase tracking-widest opacity-80">
-								{heroPoints}
-							</p>
+					<div class="z-20 rounded-t-md bg-wild-darkgreen text-white shadow-md">
+						<div class="flex">
+							<!-- Placeholder for image -->
+							<div class="h-16 w-24 lg:!h-20 lg:!w-28"></div>
+							<div class="p-5 pb-0">
+								<h2 class="font-scratchy text-3xl tracking-wider">{name}</h2>
+								<p class="mt-1 font-platNomor text-sm uppercase tracking-widest opacity-80">
+									{heroPoints}
+								</p>
+							</div>
 						</div>
+						<p class="px-3 py-2 text-end font-courier">
+							RM{price}<span class="text-sm opacity-80">/hour</span>
+						</p>
 					</div>
+
 					<div
 						class="rounded-b-lg border border-wild-darkgreen bg-wild-mossgreen p-5 font-courier text-white"
 					>
@@ -57,10 +66,10 @@
 								<div
 									class="flip-card-front absolute h-full w-full rounded-lg bg-wild-natural/50 p-3"
 								>
-									<div class="relative">
+									<div class="relative text-wild-darkgreen">
 										{#if bullets}
 											<div class="mb-1 flex justify-between">
-												<p class="text-sm text-wild-darkgreen/70">to:</p>
+												<p class="text-sm text-wild-darkgreen/70">target:</p>
 												<ClosedBookIcon
 													class="text-wild-darkgreen/70 transition-all duration-100 ease-in hover:-rotate-[16deg]"
 												/>
@@ -68,11 +77,15 @@
 											{#each bullets as bullet}
 												<ol class="list-none text-base">
 													<li>
-														<span class="tracking-wider text-wild-darkgreen">{bullet}</span>
+														<span class="tracking-wider">{bullet}</span>
 													</li>
 												</ol>
 											{/each}
 										{/if}
+										<p class="text-end font-platNomor font-bold">
+											<span class="text-xs tracking-wide text-black">max charge - </span>
+											{hours} hours
+										</p>
 									</div>
 								</div>
 								<!-- Flip card BACK -->
@@ -148,5 +161,11 @@
 
 	.flip-card-back {
 		transform: rotateY(180deg) translateX(6px);
+	}
+	.nicheShadow {
+		filter: drop-shadow(6px 4px 0px black);
+	}
+	.nicheShadow:hover {
+		filter: drop-shadow(3px 3px 0px black);
 	}
 </style>

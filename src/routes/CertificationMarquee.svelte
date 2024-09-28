@@ -58,7 +58,7 @@
 	class="relative flex overflow-clip overflow-x-hidden border-b-2 border-t-2 border-black bg-white"
 >
 	<div
-		class="animate-marquee flex w-full items-center gap-8 whitespace-nowrap py-2"
+		class="flex w-full items-center justify-center gap-8 py-2"
 		class:stopAnimation={mouseHovering}
 	>
 		{#if minified}
@@ -76,15 +76,6 @@
 				/>
 			{/each}
 		{/if}
-	</div>
-
-	<div
-		class="animate-marquee2 absolute right-0 top-0 flex items-center gap-8 whitespace-nowrap py-2"
-		class:stopAnimation={mouseHovering}
-	>
-		{#each certifications as { src }}
-			<img {src} class="w-1/12 transition-all duration-75 ease-in hover:rotate-6 hover:scale-110" />
-		{/each}
 	</div>
 </div>
 

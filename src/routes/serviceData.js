@@ -6,6 +6,8 @@ export const services = [
 		iconSrc:
 			'https://cdn.shopify.com/s/files/1/0518/4241/6818/files/grey_heron_package.png?v=1725853925',
 		iconAlt: '',
+		price: 170,
+		hours: 4,
 		actionWord: 'GET',
 		description: 'strategic analytics on your competitor(s)',
 		bullets: [
@@ -27,6 +29,8 @@ export const services = [
 		iconSrc:
 			'https://cdn.shopify.com/s/files/1/0518/4241/6818/files/spectacled_bear_package.png?v=1725853925',
 		iconAlt: '',
+		price: 240,
+		hours: 5,
 		actionWord: 'ADD',
 		description: 'brand-related keywords that directly impact your website',
 		bullets: ['Meet more relevant customers', '+ make it simpler to get your brand discovered'],
@@ -45,6 +49,8 @@ export const services = [
 		iconSrc:
 			'https://cdn.shopify.com/s/files/1/0518/4241/6818/files/pygmy_marmoset_package.png?v=1725853925',
 		iconAlt: '',
+		price: 120,
+		hours: 6,
 		actionWord: 'FIND',
 		description: 'site errors & backlinks to invite crawling bugs.',
 		bullets: ['Get Googlebots to favor us', '+ organically climb search result ranks'],
