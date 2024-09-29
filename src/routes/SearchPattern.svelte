@@ -16,7 +16,7 @@
 	};
 </script>
 
-<section class="select-none bg-wild-darkgreen/80 py-4 text-black">
+<section class="patternedBackground relative select-none bg-wild-darkgreen/80 py-4 text-black">
 	<div class="grid w-full grid-cols-3 text-xs">
 		<section
 			class="cloudDisperseLeft group flex items-center justify-center gap-2 place-self-end p-2 md:p-4"
@@ -197,6 +197,16 @@
 		animation: liftOffSpeedOne var(--randomTime) ease-in-out alternate infinite;
 		transform-origin: 0% 50%;
 		animation-delay: var(--randomDelay);
+	}
+	.patternedBackground::before {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4em' height='3em' viewBox='0 0 24 24'%3E%3Cg fill='none' stroke='rgba(155, 221, 0, 0.2)' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.1'%3E%3Cpath d='m8 2l1.88 1.88m4.24 0L16 2M9 7V6a3 3 0 1 1 6 0v1M5 7a3 3 0 1 0 2.2 5.1C9.1 10 12 7 12 7s2.9 3 4.8 5.1A3 3 0 1 0 19 7Zm2.56 5h8.87M7.5 17h9'/%3E%3Cpath d='M15.5 10.7c.9.9 1.4 2.1 1.5 3.3c0 5.8-5 8-5 8s-5-2.2-5-8c.1-1.2.6-2.4 1.5-3.3'/%3E%3C/g%3E%3C/svg%3E");
+		background-repeat: space;
 	}
 	@keyframes liftOffSpeedOne {
 		to {

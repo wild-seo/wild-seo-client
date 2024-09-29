@@ -2,30 +2,46 @@
 	import CompassIcon from '~icons/line-md/compass-twotone-loop';
 	import GoogleMeetIcon from '~icons/logos/google-meet';
 	import LightningIcon from '~icons/ph/lightning-fill';
-	import BubbleIcon from '~icons/mingcute/bubble-fill';
+	import YarnIcon from '~icons/ph/yarn-duotone';
+	import SunriseIcon from '~icons/mdi/sunrise';
+	import Toolbox from '~icons/clarity/tools-line';
+	import Wrench from '~icons/dashicons/admin-tools';
 	import SemrushIcon from '~icons/simple-icons/semrush';
 	import detailServices from './detailServices.js';
 	import RotatingService from './RotatingService.svelte';
-	import { onMount } from 'svelte';
-
-	let innerWidth;
-
-	onMount(async () => {});
 </script>
 
-<svelte:window bind:innerWidth />
+<svelte:head>
+	<script async src="https://js.stripe.com/v3/pricing-table.js"></script>
+</svelte:head>
 
 <section>
 	<section class="mb-4 grid border-b border-wild-brown shadow-lg lg:!grid-cols-2">
 		<div
-			class="order-last border-r-0 border-t border-black bg-white p-4 lg:!order-first lg:!border-r lg:!border-t-0"
+			class="order-last border-r-0 border-t border-black bg-wild-darkgreen text-white lg:!order-first lg:!border-r lg:!border-t-0"
 		>
-			<div class="mx-auto flex h-full max-w-lg items-center py-3">
+			<div>
 				<div>
-					<p class="font-bebas text-5xl tracking-wider">SEO SERVICES</p>
-					<p>Our pricing is one and done</p>
-					<p>No retainers</p>
-					<p>{innerWidth}</p>
+					<div class="flex items-center justify-between px-6 pt-6">
+						<p class="font-bebas text-3xl tracking-wide lg:!text-4xl">SEO SERVICES</p>
+
+						<div class="flex gap-2">
+							<Toolbox class="text-xl lg:!text-3xl" />
+							<Wrench class="text-xl lg:!text-3xl" />
+						</div>
+					</div>
+					<div class="mt-2 w-full border-t border-dashed border-white/40"></div>
+					<div class="h-[0.5rem] w-full bg-[#133e16]"></div>
+					<div class="bg-wild-green/50 px-6 py-3">
+						<p>Rank your website higher on Google</p>
+						<p>By nature, Guaranteed SEO results in 2 weeks.</p>
+						<p>No monthly fee</p>
+					</div>
+					<div class="px-6 pt-2">
+						<p class="text-end font-courier text-sm text-white/80">
+							Guaranteed SEO results in <span class="underline underline-offset-4">14 days</span>*
+						</p>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -80,9 +96,9 @@
 	</section>
 
 	<div class="mb-4 grid grid-cols-1 gap-2 lg:!gap-4">
-		{#each detailServices as { name, titleType, roadmapItems, finishedProductItems, animalId, animal, packageHighlight, imgUrl, imgSrc, price, credit }}
+		{#each detailServices as { name, titleType, roadmapItems, finishedProductItems, animalId, animal, packageHighlight, imgUrl, imgSrc, price, hours, credit }}
 			<div
-				class="grid scale-95 overflow-clip rounded-md border border-black shadow-md transition-all duration-[380ms] ease-in hover:rounded-lg hover:border-2 hover:shadow-xl md:grid-cols-2 lg:!scale-100 lg:!rounded-none hover:lg:!scale-[.965]"
+				class="group grid scale-95 rounded-md border border-black shadow-md transition-all duration-[380ms] ease-in hover:rounded-lg hover:border-2 hover:shadow-xl md:grid-cols-2 lg:!scale-100 lg:!rounded-none hover:lg:!scale-[.965]"
 				id={animalId}
 			>
 				<div class="relative border-r-2 border-black">
@@ -134,7 +150,9 @@
 						<div>
 							<div class="flex items-center justify-between">
 								<p class="font-platNomor text-2xl md:text-4xl">{name}</p>
-								<p>/hour</p>
+								<p class="font-courier text-xs lg:!text-sm">
+									<span class="text-lg lg:!text-xl">RM{price}</span>/hour
+								</p>
 							</div>
 							<div class="my-2 border-t border-dashed border-wild-brown"></div>
 							<div class="flex flex-col justify-between gap-6 lg:!flex-row lg:!gap-1">
@@ -148,12 +166,12 @@
 									{/if}
 									{#if titleType.siteAuditTitle}
 										<p class="font-akira text-base">
-											Spotless Site <BubbleIcon class="inline text-cyan-500" /> Roadmap
+											Untangled Site <YarnIcon class="inline text-pink-500" /> Roadmap
 										</p>
 									{/if}
 									{#if titleType.heronAnalysisTitle}
 										<p class="font-akira text-base">
-											SEO Boost <LightningIcon class="inline text-cyan-500" /> Roadmap
+											Find New Horizons <SunriseIcon class="inline text-amber-500" /> Roadmap
 										</p>
 									{/if}
 									<div class="my-2"></div>
@@ -187,7 +205,11 @@
 									</ul>
 								</section>
 								<section class="mb-6 text-end lg:!mb-0">
-									<p class="font-akira text-base">What's Included</p>
+									<p
+										class="relative font-akira text-base before:absolute before:-bottom-1 before:right-0 before:h-[0.15rem] before:w-full before:origin-left before:scale-x-0 before:rounded-full before:bg-wild-funblue before:transition-transform before:duration-500 before:ease-in-out group-hover:before:origin-right group-hover:before:scale-x-100"
+									>
+										What's Included
+									</p>
 									<div class="my-2"></div>
 									<div class="text-sm leading-8 lg:!leading-10">
 										{#each finishedProductItems as { item, number }}
@@ -207,16 +229,32 @@
 						>
 							ORDER
 						</button>
-						<p
-							class="font-platNomor text-4xl font-bold underline decoration-wild-green underline-offset-[5px]"
-						>
-							RM{price}
-						</p>
+						<div class="text-end">
+							<p class="mb-1">approx. <span class="font-semibold">{hours}</span> hours</p>
+							<p
+								class="font-platNomor text-4xl font-bold underline decoration-wild-green underline-offset-[5px]"
+							>
+								{price * hours} MYR
+							</p>
+						</div>
 					</footer>
 				</div>
 			</div>
 		{/each}
 	</div>
+
+	<section>
+		<div class="mx-auto p-4">
+			<p class="text-center">hello</p>
+			<div>
+				<stripe-pricing-table
+					pricing-table-id="prctbl_1Q4QSaJAkIp2pqyTXCKOHM9i"
+					publishable-key="pk_live_51PtWWMJAkIp2pqyT6pPUoneJCH4Y7WB9WbfKEBJc8oXvnzgXv5rGsYIuOx3Iqdy62I3liN0IwM1XR8bvcUb0UIoR00Pv0KwhTx"
+				>
+				</stripe-pricing-table>
+			</div>
+		</div>
+	</section>
 </section>
 
 <style>

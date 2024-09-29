@@ -20,7 +20,7 @@
 
 <div>
 	<section class="mx-auto my-10 grid max-w-6xl grid-cols-1 gap-10 p-4 md:gap-5 lg:!grid-cols-3">
-		{#each services as { id, name, actionWord, heroPoints, iconSrc, iconAlt, bullets, description, animalFact, price, hours }, index}
+		{#each services as { id, name, animalId, actionWord, heroPoints, iconSrc, iconAlt, bullets, description, animalFact, price, hours }, index}
 			<div
 				class="relative self-start rounded-lg bg-wild-darkgreen shadow-md"
 				class:lg:!scale-[1.08]={index === 1}
@@ -42,9 +42,14 @@
 								</p>
 							</div>
 						</div>
-						<p class="px-3 py-2 text-end font-courier">
-							RM{price}<span class="text-sm opacity-80">/hour</span>
-						</p>
+						<a href="/services/#{animalId}">
+							<p
+								class="px-3 py-2 text-end font-courier transition-all hover:scale-105"
+								style="transform-origin: 100% 50%;"
+							>
+								RM{price}<span class="text-sm opacity-80">/hour</span>
+							</p>
+						</a>
 					</div>
 
 					<div
@@ -82,10 +87,15 @@
 												</ol>
 											{/each}
 										{/if}
-										<p class="text-end font-platNomor font-bold">
-											<span class="text-xs tracking-wide text-black">max charge - </span>
-											{hours} hours
-										</p>
+										<a href="/services/#{animalId}">
+											<p
+												class="text-end font-platNomor font-bold transition-all hover:scale-105"
+												style="transform-origin: 100% 50%;"
+											>
+												<span class="text-xs tracking-wider text-wild-darkgreen/70">approx.</span>
+												{hours} hours
+											</p>
+										</a>
 									</div>
 								</div>
 								<!-- Flip card BACK -->

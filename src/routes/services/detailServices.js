@@ -3,13 +3,9 @@ export const detailServices = [
 		name: 'Keyword Forage',
 		animalId: 'andean-bear',
 		animal: 'Andean Bear',
-		packageHighlight: [
-			'20+ Optimised Keywords',
-			'FREE Site-wide application',
-			'Lock-in goal rankings'
-		],
-		price: 0,
-		hourlyRate: 0,
+		packageHighlight: ['20+ Optimised Keywords', 'FREE Site-wide revamp', 'Lock-in goal rankings'],
+		price: 120,
+		hours: 10,
 		imgUrl:
 			'https://cdn.shopify.com/s/files/1/0518/4241/6818/files/andean-bear-services.png?v=1726475196',
 		imgSrc:
@@ -43,8 +39,8 @@ export const detailServices = [
 		animalId: 'pygmy-marmoset',
 		animal: 'Pygmy Marmoset',
 		packageHighlight: ['Catch 100% error links', '1-on-1 debrief', 'Faster website speeds'],
-		price: 0,
-		hourlyRate: 0,
+		price: 60,
+		hours: 12,
 		imgUrl:
 			'https://cdn.shopify.com/s/files/1/0518/4241/6818/files/pygmy-marmoset-services.png?v=1726475196',
 		imgSrc: 'https://www.bbc.com/news/articles/cl7l1vk5exeo',
@@ -77,8 +73,8 @@ export const detailServices = [
 			'Identify mutuals',
 			'Rank ahead of your peers'
 		],
-		price: 0,
-		hourlyRate: 0,
+		price: 85,
+		hours: 8,
 		imgUrl:
 			'https://cdn.shopify.com/s/files/1/0518/4241/6818/files/gray-heron-services.png?v=1726475196',
 		imgSrc:
@@ -87,17 +83,17 @@ export const detailServices = [
 		titleType: { heronAnalysisTitle: true },
 		roadmapItems: [
 			{
-				item: 'call to get to know your industry, specifically what sector you cater to, how are your target customers different from your competitors, and what type of competitors you have',
+				item: 'industry & competitors sharing',
 				minutes: 40,
-				showSemrushIcon: true
-			},
-			{
-				item: 'manual and tool-powered competitor analysis based on what we discuseed in the previos call',
-				hours: 5,
 				showGoogleMeetIcon: true
 			},
 			{
-				item: 'report back findings to you - importantly tips on how you can differentiate your business, what SEO tactics they are using, and what trends are you missing out on as a business',
+				item: 'manual / tool-driven competitor analysis',
+				hours: 5,
+				showSemrushIcon: true
+			},
+			{
+				item: 'discussion with enormous insight',
 				hour: 1
 			}
 		],
