@@ -3,12 +3,15 @@
 
 	let innerWidth;
 	let speed = 50;
-	let size = 8;
+	export let size = 8;
 	export let text = '';
 	export let secondaryText = '';
 	export let imgSrc;
+	export let imgAlt;
+	export let extraClasses;
+	export let separator = ' • ';
+
 	let repeat = 1;
-	let separator = ' • ';
 
 	onMount(async () => {
 		if (innerWidth < 500) {
@@ -32,9 +35,13 @@
 <section>
 	<div class="relative w-full">
 		<div style="--size: {size}rem;" class="sealBackground group relative mx-auto">
-			<img src={imgSrc} class="absolute p-[15%] transition-all group-hover:p-[13%]" />
+			<img
+				src={imgSrc}
+				alt={imgAlt}
+				class="absolute z-10 rounded-full p-[15%] transition-all group-hover:p-[13%]"
+			/>
 			<div
-				class="seal font-courier text-xs transition-all duration-200 ease-out group-hover:opacity-90 lg:!text-sm"
+				class="seal z-0 {extraClasses} font-courier text-xs transition-all duration-200 ease-out group-hover:opacity-90 lg:!text-sm"
 				style="--size: {size}rem; --speed: {speed * 1000}ms;"
 			>
 				{#each charactersArray as char, index}

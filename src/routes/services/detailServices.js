@@ -10,6 +10,7 @@ export const detailServices = [
 			'https://cdn.shopify.com/s/files/1/0518/4241/6818/files/andean-bear-services.png?v=1726475196',
 		imgSrc:
 			'https://www.nationalgeographic.com/animals/article/andean-paddington-bears-poached-in-peru',
+		imgAlt: 'Andean bear in the forest',
 		credit: 'Kevin Schafer',
 		titleType: { keywordForageTitle: true },
 		roadmapItems: [
@@ -44,6 +45,7 @@ export const detailServices = [
 		imgUrl:
 			'https://cdn.shopify.com/s/files/1/0518/4241/6818/files/pygmy-marmoset-services.png?v=1726475196',
 		imgSrc: 'https://www.bbc.com/news/articles/cl7l1vk5exeo',
+		imgAlt: 'Pygmy marmoset in an urban environment',
 		credit: 'Lee Bottomley',
 		titleType: { siteAuditTitle: true },
 		roadmapItems: [
@@ -79,6 +81,7 @@ export const detailServices = [
 			'https://cdn.shopify.com/s/files/1/0518/4241/6818/files/gray-heron-services.png?v=1726475196',
 		imgSrc:
 			'https://www.nationalgeographic.com/animals/article/gray-heron-sighting-united-states-expanding-range',
+		imgAlt: 'Grey heron flying over a marsh field',
 		credit: 'Skyler Kardell',
 		titleType: { heronAnalysisTitle: true },
 		roadmapItems: [

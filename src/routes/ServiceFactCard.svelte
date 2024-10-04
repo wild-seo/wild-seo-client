@@ -155,10 +155,6 @@
 		transform-style: preserve-3d;
 	}
 
-	.flip-card:hover .flip-card-inner {
-		transform: rotateY(180deg);
-	}
-
 	.show-back {
 		transform: rotateY(180deg);
 	}

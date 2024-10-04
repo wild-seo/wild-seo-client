@@ -49,7 +49,7 @@
 		>
 			<svelte:fragment slot="lead">
 				<div class="mb-4">
-					<img src={coloredLogo} alt="" class="w-32 p-2" />
+					<img src={coloredLogo} alt="Wild SEO logo colored" class="w-32 p-2" />
 				</div>
 			</svelte:fragment>
 
@@ -138,6 +138,7 @@
 				<a href="https://cassiebrock.com/whale-shark/" target="_blank">
 					<img
 						class="w-1/2"
+						alt="Whale Shark Illustration by Cassie Brock"
 						src="https://cdn.shopify.com/s/files/1/0518/4241/6818/files/whale-shark-illustration.png?v=1726629625"
 					/>
 				</a>
@@ -182,6 +183,7 @@
 				</div>
 				<a href="https://cassiebrock.com/blue-ring-octopus/" target="_blank">
 					<img
+						alt="Blue Ring Octopus Illustration by Cassie Brock"
 						src="https://cdn.shopify.com/s/files/1/0518/4241/6818/files/blue-ring-octopus-illustration.png?v=1726630393"
 						class="h-1/2"
 					/>
@@ -211,7 +213,7 @@
 			</div>
 		</svelte:fragment>
 
-		<img src={coloredLogo} alt="" class="mx-auto" />
+		<img src={coloredLogo} alt="Wild SEO logo colored" class="mx-auto" />
 
 		<svelte:fragment slot="trail">
 			<div class="flex flex-col">
@@ -228,9 +230,5 @@
 		letter-spacing: 0.2em;
 		color: white;
 		font-weight: 400;
-	}
-	.backdrop-blur-safari {
-		-webkit-backdrop-filter: blur(12px);
-		backdrop-filter: blur(12px);
 	}
 </style>

@@ -45,12 +45,12 @@ export const actions = {
 			.then((res) => res.json())
 			.then((data) => console.log(data));
 
-		try {
-			data.get('email');
-			return { message: 'success' };
-		} catch (error) {
-			// @ts-ignore
-			return fail(422, { description: data.get('email'), error: error.message });
-		}
+		// try {
+		// 	data.get('email');
+		// 	return { message: 'success' };
+		// } catch (error) {
+		// 	// @ts-ignore
+		// 	return fail(422, { description: data.get('email'), error: error.message });
+		// }
 	}
 };

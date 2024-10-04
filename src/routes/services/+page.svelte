@@ -11,11 +11,9 @@
 	import RotatingService from './RotatingService.svelte';
 </script>
 
-<svelte:head>
-	<script async src="https://js.stripe.com/v3/pricing-table.js"></script>
-</svelte:head>
+<svelte:head></svelte:head>
 
-<section>
+<div class="w-full">
 	<section class="mb-4 grid border-b border-wild-brown shadow-lg lg:!grid-cols-2">
 		<div
 			class="order-last border-r-0 border-t border-black bg-wild-darkgreen text-white lg:!order-first lg:!border-r lg:!border-t-0"
@@ -32,14 +30,21 @@
 					</div>
 					<div class="mt-2 w-full border-t border-dashed border-white/40"></div>
 					<div class="h-[0.5rem] w-full bg-[#133e16]"></div>
-					<div class="bg-wild-green/50 px-6 py-3">
-						<p>Rank your website higher on Google</p>
-						<p>By nature, Guaranteed SEO results in 2 weeks.</p>
-						<p>No monthly fee</p>
+					<div class="bg-wild-green/60 px-6 py-3 font-courier">
+						<p class="leading-relaxed tracking-wide text-white/85">
+							Every package guarantees a <b>full-scale project</b> with expert code and UI/UX enhancements
+							tailored to your website.
+						</p>
+						<div class="my-3 border-t border-dashed border-white/50"></div>
+						<p class="max-w-fit bg-wild-darkgreen px-2 py-1 text-sm">
+							Project basis. We do not accept monthly retainers.
+						</p>
 					</div>
 					<div class="px-6 pt-2">
-						<p class="text-end font-courier text-sm text-white/80">
-							Guaranteed SEO results in <span class="underline underline-offset-4">14 days</span>*
+						<p class="pb-2 text-end font-courier text-sm text-white/80">
+							After implementation, guaranteed SEO results within <span
+								class="underline underline-offset-4">14 days</span
+							>*
 						</p>
 					</div>
 				</div>
@@ -74,6 +79,7 @@
 							text="Heron"
 							secondaryText="Competitor Analysis"
 							imgSrc="https://cdn.shopify.com/s/files/1/0518/4241/6818/files/grey_heron_package.png?v=1725853925"
+							imgAlt="Grey Heron"
 						/>
 					</a>
 					<a href="#andean-bear">
@@ -81,6 +87,7 @@
 							text="Bear"
 							secondaryText="Keyword Forage"
 							imgSrc="https://cdn.shopify.com/s/files/1/0518/4241/6818/files/spectacled_bear_package.png?v=1725853925"
+							imgAlt="Andean (Spectacled) Bear"
 						/>
 					</a>
 					<a href="#pygmy-marmoset">
@@ -88,6 +95,7 @@
 							text="Marmoset"
 							secondaryText="Site Sweep"
 							imgSrc="https://cdn.shopify.com/s/files/1/0518/4241/6818/files/pygmy_marmoset_package.png?v=1725853925"
+							imgAlt="Pygmy Marmoset on a banana"
 						/>
 					</a>
 				</div>
@@ -96,13 +104,13 @@
 	</section>
 
 	<div class="mb-4 grid grid-cols-1 gap-2 lg:!gap-4">
-		{#each detailServices as { name, titleType, roadmapItems, finishedProductItems, animalId, animal, packageHighlight, imgUrl, imgSrc, price, hours, credit }}
+		{#each detailServices as { name, titleType, roadmapItems, finishedProductItems, animalId, animal, packageHighlight, imgUrl, imgAlt, imgSrc, price, hours, credit }}
 			<div
 				class="group grid scale-95 rounded-md border border-black shadow-md transition-all duration-[380ms] ease-in hover:rounded-lg hover:border-2 hover:shadow-xl md:grid-cols-2 lg:!scale-100 lg:!rounded-none hover:lg:!scale-[.965]"
 				id={animalId}
 			>
 				<div class="relative border-r-2 border-black">
-					<img src={imgUrl} class="relative h-full w-full object-cover" />
+					<img src={imgUrl} alt={imgAlt} class="relative h-full w-full object-cover" />
 					<div class="absolute bottom-3 right-2 lg:!right-8 lg:!top-8">
 						<div class="flex flex-col items-end gap-2 text-end">
 							{#each packageHighlight as highlight}
@@ -245,9 +253,10 @@
 
 	<section>
 		<div class="mx-auto p-4">
-			<p class="text-center">hello</p>
-			<div>
+			<div id="pricing">
+				<script async src="https://js.stripe.com/v3/pricing-table.js"></script>
 				<stripe-pricing-table
+					style="width:100%!important"
 					pricing-table-id="prctbl_1Q4QSaJAkIp2pqyTXCKOHM9i"
 					publishable-key="pk_live_51PtWWMJAkIp2pqyT6pPUoneJCH4Y7WB9WbfKEBJc8oXvnzgXv5rGsYIuOx3Iqdy62I3liN0IwM1XR8bvcUb0UIoR00Pv0KwhTx"
 				>
@@ -255,7 +264,7 @@
 			</div>
 		</div>
 	</section>
-</section>
+</div>
 
 <style>
 	.rightArrowList {

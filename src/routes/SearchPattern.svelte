@@ -16,7 +16,9 @@
 	};
 </script>
 
-<section class="patternedBackground relative select-none bg-wild-darkgreen/80 py-4 text-black">
+<section
+	class="patternedBackground relative select-none bg-wild-darkgreen/80 py-10 text-black md:py-16"
+>
 	<div class="grid w-full grid-cols-3 text-xs">
 		<section
 			class="cloudDisperseLeft group flex items-center justify-center gap-2 place-self-end p-2 md:p-4"
@@ -54,7 +56,7 @@
 
 		<!-- AirBnb -->
 		<section
-			class=" cloudDisperseRight group flex scale-125 items-center justify-center gap-3 p-2 md:place-self-start md:p-4"
+			class="cloudDisperseRight group flex scale-125 items-center justify-center gap-3 p-2 md:place-self-start md:p-4"
 			style="--randomTime: {randomInt(4, 5)}s;--randomDelay: {randomInt(0, 1000)}ms"
 		>
 			<AirBnb
@@ -93,7 +95,7 @@
 			style="--randomTime: {randomInt(3, 4)}s;--randomDelay: {randomInt(0, 1000)}ms"
 		>
 			<GoogleIcon
-				class="h-10 w-10 flex-shrink-0 -rotate-6 rounded-full bg-white p-1.5 drop-shadow-md"
+				class="hidden h-10 w-10 flex-shrink-0 -rotate-6 rounded-full bg-white p-1.5 drop-shadow-md md:block"
 				style="filter: drop-shadow(3px 2px 0px black);"
 			/>
 			<div

@@ -198,8 +198,10 @@
 				<span class="font-bold">*SEO</span> = Search Engine Optimisation
 			</p>
 		</div>
+		<!-- A11y: on:mouseover must be accompanied by on:focus -->
 		<div
-			class="group relative content-center overflow-clip bg-black"
+			class="group relative content-center overflow-clip bg-black/90"
+			on:focus
 			on:mouseleave={() => {
 				mouseHovering = false;
 			}}
@@ -277,7 +279,11 @@
 						<div class="max-w-lg">
 							<p class="my-2">
 								At <span class="inline-block font-scratchy text-3xl text-wild-darkgreen">
-									<img src={LogoColoredShadow} class="h-6 select-none" />
+									<img
+										src={LogoColoredShadow}
+										alt="Wild SEO colored logo with shadow"
+										class="h-6 select-none"
+									/>
 								</span>
 								we believe your website<br />
 								<span class="font-courier">
@@ -348,31 +354,31 @@
 								<div class="mb-4 mt-2 border-t border-wild-brown"></div>
 
 								<ul
-									class="list-inside list-decimal font-courier leading-relaxed tracking-wide marker:text-wild-brown"
+									class="list-inside list-decimal font-folks leading-loose tracking-wide marker:text-wild-brown"
 								>
 									<li class="mb-2">
-										Keywords <span class="text-xs font-bold text-wild-funblue">!important</span>
+										Code <span class="font-semibold text-wild-funblue">optimised keywords</span> into
+										your website
 									</li>
 									<li class="my-2">
-										<span class="font-platNomor text-xs uppercase tracking-wider">
-											+ Commercially Guided
-										</span>
-										<br />Word Pairings
-										<span class="text-xs opacity-80">(where to buy _, top 10 best _, etc.)</span>
+										Add <span class="font-semibold text-[#6C8C21]">wild word pairings</span> to capture
+										related searches
 									</li>
 									<li class="my-2">
-										<span class="font-platNomor text-xs">Site headers - </span>add Schemas + OG tags
-										<span class="text-xs underline decoration-wild-funblue underline-offset-4"
-											>make Googlebots happy [•ᴗ•]
+										Finally, add under-the-hood website code that
+										<span class="underline decoration-[#f02eaad9] underline-offset-4">
+											robots love
 										</span>
+										<span class="text-red-500"> ♥ </span>
+										<span class="font-courier text-sm text-zinc-600"
+											>(schemas, OG tags, sitemaps)</span
+										>
 									</li>
 								</ul>
 							</div>
-							<div
-								class="border-b border-t border-blue-800 bg-wild-funblue p-4 font-courier text-white"
-							>
+							<div class="border-2 border-blue-600 bg-wild-funblue p-4 font-courier text-white">
 								<p class="text-sm tracking-normal">
-									Guaranteed
+									Consistent
 									<span class="font-semibold underline underline-offset-2">15 - 30% </span>
 									<span class="text-xs uppercase">
 										increase <span class="lowercase">in </span></span
@@ -388,6 +394,7 @@
 							>
 								<img
 									src="https://imagedelivery.net/usYhDnhJIpKLEgUtJMbggw/531533df-4ff8-478f-89ac-7a10440baf00/public"
+									alt="Pygmy marmoset on a branch with long tail"
 									class="h-full object-contain duration-100 ease-in hover:-skew-x-2 hover:-skew-y-3 md:w-full"
 								/>
 							</div>
@@ -417,7 +424,7 @@
 		</div>
 	</section>
 	<!-- SEO Example -->
-	<section class="">
+	<section class="" id="case-study">
 		<section class="grid lg:!grid-cols-2">
 			<div class="flex items-center justify-center bg-white/50 p-3 shadow-lg">
 				<div class="pt-6 text-center md:pt-0">
@@ -434,10 +441,12 @@
 			<div class="grid grid-cols-2 items-stretch">
 				<img
 					src="https://imagedelivery.net/usYhDnhJIpKLEgUtJMbggw/a7c331b4-bbc6-482e-7caf-572339916700/public"
+					alt="Suki Yeoh, a wet market owner"
 					class="object-cover transition-all duration-200 hover:z-10 hover:scale-110 hover:shadow-lg"
 				/>
 				<img
 					src="https://imagedelivery.net/usYhDnhJIpKLEgUtJMbggw/309e112a-144e-4539-796a-599857a70100/public"
+					alt="Wet market in Bhutan during late afternoon"
 					class="object-cover transition-all duration-200 hover:z-10 hover:scale-110 hover:shadow-lg"
 				/>
 			</div>
@@ -458,7 +467,7 @@
 							</p>
 							<img
 								src="https://cdn.shopify.com/s/files/1/0518/4241/6818/files/Old_Market_SEO_Designed.png?v=1726388025"
-								alt=""
+								alt="Unimpactful, bad Google Search result with few keywords and little SEO"
 								class=""
 							/>
 						</div>
@@ -477,17 +486,17 @@
 							</p>
 							<img
 								src="https://cdn.shopify.com/s/files/1/0518/4241/6818/files/Suki_Wet_Market_Designed.png?v=1726388025"
-								alt=""
+								alt="Impactful, detailed Google Search result with optimized keywords and SEO"
 								class="relative z-10"
 							/>
 							<img
 								src="https://imagedelivery.net/usYhDnhJIpKLEgUtJMbggw/7d7617a9-471a-4bc4-eee9-e9721d002900/public"
-								alt=""
+								alt="Lady picking a vegetable in a wet market"
 								class="absolute -bottom-[3rem] -left-[1rem] z-0 w-32 -rotate-6 lg:!-bottom-[5rem] lg:!w-64"
 							/>
 							<img
 								src="https://imagedelivery.net/usYhDnhJIpKLEgUtJMbggw/382024eb-60e6-47f4-833c-5325cbba5f00/public"
-								alt=""
+								alt="LocalBusiness schema code for head tag in HTML website"
 								class="absolute -right-5 top-2 z-0 w-32 rotate-6 lg:!-right-0 lg:!-top-10 lg:!w-60"
 							/>
 						</div>
@@ -512,14 +521,11 @@
 			</p> -->
 			</div>
 		</div>
-		<MiniContactUs />
+		<MiniContactUs {form} />
 	</section>
 </div>
 
 <style>
-	h2 {
-		font-family: 'Scratchy', 'sans-serif';
-	}
 	.stopAnimation {
 		animation-play-state: paused;
 	}
@@ -558,5 +564,8 @@
 		to {
 			transform: translateX(-100%);
 		}
+	}
+	ul > li::marker {
+		font-weight: 600;
 	}
 </style>

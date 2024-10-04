@@ -1,5 +1,6 @@
 import { fail } from '@sveltejs/kit';
 import isUrlHttp from 'is-url-http';
+import * as EmailValidator from 'email-validator';
 
 export function load({ setHeaders }) {
 	setHeaders({});
@@ -39,5 +40,43 @@ export const actions = {
 		} catch (error) {
 			return { warning: true, error };
 		}
+	},
+	contact: async ({ request }) => {
+		const formData = await request.formData();
+
+		if (!formData.get('message'))
+			return { miniWarning: true, miniMessage: "Please don't leave the message empty" };
+		if (!formData.get('email')) return { miniWarning: true, miniMessage: 'Please enter an email' };
+
+		let message = formData.get('message');
+		let returnEmail = formData.get('email');
+
+		if (!EmailValidator.validate(`${returnEmail}`))
+			return { miniWarning: true, miniMessage: 'Please enter a valid email address' };
+
+		const mailApiURL = new URL('https://wild-seo-server-87fb94c91999.herokuapp.com/contact/short');
+
+		let miniMailData = {
+			message,
+			returnEmail
+		};
+
+		fetch(mailApiURL, {
+			method: 'POST',
+			headers: {
+				Accept: 'application/json',
+				'Content-Type': 'application/json'
+			},
+			body: JSON.stringify(miniMailData)
+		})
+			.then((res) => {
+				res.json();
+			})
+			.then((data) => console.log(data));
+
+		return {
+			success: true,
+			miniMessage: "We've got your message !"
+		};
 	}
 };
