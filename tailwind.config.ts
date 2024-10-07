@@ -18,7 +18,7 @@ export default {
 		extend: {
 			wildButton: {},
 			animation: {
-				gradient: 'gradient 3s linear infinite',
+				gradient: 'gradient 20s ease-in-out alternate infinite',
 				marquee: 'marquee 20s linear infinite',
 				marquee2: 'marquee2 20s linear infinite',
 				wind: 'gustRight 10s ease-in-out alternate infinite',

@@ -34,7 +34,7 @@ export const actions = {
 
 		const apiURL = new URL('https://wild-seo-server-87fb94c91999.herokuapp.com/contact');
 
-		fetch(apiURL, {
+		await fetch(apiURL, {
 			method: 'POST',
 			headers: {
 				Accept: 'application/json',

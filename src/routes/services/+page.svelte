@@ -9,12 +9,15 @@
 	import SemrushIcon from '~icons/simple-icons/semrush';
 	import detailServices from './detailServices.js';
 	import RotatingService from './RotatingService.svelte';
+	import MiniContactUs from '../MiniContactUs.svelte';
+
+	export let form;
 </script>
 
 <svelte:head></svelte:head>
 
 <div class="w-full">
-	<section class="mb-4 grid border-b border-wild-brown shadow-lg lg:!grid-cols-2">
+	<section class="grid shadow-lg lg:!grid-cols-2">
 		<div
 			class="order-last border-r-0 border-t border-black bg-wild-darkgreen text-white lg:!order-first lg:!border-r lg:!border-t-0"
 		>
@@ -30,23 +33,21 @@
 					</div>
 					<div class="mt-2 w-full border-t border-dashed border-white/40"></div>
 					<div class="h-[0.5rem] w-full bg-[#133e16]"></div>
-					<div class="bg-wild-green/60 px-6 py-3 font-courier">
-						<p class="leading-relaxed tracking-wide text-white/85">
-							Every package guarantees a <b>full-scale project</b> with expert code and UI/UX enhancements
-							tailored to your website.
+					<div
+						class="animate-gradient bg-gradient-to-r from-wild-green/30 to-wild-green/60 px-6 py-3 font-folks tracking-wider"
+					>
+						<p class="leading-relaxed text-white/85">
+							Every package guarantees a <b>full-scale project</b> with code and UI/UX enhancements tailored
+							to your website.
 						</p>
-						<div class="my-3 border-t border-dashed border-white/50"></div>
-						<p class="max-w-fit bg-wild-darkgreen px-2 py-1 text-sm">
+						<p class="mt-3 leading-relaxed tracking-wide text-white/85">
+							<b>No paid advertising involved</b> - 100% code-driven solutions for organic SEO growth.
+						</p>
+						<p class="mt-4 max-w-fit bg-black/80 px-2 py-1 text-sm">
 							Project basis. We do not accept monthly retainers.
 						</p>
 					</div>
-					<div class="px-6 pt-2">
-						<p class="pb-2 text-end font-courier text-sm text-white/80">
-							After implementation, guaranteed SEO results within <span
-								class="underline underline-offset-4">14 days</span
-							>*
-						</p>
-					</div>
+					<div class="h-4 w-full"></div>
 				</div>
 			</div>
 		</div>
@@ -72,38 +73,47 @@
 					<li class="text-black">Services</li>
 				</ol>
 			</div>
-			<div class="my-3 lg:!m-4">
-				<div class="grid grid-cols-3 divide-x-2 divide-wild-brown/30">
-					<a href="#gray-heron">
-						<RotatingService
-							text="Heron"
-							secondaryText="Competitor Analysis"
-							imgSrc="https://cdn.shopify.com/s/files/1/0518/4241/6818/files/grey_heron_package.png?v=1725853925"
-							imgAlt="Grey Heron"
-						/>
-					</a>
-					<a href="#andean-bear">
-						<RotatingService
-							text="Bear"
-							secondaryText="Keyword Forage"
-							imgSrc="https://cdn.shopify.com/s/files/1/0518/4241/6818/files/spectacled_bear_package.png?v=1725853925"
-							imgAlt="Andean (Spectacled) Bear"
-						/>
-					</a>
-					<a href="#pygmy-marmoset">
-						<RotatingService
-							text="Marmoset"
-							secondaryText="Site Sweep"
-							imgSrc="https://cdn.shopify.com/s/files/1/0518/4241/6818/files/pygmy_marmoset_package.png?v=1725853925"
-							imgAlt="Pygmy Marmoset on a banana"
-						/>
-					</a>
+			<section>
+				<div class="my-3 lg:!m-4">
+					<div class="grid grid-cols-3 divide-x-2 divide-wild-brown/30">
+						<a href="#gray-heron">
+							<RotatingService
+								text="Heron"
+								secondaryText="Competitor Analysis"
+								imgSrc="https://cdn.shopify.com/s/files/1/0518/4241/6818/files/grey_heron_package.png?v=1725853925"
+								imgAlt="Grey Heron"
+							/>
+						</a>
+						<a href="#andean-bear">
+							<RotatingService
+								text="Bear"
+								secondaryText="Keyword Forage"
+								imgSrc="https://cdn.shopify.com/s/files/1/0518/4241/6818/files/spectacled_bear_package.png?v=1725853925"
+								imgAlt="Andean (Spectacled) Bear"
+							/>
+						</a>
+						<a href="#pygmy-marmoset">
+							<RotatingService
+								text="Marmoset"
+								secondaryText="Site Sweep"
+								imgSrc="https://cdn.shopify.com/s/files/1/0518/4241/6818/files/pygmy_marmoset_package.png?v=1725853925"
+								imgAlt="Pygmy Marmoset on a banana"
+							/>
+						</a>
+					</div>
 				</div>
-			</div>
+				<div class="bg-wild-brown/90">
+					<p class="px-4 py-2 text-end font-courier text-sm text-white/90">
+						Post-SEO, guaranteed results within <span class="underline underline-offset-4"
+							>14 days</span
+						>*
+					</p>
+				</div>
+			</section>
 		</div>
 	</section>
 
-	<div class="mb-4 grid grid-cols-1 gap-2 lg:!gap-4">
+	<div class="mb-4 grid grid-cols-1 gap-2 bg-black/90 py-4 lg:!gap-4">
 		{#each detailServices as { name, titleType, roadmapItems, finishedProductItems, animalId, animal, packageHighlight, imgUrl, imgAlt, imgSrc, price, hours, credit }}
 			<div
 				class="group grid scale-95 rounded-md border border-black shadow-md transition-all duration-[380ms] ease-in hover:rounded-lg hover:border-2 hover:shadow-xl md:grid-cols-2 lg:!scale-100 lg:!rounded-none hover:lg:!scale-[.965]"
@@ -157,7 +167,11 @@
 					<header class="card-header">
 						<div>
 							<div class="flex items-center justify-between">
-								<p class="font-platNomor text-2xl md:text-4xl">{name}</p>
+								<p class="font-platNomor text-2xl md:text-4xl">
+									{name}
+									<span class="text-sm tracking-widest text-wild-darkgreen opacity-90">PACKAGE</span
+									>
+								</p>
 								<p class="font-courier text-xs lg:!text-sm">
 									<span class="text-lg lg:!text-xl">RM{price}</span>/hour
 								</p>
@@ -233,9 +247,9 @@
 					</header>
 					<footer class="card-footer flex items-center justify-between">
 						<button
-							class="w-1/4 border-2 border-wild-funblue p-2 font-bebas text-2xl tracking-wider text-wild-funblue transition-all duration-150 ease-in hover:border-l-4 hover:border-r-4 hover:border-blue-300 hover:border-b-blue-400 hover:border-t-blue-400 hover:bg-blue-600 hover:text-white hover:shadow-md"
+							class="w-1/2 border-2 border-wild-funblue p-2 font-bebas text-2xl tracking-wider text-wild-funblue transition-all duration-150 ease-in hover:border-l-4 hover:border-r-4 hover:border-blue-300 hover:border-b-blue-400 hover:border-t-blue-400 hover:bg-blue-600 hover:text-white hover:shadow-md"
 						>
-							ORDER
+							REQUEST SEO
 						</button>
 						<div class="text-end">
 							<p class="mb-1">approx. <span class="font-semibold">{hours}</span> hours</p>
@@ -263,6 +277,10 @@
 				</stripe-pricing-table>
 			</div>
 		</div>
+	</section>
+
+	<section>
+		<MiniContactUs {form} />
 	</section>
 </div>
 

@@ -2,6 +2,8 @@
 	import Icon from '@iconify/svelte';
 	import SealIcon from '~icons/noto/seal';
 	import BeetleIcon from '~icons/noto/beetle';
+	import MailIcon from '~icons/fluent/mail-32-regular';
+	import PenIcon from '~icons/fluent/pen-sparkle-16-filled';
 	import { enhance } from '$app/forms';
 	import { ConicGradient } from '@skeletonlabs/skeleton';
 	import { fade, blur } from 'svelte/transition';
@@ -31,16 +33,17 @@
 </script>
 
 <section
-	class="grid bg-black/90 md:bg-gradient-to-bl md:from-slate-700 md:to-black/90 lg:!grid-cols-2"
+	class="grid md:animate-gradient lg:!grid-cols-2"
+	style="background-image: url('https://imagedelivery.net/usYhDnhJIpKLEgUtJMbggw/51c6c5c1-3323-42ce-c425-a4adf9f49900/public')"
 >
-	<div class="flex flex-col items-center justify-center pb-0 pt-12 md:pb-20 md:pt-20">
+	<div class="flex flex-col items-center justify-center pb-0 pt-12 text-white md:pb-20 md:pt-20">
 		<section class="relative">
 			<div
-				class:blueShadow={mouseHovering}
-				class="relative bg-white p-8 saturate-150 transition-all duration-300 ease-out md:rounded-lg md:border-8 md:border-wild-brown/80 hover:md:border-wild-brown/70"
+				class:yellowShadow={mouseHovering}
+				class="relative bg-black/70 p-8 saturate-150 backdrop-blur-sm transition-all duration-300 ease-out md:rounded-lg md:border-8 md:border-wild-mossgreen/50 md:bg-black/50 hover:md:border-wild-mossgreen/70"
 			>
 				<p class="font-bebas text-4xl tracking-wide">Got a Question ?</p>
-				<p class="my-2 font-bebas text-lg tracking-wide">
+				<p class="my-2 font-bebas text-lg tracking-wide text-wild-green/90">
 					Or feedback / complaint / juicy gossip / custom pricing
 				</p>
 				<div class="mb-4 mt-2 w-full border-b border-wild-brown/50"></div>
@@ -78,24 +81,30 @@
 						};
 					}}
 				>
-					<label class="mb-4 flex flex-col gap-2 font-platNomor text-black/90">
-						Drop us a quick message:
+					<label class="mb-4 flex flex-col gap-2 font-platNomor text-white">
+						<p class="flex items-center justify-between">
+							Drop us a quick message:
+							<MailIcon class="text-wild-green" />
+						</p>
 						<textarea
 							required
 							name="message"
 							rows="3"
-							class="rounded-md font-folks tracking-wide text-wild-brown"
+							class="rounded-md font-folks tracking-wide text-black/90"
 							placeholder="Hi, I'd like to..."
 						/>
 					</label>
-					<label class="flex flex-col gap-2 font-platNomor text-black/90">
-						How do we get back to you ?
+					<label class="flex flex-col gap-2 font-platNomor text-white">
+						<p class="flex items-center justify-between">
+							How do we get back to you ?
+							<PenIcon class="text-wild-green" />
+						</p>
 						<input
 							required
 							name="email"
 							type="email"
 							placeholder="email@example.com"
-							class="rounded-lg font-folks tracking-wide text-wild-brown"
+							class="rounded-lg font-folks tracking-wide text-black/90"
 						/>
 					</label>
 					<button
@@ -105,7 +114,7 @@
 						on:mouseleave={() => {
 							mouseHovering = false;
 						}}
-						class="mt-4 rounded-md border-2 border-wild-brown bg-wild-brown px-4 py-2 font-bebas text-xl text-white shadow-md saturate-150 transition-all duration-200 hover:scale-105 hover:shadow-lg hover:saturate-200"
+						class="mt-4 rounded-md border-4 border-wild-mossgreen bg-wild-darkgreen px-4 py-2 font-bebas text-xl text-white shadow-md saturate-150 transition-all duration-200 hover:scale-105 hover:shadow-lg hover:saturate-200"
 						type="submit"
 					>
 						{#if sendingMiniMessage}
@@ -125,12 +134,12 @@
 		/> -->
 			<img
 				src="https://imagedelivery.net/usYhDnhJIpKLEgUtJMbggw/ebed91dc-6c78-4461-c267-a9d5345d6f00/public"
-				class="absolute -right-14 -top-5 h-32 w-32 -rotate-12 transition-all ease-in hover:-rotate-0 md:-right-10 md:h-24 md:w-24"
+				class="absolute -right-4 -top-5 h-20 w-20 -rotate-12 transition-all ease-in hover:-rotate-0 md:-right-10 md:h-24 md:w-24"
 			/>
 		</section>
 	</div>
 	<div
-		class="animate-gradient bg-gradient-to-tr from-blue-800 via-wild-funblue to-blue-950 py-6 md:py-0"
+		class="m-5 animate-gradient rounded-xl bg-gradient-to-t from-wild-mossgreen/40 via-wild-funblue/90 to-blue-950 py-6 shadow-xl backdrop-blur-sm md:py-0"
 	>
 		<section class="grid h-full grid-cols-3 gap-3">
 			<!-- First ROW -->
@@ -241,12 +250,12 @@
 			transform: scale(1) rotate(0deg);
 		}
 	}
-	.blueShadow {
+	.yellowShadow {
 		box-shadow:
-			rgba(33, 146, 255, 0.4) 5px 5px,
-			rgba(33, 146, 255, 0.3) 10px 10px,
-			rgba(33, 146, 255, 0.2) 15px 15px,
-			rgba(33, 146, 255, 0.1) 20px 20px,
-			rgba(33, 146, 255, 0.05) 25px 25px;
+			rgba(253, 224, 71, 0.4) 5px 5px,
+			rgba(253, 224, 71, 0.3) 10px 10px,
+			rgba(253, 224, 71, 0.2) 15px 15px,
+			rgba(253, 224, 71, 0.1) 20px 20px,
+			rgba(253, 224, 71, 0.05) 25px 25px;
 	}
 </style>

@@ -22,8 +22,18 @@
 	import SearchPattern from './SearchPattern.svelte';
 	import MiniContactUs from './MiniContactUs.svelte';
 	import LogoColoredShadow from '$assets/logo_colored_shadow.png';
+	import SearchResultComponent from './SearchResultComponent.svelte';
+	import NoSearchResultComponent from './NoSearchResultComponent.svelte';
 
 	export let form;
+
+	const modalComponent = {
+		ref: SearchResultComponent
+	};
+
+	const errorModalComponent = {
+		ref: NoSearchResultComponent
+	};
 
 	let mouseHovering = false;
 
@@ -31,14 +41,31 @@
 
 	const modalStore = getModalStore();
 
-	function getModal(formData) {
-		const data = formData;
+	function getModal(formResult) {
+		const data = formResult.data;
 
 		const modal = {
-			type: 'confirm',
-			title: data,
-			body: '<div><p>hello</p></div>',
-			response: (r) => console.log('response:', r)
+			type: 'component',
+			component: modalComponent,
+			meta: {
+				image: data.image,
+				url: data.url,
+				title: data.title,
+				description: data.description,
+				domainAge: data.domainAge,
+				registarName: data.registarName,
+				registrantCountry: data.registrantCountry,
+				registrantRegion: data.registrantRegion
+			}
+		};
+
+		modalStore.trigger(modal);
+	}
+
+	function getErrorModal() {
+		const modal = {
+			type: 'component',
+			component: errorModalComponent
 		};
 
 		modalStore.trigger(modal);
@@ -116,14 +143,19 @@
 							<OctopusLogo class="h-7 w-7 bg-white p-0.5" />
 						</p>
 					{/if}
+					<!-- Wild SEO Search Result Form -->
 					<form
 						action="?/enquire"
 						method="POST"
 						use:enhance={() => {
 							connecting = true;
 							return async ({ result, update }) => {
-								console.log(result);
 								connecting = false;
+
+								if (!result.data?.warning) {
+									getModal(result);
+								}
+
 								update();
 							};
 						}}
@@ -146,7 +178,7 @@
 
 						<button
 							type="submit"
-							class="mt-2 flex w-1/3 items-center justify-center rounded-md bg-emerald-700 py-2 text-xs font-semibold uppercase tracking-wider text-white shadow-md transition-all duration-75 ease-out hover:border-l-4 hover:border-r-4 hover:border-wild-green hover:bg-emerald-800"
+							class="mt-2 flex w-full items-center justify-center rounded-md bg-emerald-700 py-2 text-xs font-semibold uppercase tracking-wider text-white shadow-md transition-all duration-75 ease-out hover:border-l-4 hover:border-r-4 hover:border-wild-green hover:bg-emerald-800 md:w-1/3"
 						>
 							{#if connecting}
 								<div in:blur>
@@ -158,26 +190,6 @@
 							{/if}
 						</button>
 					</form>
-					<!-- <div class="m-2 grid grid-cols-3 gap-1 rounded-md border-wild-green shadow-md">
-						<div class="col-span-1 h-full border-r border-wild-seriousblue">
-							<img src={form?.image ?? ''} class="h-full object-cover" />
-						</div>
-						<div class="col-span-2">
-							<p class="font-courier bg-wild-brown px-2 py-1 text-sm text-white">
-								{form?.url ?? ''}
-							</p>
-							<div class="bg-white px-4 py-2">
-								<p
-									class="font-bebas mb-1 text-xl font-semibold text-wild-funblue underline underline-offset-2"
-								>
-									{form?.title ?? ''}
-								</p>
-								<p class="font-courier text-sm tracking-wide text-zinc-500">
-									{form?.description ?? ''}
-								</p>
-							</div>
-						</div>
-					</div> -->
 				</div>
 			</div>
 		</section>
@@ -185,12 +197,12 @@
 	<ServiceFactCard />
 
 	<!-- Sustainability Image section -->
-	<section class="mt-8 grid lg:!grid-cols-2">
+	<section class="mt-8 grid h-fit lg:!grid-cols-2">
 		<div class="relative">
 			<img
 				src="https://cdn.shopify.com/s/files/1/0518/4241/6818/files/siargao-wild-seo.jpg?v=1725720499"
 				alt="Stunning beach from drone view"
-				class="relative h-full object-cover"
+				class="relative h-full object-contain"
 			/>
 			<p
 				class="absolute bottom-0 left-0 m-2 bg-black/40 p-2 font-courier text-sm text-white shadow-md"
@@ -434,7 +446,7 @@
 					<p
 						class="mx-auto mb-2 mt-1 max-w-xl text-center font-scratchy text-xl italic tracking-wider text-wild-funblue md:text-3xl"
 					>
-						Her links compete with every type of market ever (!)
+						Will her site show up for every 'market' search ?
 					</p>
 				</div>
 			</div>

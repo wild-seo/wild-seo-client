@@ -24,7 +24,7 @@ export const actions = {
 			});
 
 			if (!response.ok) {
-				return { warning: true, message: 'Could not find anything in this URL' };
+				return { warning: true, message: 'Oops! URL has their SEO settings to private' };
 				// throw new Error(`Response status: ${response.status}`);
 			}
 
@@ -35,7 +35,11 @@ export const actions = {
 					url: json.url,
 					title: json.title,
 					description: json.description,
-					image: json.image
+					image: json.image,
+					domainAge: json.domainAge,
+					registarName: json.registarName,
+					registrantCountry: json.registrantCountry,
+					registrantRegion: json.registrantRegion
 				};
 		} catch (error) {
 			return { warning: true, error };
@@ -61,7 +65,7 @@ export const actions = {
 			returnEmail
 		};
 
-		fetch(mailApiURL, {
+		await fetch(mailApiURL, {
 			method: 'POST',
 			headers: {
 				Accept: 'application/json',

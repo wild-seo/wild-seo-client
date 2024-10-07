@@ -49,7 +49,9 @@
 		>
 			<svelte:fragment slot="lead">
 				<div class="mb-4">
-					<img src={coloredLogo} alt="Wild SEO logo colored" class="w-32 p-2" />
+					<a href="/">
+						<img src={coloredLogo} alt="Wild SEO logo colored" class="w-32 p-2" />
+					</a>
 				</div>
 			</svelte:fragment>
 
