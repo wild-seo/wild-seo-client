@@ -12,8 +12,9 @@ export const services = [
 		actionWord: 'GET',
 		description: 'strategic analytics on your competitor(s)',
 		bullets: [
-			'Differentiate your brand OR find new competitors ',
-			'+ explore new rising trends in the industry'
+			'Differentiate your brand',
+			'find new competitors',
+			'explore new rising trends in the industry'
 		],
 		animalFact: {
 			primaryFact: "Grey Heron's have",
@@ -35,7 +36,7 @@ export const services = [
 		hours: 10,
 		actionWord: 'ADD',
 		description: 'brand-related keywords that directly impact your website',
-		bullets: ['Meet more relevant customers', '+ make it simpler to get your brand discovered'],
+		bullets: ['Meet relevant customers', 'make it simpler to search for your brand'],
 		animalFact: {
 			primaryFact: "Spec Bear's forage in",
 			primaryStar: 'Andes Mountains',
@@ -56,7 +57,7 @@ export const services = [
 		hours: 12,
 		actionWord: 'FIND',
 		description: 'site errors & backlinks to invite crawling bugs.',
-		bullets: ['Get Googlebots to favor us', '+ organically climb search result ranks'],
+		bullets: ['Get Googlebots to favor your site', 'organically climb search result ranks'],
 		animalFact: {
 			primaryFact: "Pygmy's hand compared to humans",
 			primaryStar: '10x smaller',

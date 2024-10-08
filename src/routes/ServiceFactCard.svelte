@@ -80,16 +80,16 @@
 												/>
 											</div>
 											{#each bullets as bullet}
-												<ol class="list-none text-base">
-													<li>
-														<span class="tracking-wider">{bullet}</span>
+												<ol class="list-inside list-disc">
+													<li class="font-folks text-sm capitalize tracking-wider">
+														{bullet}
 													</li>
 												</ol>
 											{/each}
 										{/if}
 										<a href="/services/#{animalId}">
 											<p
-												class="text-end font-platNomor font-bold transition-all hover:scale-105"
+												class="mt-3 text-end font-platNomor font-bold transition-all hover:scale-105"
 												style="transform-origin: 100% 50%;"
 											>
 												<span class="text-xs tracking-wider text-wild-darkgreen/70">approx.</span>

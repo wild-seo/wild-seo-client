@@ -14,6 +14,8 @@
 	import PixelBugIcon from '~icons/pixelarticons/bug';
 	import PrivacyIcon from '~icons/fluent-mdl2/lifesaver-lock';
 	import CodeTreeIcon from '~icons/grommet-icons/tree';
+	import EmailIcon from '~icons/mdi/email-edit';
+	import PhoneIcon from '~icons/solar/call-chat-bold';
 	// Skeleton
 	import { initializeStores, Modal } from '@skeletonlabs/skeleton';
 	import { AppRail, AppRailTile, AppRailAnchor, AppBar } from '@skeletonlabs/skeleton';
@@ -134,72 +136,98 @@
 		<slot></slot>
 	</section>
 
-	<div class="bottom-0 left-0 w-full bg-wild-seriousblue">
-		<div class="mx-auto grid grid-cols-1 p-6 lg:!grid-cols-2">
-			<div class="col-span-1 flex">
-				<a href="https://cassiebrock.com/whale-shark/" target="_blank">
-					<img
-						class="w-1/2"
-						alt="Whale Shark Illustration by Cassie Brock"
-						src="https://cdn.shopify.com/s/files/1/0518/4241/6818/files/whale-shark-illustration.png?v=1726629625"
-					/>
-				</a>
-				<div class="w-fit">
-					<div class="py-4">
-						<img src={whiteLogo} alt="Wild SEO white logo" class="mb-2 w-32 flex-none" />
+	<!-- FOOTER SECTION -->
+	<div
+		class="bottom-0 left-0 w-full p-6"
+		style="background-image: url('https://imagedelivery.net/usYhDnhJIpKLEgUtJMbggw/25435a09-fc2a-4335-4728-c593b36a0900/public');background-size:cover"
+	>
+		<section
+			class="rounded-md border-[6px] border-double border-white/40 bg-gradient-to-br from-wild-funblue/20 via-blue-500/10 to-wild-seriousblue/50 shadow-md backdrop-blur-sm"
+		>
+			<div class="grid-cols-none grid-rows-2 md:grid md:grid-rows-none lg:!grid-cols-2">
+				<div class="flex flex-col gap-6 p-6 md:col-span-1 md:flex-row">
+					<a href="https://cassiebrock.com/whale-shark/" target="_blank" class="">
+						<img
+							class="w-32"
+							alt="Whale Shark Illustration by Cassie Brock"
+							src="https://cdn.shopify.com/s/files/1/0518/4241/6818/files/whale-shark-illustration.png?v=1726629625"
+						/>
+					</a>
+					<div class="w-full rounded-lg p-4">
+						<div class="max-w-sm py-4 text-white">
+							<img src={whiteLogo} alt="Wild SEO white logo" class="mb-2 w-32 flex-none" />
+							<p class="mt-4 text-pretty font-folks tracking-wide">
+								Boutique <span class="text-sm uppercase">SEO</span> partner in Malaysia specialising
+								in
+								<span class="text-sm uppercase"> on-page & technical SEO. </span>
+							</p>
+							<p class="mt-3 text-xs font-bold uppercase leading-relaxed tracking-wide">
+								better Google search rankings with niche keywords
+							</p>
+						</div>
+						<div class="mb-4 w-full border-t border-white"></div>
+						<div class="flex flex-col gap-1">
+							<p class="font-courier text-sm text-white">Kuala Lumpur</p>
+							<p class="font-courier text-sm text-white">
+								<EmailIcon class="inline" />
+								hello@wild-seo.com
+							</p>
+							<p class="font-courier text-sm text-white">
+								<PhoneIcon class="inline" />
+								+6012 342 9663
+							</p>
+						</div>
 					</div>
 				</div>
-			</div>
-			<div class="flex gap-6">
-				<div
-					class="card variant-filled-tertiary mb-3 h-fit flex-grow rounded-lg p-4 text-center font-semibold text-white shadow-md"
-				>
-					<nav class="list-nav">
-						<ul class="">
-							<li>
-								<a href="/about-us">
-									<HeartIcon class="text-white" />
-									<span class="font-bebas">About Us</span>
-								</a>
-							</li>
-							<li>
-								<a href="/contact-us">
-									<PixelBugIcon class="text-white" />
-									<span class="font-bebas">Contact Us</span>
-								</a>
-							</li>
-							<li>
-								<a href="/terms-and-conditions">
-									<CodeTreeIcon class="text-white" />
-									<span class="font-bebas">Terms & Conditions</span>
-								</a>
-							</li>
-							<li>
-								<a href="/privacy-policy">
-									<PrivacyIcon class="text-white" />
-									<span class="font-bebas">Privacy Policy</span>
-								</a>
-							</li>
-						</ul>
-					</nav>
+				<div class="flex flex-col gap-6 p-6 md:flex-row">
+					<div
+						class="card mb-3 h-fit flex-grow rounded-lg bg-wild-funblue/50 p-4 text-center font-bold shadow-md backdrop-blur-sm"
+					>
+						<nav class="list-nav">
+							<ul class="">
+								<li class="text-blue-800">
+									<a href="/about-us">
+										<HeartIcon class="text-blue-800" />
+										<span class="font-bebas">About Us</span>
+									</a>
+								</li>
+								<li>
+									<a href="/contact-us">
+										<PixelBugIcon class="text-blue-800" />
+										<span class="font-bebas">Contact Us</span>
+									</a>
+								</li>
+								<li>
+									<a href="/terms-and-conditions">
+										<CodeTreeIcon class="text-blue-800" />
+										<span class="font-bebas">Terms & Conditions</span>
+									</a>
+								</li>
+								<li>
+									<a href="/privacy-policy">
+										<PrivacyIcon class="text-blue-800" />
+										<span class="font-bebas">Privacy Policy</span>
+									</a>
+								</li>
+							</ul>
+						</nav>
+					</div>
+					<a href="https://cassiebrock.com/blue-ring-octopus/" target="_blank">
+						<img
+							alt="Blue Ring Octopus Illustration by Cassie Brock"
+							src="https://cdn.shopify.com/s/files/1/0518/4241/6818/files/blue-ring-octopus-illustration.png?v=1726630393"
+							class="w-32"
+						/>
+					</a>
 				</div>
-				<a href="https://cassiebrock.com/blue-ring-octopus/" target="_blank">
-					<img
-						alt="Blue Ring Octopus Illustration by Cassie Brock"
-						src="https://cdn.shopify.com/s/files/1/0518/4241/6818/files/blue-ring-octopus-illustration.png?v=1726630393"
-						class="h-1/2"
-					/>
-				</a>
+				<div class="col-span-2 max-h-fit backdrop-blur-md">
+					<div class="border-t border-white/90"></div>
+					<p class="my-2 py-3 text-center font-folks text-xs tracking-wider text-white/90">
+						Copyright © 2024 Wild SEO. All Rights Reserved.
+					</p>
+				</div>
 			</div>
-			<div></div>
-			<div></div>
-			<div class="col-span-2">
-				<div class="mx-auto w-5/6 border-t border-white/60"></div>
-				<p class="my-2 text-center text-xs text-white/60">
-					Copyright © 2024 Wild SEO. All Rights Reserved.
-				</p>
-			</div>
-		</div>
+		</section>
 	</div>
 
 	<!-- For mobile -->
