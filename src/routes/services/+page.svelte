@@ -10,13 +10,21 @@
 	import detailServices from './detailServices.js';
 	import RotatingService from './RotatingService.svelte';
 	import MiniContactUs from '../MiniContactUs.svelte';
+	import { TabGroup, Tab, TabAnchor } from '@skeletonlabs/skeleton';
+	import { fade } from 'svelte/transition';
 
 	export let form;
+
+	let Ringgit = Intl.NumberFormat('en-MY', { style: 'currency', currency: 'MYR' });
+
+	let tabSetController = { 'andean-bear': 0, 'pygmy-marmoset': 0, 'gray-heron': 0 };
 </script>
 
-<svelte:head></svelte:head>
+<svelte:head>
+	<script async src="https://js.stripe.com/v3/pricing-table.js"></script>
+</svelte:head>
 
-<div class="w-full">
+<div class="w-screen">
 	<section class="grid shadow-lg lg:!grid-cols-2">
 		<div
 			class="order-last border-r-0 border-t border-black bg-wild-darkgreen text-white lg:!order-first lg:!border-r lg:!border-t-0"
@@ -73,7 +81,7 @@
 					<li class="text-black">Services</li>
 				</ol>
 			</div>
-			<section>
+			<section class="overflow-clip">
 				<div class="my-3 lg:!m-4">
 					<div class="grid grid-cols-3 divide-x-2 divide-wild-brown/30">
 						<a href="#gray-heron">
@@ -103,8 +111,8 @@
 					</div>
 				</div>
 				<div class="bg-wild-brown/90">
-					<p class="px-4 py-2 text-end font-courier text-sm text-white/90">
-						Post-SEO, guaranteed results within <span class="underline underline-offset-4"
+					<p class="px-4 py-2 text-end font-courier text-xs text-white/90 md:text-sm">
+						Post-SEO, ranking results within <span class="underline underline-offset-4"
 							>14 days</span
 						>*
 					</p>
@@ -113,10 +121,13 @@
 		</div>
 	</section>
 
-	<div class="mb-4 grid grid-cols-1 gap-2 bg-black/90 py-4 lg:!gap-4">
+	<div
+		class="mb-4 grid grid-cols-1 gap-0 bg-black/80 py-2 md:gap-2 md:bg-black/90 md:py-4 lg:!gap-4"
+	>
 		{#each detailServices as { name, titleType, roadmapItems, finishedProductItems, animalId, animal, packageHighlight, imgUrl, imgAlt, imgSrc, price, hours, credit }}
 			<div
-				class="group grid scale-95 rounded-md border border-black shadow-md transition-all duration-[380ms] ease-in hover:rounded-lg hover:border-2 hover:shadow-xl md:grid-cols-2 lg:!scale-100 lg:!rounded-none hover:lg:!scale-[.965]"
+				class="group grid scale-95 overflow-clip rounded-md border border-black shadow-md transition-all duration-[380ms] ease-in hover:rounded-lg hover:border-2 hover:shadow-xl md:grid-cols-2 lg:!scale-100 lg:!rounded-none hover:lg:!scale-[.965]"
+				transition:fade
 				id={animalId}
 			>
 				<div class="relative border-r-2 border-black">
@@ -166,7 +177,7 @@
 				<div class="card flex h-full w-full flex-col justify-between border-b bg-white">
 					<header class="card-header">
 						<div>
-							<div class="flex items-center justify-between">
+							<div class="flex items-center justify-between gap-6">
 								<p class="font-platNomor text-2xl md:text-4xl">
 									{name}
 									<span class="text-sm tracking-widest text-wild-darkgreen opacity-90">PACKAGE</span
@@ -177,86 +188,109 @@
 								</p>
 							</div>
 							<div class="my-2 border-t border-dashed border-wild-brown"></div>
-							<div class="flex flex-col justify-between gap-6 lg:!flex-row lg:!gap-1">
-								<section>
-									{#if titleType.keywordForageTitle}
-										<p class="font-akira text-base">
-											SEO Boost <LightningIcon
-												class="inline text-amber-500 transition-all hover:-skew-y-12 hover:scale-110"
-											/> Roadmap
-										</p>
-									{/if}
-									{#if titleType.siteAuditTitle}
-										<p class="font-akira text-base">
-											Untangled Site <YarnIcon class="inline text-pink-500" /> Roadmap
-										</p>
-									{/if}
-									{#if titleType.heronAnalysisTitle}
-										<p class="font-akira text-base">
-											Find New Horizons <SunriseIcon class="inline text-amber-500" /> Roadmap
-										</p>
-									{/if}
-									<div class="my-2"></div>
-									<ul class="rightArrowList list-inside">
-										{#each roadmapItems as { item, hours, hour, minutes, showGoogleMeetIcon, showSemrushIcon }}
-											<li>
-												<div class="ml-2 inline-block max-h-fit gap-2 text-sm">
-													{#if hours}
-														<span class="font-semibold">{hours} hours+</span>
-													{/if}
-													{#if hour}
-														<span class="font-semibold">{hour} hour</span>
-													{/if}
-													{#if minutes}
-														<span class="font-semibold">{minutes} mins</span>
-													{/if}
-													<p class="inline leading-[2]">{item}</p>
-													{#if showGoogleMeetIcon}
-														<GoogleMeetIcon
-															class="mb-[3px] ml-1 inline h-3 transition-all hover:-rotate-12 hover:scale-125"
-														/>
-													{/if}
-													{#if showSemrushIcon}
-														<SemrushIcon
-															class="mb-[3px] ml-1 inline h-5 text-[#ff642d] transition-all hover:rotate-12 hover:scale-125"
-														/>
-													{/if}
-												</div>
-											</li>
-										{/each}
-									</ul>
-								</section>
-								<section class="mb-6 text-end lg:!mb-0">
-									<p
-										class="relative font-akira text-base before:absolute before:-bottom-1 before:right-0 before:h-[0.15rem] before:w-full before:origin-left before:scale-x-0 before:rounded-full before:bg-wild-funblue before:transition-transform before:duration-500 before:ease-in-out group-hover:before:origin-right group-hover:before:scale-x-100"
-									>
-										What's Included
-									</p>
-									<div class="my-2"></div>
-									<div class="text-sm leading-8 lg:!leading-10">
-										{#each finishedProductItems as { item, number }}
-											<p class="capitalize">
-												<span class="font-semibold lowercase">{number}x </span>
-												{item}
+							<TabGroup>
+								<Tab bind:group={tabSetController[`${animalId}`]} name="roadmap" value={0}>
+									<p class="font-bebas text-sm tracking-wide md:text-base">ROADMAP</p>
+								</Tab>
+								<Tab bind:group={tabSetController[`${animalId}`]} name="includedItems" value={1}>
+									<p class="font-bebas text-sm tracking-wide md:text-base">WHAT'S INCLUDED</p>
+								</Tab>
+								<svelte:fragment slot="panel">
+									{#if tabSetController[`${animalId}`] === 0}
+										<section class="mb-2 h-fit overflow-y-scroll rounded-md bg-wild-natural/40 p-4">
+											{#if titleType.keywordForageTitle}
+												<p
+													class="relative font-akira text-base before:absolute before:-bottom-1 before:left-0 before:h-[0.15rem] before:w-1/2 before:origin-left before:scale-x-0 before:rounded-full before:bg-amber-500/90 before:transition-transform before:duration-500 before:ease-in-out group-hover:before:origin-right group-hover:before:scale-x-100"
+												>
+													SEO Boost <LightningIcon
+														class="inline text-amber-500 transition-all hover:-skew-y-12 hover:scale-110"
+													/> Roadmap
+												</p>
+											{/if}
+											{#if titleType.siteAuditTitle}
+												<p
+													class="relative font-akira text-base before:absolute before:-bottom-1 before:left-0 before:h-[0.15rem] before:w-1/2 before:origin-left before:scale-x-0 before:rounded-full before:bg-pink-400/90 before:transition-transform before:duration-500 before:ease-in-out group-hover:before:origin-right group-hover:before:scale-x-100"
+												>
+													Untangled Site <YarnIcon class="inline text-pink-500" /> Roadmap
+												</p>
+											{/if}
+											{#if titleType.heronAnalysisTitle}
+												<p
+													class="relative font-akira text-base before:absolute before:-bottom-1 before:left-0 before:h-[0.15rem] before:w-1/2 before:origin-left before:scale-x-0 before:rounded-full before:bg-yellow-400/90 before:transition-transform before:duration-500 before:ease-in-out group-hover:before:origin-right group-hover:before:scale-x-100"
+												>
+													Find New Horizons <SunriseIcon class="inline text-amber-500" /> Roadmap
+												</p>
+											{/if}
+											<div class="my-3"></div>
+											<ul class="rightArrowList list-inside">
+												{#each roadmapItems as { item, hours, hour, minutes, showGoogleMeetIcon, showSemrushIcon }}
+													<li>
+														<div class="ml-2 inline-block max-h-fit gap-2 text-sm">
+															{#if hours}
+																<span class="font-semibold">{hours} hours+</span>
+															{/if}
+															{#if hour}
+																<span class="font-semibold">{hour} hour</span>
+															{/if}
+															{#if minutes}
+																<span class="font-semibold">{minutes} mins</span>
+															{/if}
+															<p class="inline leading-[2]">{item}</p>
+															{#if showGoogleMeetIcon}
+																<GoogleMeetIcon
+																	class="mb-[3px] ml-1 inline h-3 transition-all hover:-rotate-12 hover:scale-125"
+																/>
+															{/if}
+															{#if showSemrushIcon}
+																<SemrushIcon
+																	class="mb-[3px] ml-1 inline h-5 text-[#ff642d] transition-all hover:rotate-12 hover:scale-125"
+																/>
+															{/if}
+														</div>
+													</li>
+												{/each}
+											</ul>
+										</section>
+									{:else if tabSetController[`${animalId}`] === 1}
+										<section class="mb-2 rounded-md bg-wild-seriousblue/20 p-4 text-start lg:!mb-0">
+											<p
+												class="relative font-akira text-base before:absolute before:-bottom-1 before:left-0 before:h-[0.15rem] before:w-1/2 before:origin-left before:scale-x-0 before:rounded-full before:bg-wild-funblue before:transition-transform before:duration-500 before:ease-in-out group-hover:before:origin-right group-hover:before:scale-x-100"
+											>
+												What's Included
 											</p>
-										{/each}
-									</div>
-								</section>
-							</div>
+											<div class="my-2"></div>
+											<div
+												class="grid grid-cols-2 items-center gap-3 text-sm leading-8 lg:!leading-10"
+											>
+												{#each finishedProductItems as { item, number }}
+													<p class="col-span-1 lowercase">
+														<span class="font-semibold lowercase">{number}x </span>
+														{item}
+													</p>
+												{/each}
+											</div>
+										</section>
+									{/if}
+								</svelte:fragment>
+							</TabGroup>
 						</div>
 					</header>
-					<footer class="card-footer flex items-center justify-between">
+					<footer
+						class="card-footer mt-4 flex flex-col items-center justify-between gap-4 md:flex-row"
+					>
 						<button
-							class="w-1/2 border-2 border-wild-funblue p-2 font-bebas text-2xl tracking-wider text-wild-funblue transition-all duration-150 ease-in hover:border-l-4 hover:border-r-4 hover:border-blue-300 hover:border-b-blue-400 hover:border-t-blue-400 hover:bg-blue-600 hover:text-white hover:shadow-md"
+							class="w-full border-2 border-wild-funblue p-2 font-bebas text-2xl tracking-wider text-wild-funblue transition-all duration-150 ease-in hover:border-l-4 hover:border-r-4 hover:border-blue-300 hover:border-b-blue-400 hover:border-t-blue-400 hover:bg-blue-600 hover:text-white hover:shadow-md md:w-1/2"
 						>
 							REQUEST SEO
 						</button>
 						<div class="text-end">
-							<p class="mb-1">approx. <span class="font-semibold">{hours}</span> hours</p>
+							<p class="mb-1 font-platNomor">
+								approx. <span class="font-semibold">{hours}</span> hours
+							</p>
 							<p
-								class="font-platNomor text-4xl font-bold underline decoration-wild-green underline-offset-[5px]"
+								class="font-platNomor text-2xl font-bold tracking-wide underline decoration-wild-green underline-offset-[5px] md:text-3xl"
 							>
-								{price * hours} MYR
+								{Ringgit.format(price * hours)}
 							</p>
 						</div>
 					</footer>
@@ -266,21 +300,19 @@
 	</div>
 
 	<section>
+		<MiniContactUs {form} />
+	</section>
+
+	<section>
 		<div class="mx-auto p-4">
 			<div id="pricing">
-				<script async src="https://js.stripe.com/v3/pricing-table.js"></script>
 				<stripe-pricing-table
-					style="width:100%!important"
-					pricing-table-id="prctbl_1Q4QSaJAkIp2pqyTXCKOHM9i"
+					pricing-table-id="prctbl_1Q7a2uJAkIp2pqyTXR2N1Ci3"
 					publishable-key="pk_live_51PtWWMJAkIp2pqyT6pPUoneJCH4Y7WB9WbfKEBJc8oXvnzgXv5rGsYIuOx3Iqdy62I3liN0IwM1XR8bvcUb0UIoR00Pv0KwhTx"
 				>
 				</stripe-pricing-table>
 			</div>
 		</div>
-	</section>
-
-	<section>
-		<MiniContactUs {form} />
 	</section>
 </div>
 

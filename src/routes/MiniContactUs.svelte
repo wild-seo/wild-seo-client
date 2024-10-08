@@ -33,7 +33,7 @@
 </script>
 
 <section
-	class="grid md:animate-gradient lg:!grid-cols-2"
+	class="grid animate-gradient overflow-clip lg:!grid-cols-2"
 	style="background-image: url('https://imagedelivery.net/usYhDnhJIpKLEgUtJMbggw/51c6c5c1-3323-42ce-c425-a4adf9f49900/public')"
 >
 	<div class="flex flex-col items-center justify-center pb-0 pt-12 text-white md:pb-20 md:pt-20">
@@ -141,7 +141,7 @@
 	<div
 		class="m-5 animate-gradient rounded-xl bg-gradient-to-t from-wild-mossgreen/40 via-wild-funblue/90 to-blue-950 py-6 shadow-xl backdrop-blur-sm md:py-0"
 	>
-		<section class="grid h-full grid-cols-3 gap-3">
+		<section class="grid h-full grid-cols-3 gap-3 overflow-clip">
 			<!-- First ROW -->
 			<div
 				class="scaleAnimation max-h-fit max-w-fit place-self-end"

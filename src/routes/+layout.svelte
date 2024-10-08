@@ -10,10 +10,7 @@
 	import SEOIcon from '~icons/icon-park-solid/seo';
 	// import SunIcon from '~icons/fluent-emoji-high-contrast/sun-with-face';
 	import MoonIcon from '~icons/ri/moon-clear-fill';
-	import HeartIcon from '~icons/pixelarticons/heart';
-	import PixelBugIcon from '~icons/pixelarticons/bug';
-	import PrivacyIcon from '~icons/fluent-mdl2/lifesaver-lock';
-	import CodeTreeIcon from '~icons/grommet-icons/tree';
+	import Icon from '@iconify/svelte';
 	import EmailIcon from '~icons/mdi/email-edit';
 	import PhoneIcon from '~icons/solar/call-chat-bold';
 	// Skeleton
@@ -93,7 +90,7 @@
 					class="rounded-md text-wild-natural transition-all hover:text-white"
 				>
 					<svelte:fragment slot="lead">
-						<HeartIcon class="mx-auto mb-1 h-8 w-8" />
+						<Icon icon="pixelarticons:heart" class="mx-auto mb-1 h-8 w-8" />
 					</svelte:fragment>
 					<span class="font-bebas text-base">About Us</span>
 				</AppRailAnchor>
@@ -107,7 +104,7 @@
 					class="rounded-md text-wild-natural transition-all hover:text-white"
 				>
 					<svelte:fragment slot="lead">
-						<PixelBugIcon class="mx-auto mb-1 h-8 w-8" />
+						<Icon icon="pixelarticons:bug" class="mx-auto mb-1 h-8 w-8" />
 					</svelte:fragment>
 					<span class="font-bebas text-base">Contact Us</span>
 				</AppRailAnchor>
@@ -138,7 +135,7 @@
 
 	<!-- FOOTER SECTION -->
 	<div
-		class="bottom-0 left-0 w-full p-6"
+		class="bottom-0 left-0 w-full px-3 py-6 md:px-6"
 		style="background-image: url('https://imagedelivery.net/usYhDnhJIpKLEgUtJMbggw/25435a09-fc2a-4335-4728-c593b36a0900/public');background-size:cover"
 	>
 		<section
@@ -185,28 +182,49 @@
 					>
 						<nav class="list-nav">
 							<ul class="">
-								<li class="text-blue-800">
+								<li>
+									<a href="/">
+										<Icon
+											icon="ph:tree-fill"
+											class="h-5 w-5 rounded-full bg-white/90 p-0.5 text-wild-seriousblue"
+										/>
+										<span class="font-bebas">Home</span>
+									</a>
+								</li>
+								<li>
 									<a href="/about-us">
-										<HeartIcon class="text-blue-800" />
-										<span class="font-bebas">About Us</span>
+										<Icon
+											icon="pixelarticons:heart"
+											class="h-5 w-5 rounded-full bg-white/90 p-0.5 text-wild-seriousblue"
+										/>
+										<span class="font-bebas">About Wild SEO</span>
 									</a>
 								</li>
 								<li>
 									<a href="/contact-us">
-										<PixelBugIcon class="text-blue-800" />
+										<Icon
+											icon="pixelarticons:bug"
+											class="h-5 w-5 rounded-full bg-white/90 p-0.5 text-wild-seriousblue"
+										/>
 										<span class="font-bebas">Contact Us</span>
 									</a>
 								</li>
 								<li>
 									<a href="/terms-and-conditions">
-										<CodeTreeIcon class="text-blue-800" />
+										<Icon
+											icon="grommet-icons:tree"
+											class="h-5 w-5 rounded-full bg-white/90 p-0.5 text-wild-seriousblue"
+										/>
 										<span class="font-bebas">Terms & Conditions</span>
 									</a>
 								</li>
 								<li>
 									<a href="/privacy-policy">
-										<PrivacyIcon class="text-blue-800" />
-										<span class="font-bebas">Privacy Policy</span>
+										<Icon
+											icon="fluent-mdl2:lifesaver-lock"
+											class="h-5 w-5 rounded-full bg-white/90 p-0.5 text-wild-seriousblue"
+										/>
+										<span class="font-bebas hover:underline">Privacy Policy</span>
 									</a>
 								</li>
 							</ul>
@@ -232,24 +250,52 @@
 
 	<!-- For mobile -->
 	<AppBar
-		background="bg-white/20"
+		background="bg-wild-darkgreen/90"
 		gridColumns="grid-cols-3"
-		class="backdrop-blur-safari sticky bottom-0 left-0 grid h-fit w-screen backdrop-blur-xl lg:!hidden"
+		gap="gap-2"
+		padding=""
+		slotLead="items-start justify-evenly gap-2"
+		slotTrail="justify-end items-end"
+		class="sticky bottom-0 left-0 z-50 grid h-fit w-screen backdrop-blur-md lg:!hidden"
 	>
 		<svelte:fragment slot="lead">
-			<div class="flex flex-col">
-				<HomeIcon class="mx-auto h-6 w-6 text-white" />
-				<p class="mt-2 text-center font-bebas text-xs font-medium text-white">Home</p>
-			</div>
+			<a
+				href="/about-us"
+				class="flex flex-col bg-black/20 p-2"
+				class:selectedMobileMenuItem={$page.url.pathname === '/about-us'}
+			>
+				<Icon icon="pixelarticons:heart" class="mx-auto h-6 w-6 text-white" />
+				<p class="mt-2 text-center font-bebas text-xs font-medium text-white">About Us</p>
+			</a>
+			<a
+				href="/services"
+				class="flex flex-col bg-black/20 p-2"
+				class:selectedMobileMenuItem={$page.url.pathname === '/services'}
+			>
+				<Icon icon="icon-park-solid:seo" class="mx-auto h-6 w-6 text-white" />
+				<p class="mt-2 text-center font-bebas text-xs font-medium text-white">Services</p>
+			</a>
 		</svelte:fragment>
 
-		<img src={coloredLogo} alt="Wild SEO logo colored" class="mx-auto" />
+		<div class="px-2">
+			<a href="/">
+				<img src={coloredLogo} alt="Wild SEO logo colored" class=" mx-auto" />
+			</a>
+		</div>
 
 		<svelte:fragment slot="trail">
-			<div class="flex flex-col">
-				<SEOIcon class="mx-auto h-6 w-6 text-white" />
-				<p class="mt-2 text-center font-bebas text-xs font-medium text-white">Services</p>
-			</div>
+			<a
+				href="/contact-us"
+				class="flex flex-col bg-black/20 p-2"
+				class:selectedMobileMenuItem={$page.url.pathname === '/contact-us'}
+			>
+				<Icon icon="pixelarticons:bug" class="mx-auto h-6 w-6 text-white" />
+				<p class="mt-2 text-center font-bebas text-xs font-medium text-white">Contact</p>
+			</a>
+			<a href="/services" class="flex flex-col bg-black/20 p-2">
+				<Icon icon="skill-icons:linkedin" class="mx-auto h-6 w-6 text-white" />
+				<p class="mt-2 text-center font-bebas text-xs font-medium text-white">Linkedin</p>
+			</a>
 		</svelte:fragment>
 	</AppBar>
 </div>
@@ -260,5 +306,8 @@
 		letter-spacing: 0.2em;
 		color: white;
 		font-weight: 400;
+	}
+	.selectedMobileMenuItem {
+		background: #6c8c21;
 	}
 </style>
