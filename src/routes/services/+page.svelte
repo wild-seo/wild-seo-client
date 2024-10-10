@@ -25,8 +25,39 @@
 	<title>SEO Packages for Website Traffic | Wild SEO</title>
 	<meta
 		name="description"
-		content="Contact us with your business details to get started ranking your website higher on Google. Guidelines on how an SEO project with Wild SEO will function."
+		content="Explore Wild SEO packages to elevate your website's Google rankings and attract new customers. Learn how our tailored solutions meet your unique business needs."
 	/>
+	<meta property="og:type" content="article" />
+	<meta property="og:title" content="SEO Packages for Organic Website Growth | Wild SEO" />
+	<meta property="og:url" content="https://wild-seo.com/services" />
+	<meta
+		property="og:image"
+		content="https://cdn.shopify.com/s/files/1/0518/4241/6818/files/andean-bear-services.png?v=1726475196"
+	/>
+	<meta
+		property="og:description"
+		content="Explore Wild SEO packages to elevate your website's Google rankings and attract new customers. Learn how our tailored solutions meet your unique business needs."
+	/>
+	<script type="application/ld+json">
+		{
+			"@context": "https://schema.org/",
+			"@type": "BreadcrumbList",
+			"itemListElement": [
+				{
+					"@type": "ListItem",
+					"position": 1,
+					"name": "Home",
+					"item": "https://wild-seo.com"
+				},
+				{
+					"@type": "ListItem",
+					"position": 2,
+					"name": "Services",
+					"item": "https://wild-seo.com/services"
+				}
+			]
+		}
+	</script>
 </svelte:head>
 
 <div class="w-screen">
@@ -37,7 +68,7 @@
 			<div>
 				<div>
 					<div class="flex items-center justify-between px-6 pt-6">
-						<p class="font-bebas text-3xl tracking-wide lg:!text-4xl">SEO SERVICES</p>
+						<h1 class="font-bebas text-3xl tracking-wide lg:!text-4xl">SEO SERVICES</h1>
 
 						<div class="flex gap-2">
 							<Toolbox class="text-xl lg:!text-3xl" />
@@ -49,13 +80,13 @@
 					<div
 						class="animate-gradient bg-gradient-to-r from-wild-green/30 to-wild-green/60 px-6 py-3 font-folks tracking-wider"
 					>
-						<p class="leading-relaxed text-white/85">
-							Every package guarantees a <b>full-scale project</b> with code and UI/UX enhancements tailored
-							to your website.
-						</p>
-						<p class="mt-3 leading-relaxed tracking-wide text-white/85">
+						<h2 class="leading-relaxed text-white/85">
+							Every SEO package guarantees a <b>full-scale optimized website project</b> with code and
+							UI/UX enhancements tailored to your site.
+						</h2>
+						<h3 class="mt-3 leading-relaxed tracking-wide text-white/85">
 							<b>No paid advertising involved</b> - 100% code-driven solutions for organic SEO growth.
-						</p>
+						</h3>
 						<p class="mt-4 max-w-fit bg-black/80 px-2 py-1 text-sm">
 							Project basis. We do not accept monthly retainers.
 						</p>
@@ -116,11 +147,11 @@
 					</div>
 				</div>
 				<div class="bg-wild-brown/90">
-					<p class="px-4 py-2 text-end font-courier text-xs text-white/90 md:text-sm">
+					<h3 class="px-4 py-2 text-end font-courier text-xs text-white/90 md:text-sm">
 						Post-SEO, ranking results within <span class="underline underline-offset-4"
 							>14 days</span
 						>*
-					</p>
+					</h3>
 				</div>
 			</section>
 		</div>

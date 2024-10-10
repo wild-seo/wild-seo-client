@@ -81,6 +81,37 @@
 		name="description"
 		content="Contact us with your business details to get started ranking your website higher on Google. Guidelines on how an SEO project with Wild SEO will function."
 	/>
+	<meta property="og:type" content="article" />
+	<meta property="og:title" content="Page 1 on Google Starts Here | Contact Wild SEO" />
+	<meta property="og:url" content="https://wild-seo.com/contact-us" />
+	<meta
+		property="og:image"
+		content="https://imagedelivery.net/usYhDnhJIpKLEgUtJMbggw/b0d10f4e-7c6c-46f1-f7d3-6c213cc34f00/small"
+	/>
+	<meta
+		property="og:description"
+		content="Contact us with your business details to get started ranking your website higher on Google. Guidelines on how an SEO project with Wild SEO will function."
+	/>
+	<script type="application/ld+json">
+		{
+			"@context": "https://schema.org/",
+			"@type": "BreadcrumbList",
+			"itemListElement": [
+				{
+					"@type": "ListItem",
+					"position": 1,
+					"name": "Home",
+					"item": "https://wild-seo.com"
+				},
+				{
+					"@type": "ListItem",
+					"position": 2,
+					"name": "Contact Us",
+					"item": "https://wild-seo.com/contact-us"
+				}
+			]
+		}
+	</script>
 </svelte:head>
 
 <section class="no-scrollbar grid h-screen overflow-scroll lg:!grid-cols-2">
@@ -94,39 +125,51 @@
 				<div class="h-3 w-full bg-blue-800 bg-gradient-to-tr from-blue-950"></div>
 				<section class="px-8 pb-4 pt-6">
 					<div class="flex items-center justify-between">
-						<p class="font-bebas text-3xl tracking-wide text-white/90">How We Work:</p>
+						<h1 class="font-bebas text-3xl tracking-wide text-white/90">
+							How A Wild SEO Project Works:
+						</h1>
 						<QuestionMarkIcon class="h-6 w-6 text-white/90" />
 					</div>
 					<div class="font-folks tracking-wider text-white">
 						<ul class="workList my-2 ml-5 list-outside leading-loose">
 							<li>
-								You may purchase a <a
-									href="/services"
-									class="text-wild-green underline underline-offset-[1px]">package</a
-								>
-								to guarantee a project.
-							</li>
-							<li>Packages are ideal for <b>returning clients.</b></li>
-							<li>
-								For <b>first-timers</b>, please share details of your business with us!
-								<span class="opacity-95"
-									>This gives us a head start on your current website SEO, estimate hours, and plan
-									the <span class="italic">14-day</span> timeline.</span
-								>
+								<h4>
+									You may purchase a <a
+										href="/services"
+										class="text-wild-green underline underline-offset-[1px]">package</a
+									>
+									to guarantee a project.
+								</h4>
 							</li>
 							<li>
-								You may also email <a
-									href="mailto:hello@wild-seo.com"
-									class="text-wild-green underline underline-offset-[1px]">hello@wild-seo.com</a
-								>
-								for <b>custom pricing.</b>
+								<h4>
+									Packages are ideal for <b>returning clients.</b>
+								</h4>
+							</li>
+							<li>
+								<h4>
+									For <b>first-timers</b>, please share details of your business with us!
+									<span class="opacity-95"
+										>This gives us a head start on your current website SEO, estimate hours, and
+										plan the <span class="italic">14-day</span> timeline.</span
+									>
+								</h4>
+							</li>
+							<li>
+								<h4>
+									You may also email <a
+										href="mailto:hello@wild-seo.com"
+										class="text-wild-green underline underline-offset-[1px]">hello@wild-seo.com</a
+									>
+									for <b>custom pricing.</b>
+								</h4>
 							</li>
 						</ul>
 						<div class="my-3 w-2/3 border-t border-dashed border-white/70"></div>
-						<p class="my-2 font-courier text-sm tracking-wide">
+						<h2 class="my-2 font-courier text-sm tracking-wide">
 							Our packages are priced based on the minimum research & implementation hours required
-							for optimization.
-						</p>
+							for search engine optimization.
+						</h2>
 					</div>
 					<div class="mt-6 flex items-center justify-between">
 						<p class="font-bebas text-3xl tracking-wide text-white/90">Checklist:</p>
@@ -134,10 +177,14 @@
 					</div>
 					<div class="font-folks tracking-wider text-white">
 						<ul class="checkList my-2 list-inside list-disc leading-loose">
-							<li>Your own live website</li>
-							<li>Access to your website's backend</li>
+							<li><h3 class="inline">Your own live website</h3></li>
 							<li>
-								Availability for video calls <div class="inline p-2"></div>
+								<h3 class="inline">Access to your website's backend</h3>
+							</li>
+							<li>
+								<h3 class="inline">
+									Availability for video calls <div class="inline p-2"></div>
+								</h3>
 							</li>
 						</ul>
 						<div class="my-3 w-2/3 border-t border-dashed border-white/70"></div>
@@ -147,7 +194,7 @@
 					</div>
 				</section>
 				<div class="mb-1 mt-4 flex items-center justify-between px-8">
-					<p class="font-bebas text-2xl tracking-wider text-white">Free stuff to note :</p>
+					<h3 class="font-bebas text-2xl tracking-wider text-white">Free SEO stuff to note :</h3>
 					<TurtleIcon
 						class="h-8 w-8 transition-all duration-500 hover:-translate-x-1 hover:-translate-y-2 hover:-rotate-3 hover:scale-110"
 					/>

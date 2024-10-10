@@ -91,8 +91,68 @@
 	<title>Wild SEO | Rank Your Website Higher On Google</title>
 	<meta
 		name="description"
-		content="A boutique SEO agency specializing in on-page and technical SEO. Based in Kuala Lumpur, Malaysia. Rank your website higher on Google search result rankings with our SEO services."
+		content="A boutique SEO agency specializing in on-page and technical SEO - based in Kuala Lumpur, Malaysia. Rank your website higher on Google search result rankings with our affordable SEO services."
 	/>
+	<meta property="og:type" content="article" />
+	<meta property="og:title" content="Wild SEO | Rank Your Website Higher On Google" />
+	<meta property="og:url" content="https://wild-seo.com" />
+	<meta
+		property="og:image"
+		content="https://cdn.shopify.com/s/files/1/0518/4241/6818/files/Camping_Illustration.png?v=1726236736"
+	/>
+	<meta
+		property="og:description"
+		content="A boutique SEO agency specializing in on-page and technical SEO - based in Kuala Lumpur, Malaysia. Rank your website higher on Google search result rankings with our affordable SEO services."
+	/>
+	<script type="application/ld+json">
+		{
+			"@context": "https://schema.org/",
+			"@type": "WebSite",
+			"name": "Wild SEO",
+			"url": "https://wild-seo.com"
+		}
+	</script>
+	<script type="application/ld+json">
+		{
+			"@context": "https://schema.org",
+			"@type": "Organization",
+			"name": "Wild SEO",
+			"url": "https://wild-seo.com",
+			"logo": "https://imagedelivery.net/usYhDnhJIpKLEgUtJMbggw/392da165-d941-4467-8bfa-f093308f8200/small",
+			"sameAs": ["https://www.wild-seo.com", "https://www.linkedin.com/company/wild-seo"]
+		}
+	</script>
+	<script type="application/ld+json">
+		{
+			"@context": "https://schema.org",
+			"@type": "ProfessionalService",
+			"name": "Wild SEO",
+			"image": "https://cdn.shopify.com/s/files/1/0518/4241/6818/files/Camping_Illustration.png?v=1726236736",
+			"@id": "",
+			"url": "https://wild-seo.com",
+			"telephone": "0123429663",
+			"priceRange": "$$",
+			"address": {
+				"@type": "PostalAddress",
+				"streetAddress": "Jalan Kiara 3",
+				"addressLocality": "Mont Kiara",
+				"postalCode": "50480",
+				"addressCountry": "MY"
+			},
+			"geo": {
+				"@type": "GeoCoordinates",
+				"latitude": 3.1703493,
+				"longitude": 101.6492842
+			},
+			"openingHoursSpecification": {
+				"@type": "OpeningHoursSpecification",
+				"dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+				"opens": "00:00",
+				"closes": "23:59"
+			},
+			"sameAs": ["https://www.linkedin.com/company/wild-seo", "https://www.wild-seo.com"]
+		}
+	</script>
 </svelte:head>
 
 <div class="overflow-clip">
@@ -136,9 +196,9 @@
 						/>
 					</div>
 				</h1>
-				<p class="mt-2 font-platNomor text-sm uppercase tracking-widest text-black/70 lg:!text-xl">
+				<h2 class="mt-2 font-platNomor text-sm uppercase tracking-widest text-black/70 lg:!text-xl">
 					Rank your website higher on Google
-				</p>
+				</h2>
 				<div class="mb-3 mt-2 border-t border-wild-beige"></div>
 				<div class="grid grid-cols-1">
 					{#if form?.warning}
@@ -252,9 +312,9 @@
 			<!-- END -->
 			<div class="mx-auto grid grid-flow-row gap-4 p-6 md:max-w-fit">
 				<section>
-					<p class="mb-1 font-courier text-xs tracking-wider text-white md:text-sm">
+					<h3 class="mb-1 font-courier text-xs tracking-wider text-white md:text-sm">
 						HOW CAN SEO HELP YOUR BUSINESS ?
-					</p>
+					</h3>
 					<div class="h-1 w-full border-b border-white/70"></div>
 				</section>
 				<p class="z-10 flex flex-wrap gap-1 text-xl font-bold text-white md:text-3xl">
@@ -297,7 +357,7 @@
 					<div class="mb-4 w-3/4 border border-dashed border-wild-brown"></div>
 					<div class="leading-[1.6] tracking-wide">
 						<div class="max-w-lg">
-							<p class="my-2">
+							<h4 class="my-2">
 								At <span class="inline-block font-scratchy text-3xl text-wild-darkgreen">
 									<img
 										src={LogoColoredShadow}
@@ -311,7 +371,7 @@
 									your customers]</span
 								><br />
 								is a crucial representation of your business.
-							</p>
+							</h4>
 							<p class="my-2">So, searching for it - should be a breeze 🍃</p>
 						</div>
 						<p
@@ -326,7 +386,7 @@
 								<FlowerIcon
 									class="text-pink-500 transition-all  md:text-wild-green group-hover:md:text-white"
 								/>
-								<p class="transition-all md:group-hover:text-wild-green">Page 1 on Google</p>
+								<h4 class="transition-all md:group-hover:text-wild-green">Page 1 on Google</h4>
 							</div>
 							<div
 								class="goalCard group flex items-center gap-2 capitalize transition-all hover:rounded-xl md:flex-col md:items-start md:rounded-lg md:bg-wild-darkgreen md:p-4 md:text-white md:shadow-md"
@@ -334,7 +394,9 @@
 								<FlowerIcon
 									class="text-pink-500 transition-all md:text-wild-green group-hover:md:text-white"
 								/>
-								<p class="transition-all md:group-hover:text-wild-green">On niche search spaces</p>
+								<h4 class="transition-all md:group-hover:text-wild-green">
+									On niche search spaces
+								</h4>
 							</div>
 							<div
 								class="goalCard group flex items-center gap-2 capitalize transition-all hover:rounded-xl md:flex-col md:items-start md:rounded-lg md:bg-wild-darkgreen md:p-4 md:text-white md:shadow-md"
@@ -342,7 +404,7 @@
 								<FlowerIcon
 									class="text-pink-500 transition-all md:text-wild-green group-hover:md:text-white"
 								/>
-								<p class="transition-all md:group-hover:text-wild-green">Grow with New Trends</p>
+								<h4 class="transition-all md:group-hover:text-wild-green">Grow with New Trends</h4>
 							</div>
 						</div>
 						<section class="mt-4 flex gap-6">
@@ -434,13 +496,13 @@
 					</div>
 				</section>
 			</div>
-			<p class="font-courier text-xs md:text-sm">
+			<h5 class="font-courier text-xs md:text-sm">
 				<b>TL;DR</b> - We tweak your site's wording to match your brand's vibe, fix any broken links
 				or search issues, and make sure curious searchers can easily
 				<span class="font-semibold underline decoration-double underline-offset-4">
 					find you 👀</span
 				>
-			</p>
+			</h5>
 		</div>
 	</section>
 	<!-- SEO Example -->
@@ -451,11 +513,11 @@
 					<p class="font-courier text-sm md:text-base">How does your site look on Google ?</p>
 					<div class="mx-auto mb-3 mt-1 w-4/6 border-b border-wild-brown"></div>
 					<p class="font-akira text-lg text-black md:text-2xl">Suki owns a wet market.</p>
-					<p
+					<h5
 						class="mx-auto mb-2 mt-1 max-w-xl text-center font-scratchy text-xl italic tracking-wider text-wild-funblue md:text-3xl"
 					>
 						Will her site show up for every 'market' search ?
-					</p>
+					</h5>
 				</div>
 			</div>
 			<div class="grid grid-cols-2 items-stretch">

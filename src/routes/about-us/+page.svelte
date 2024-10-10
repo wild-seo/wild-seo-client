@@ -45,6 +45,37 @@
 		name="description"
 		content="Get a glimpse on who runs Wild SEO and why we don't compete with the highest ranked keywords - tl;dr it's a costly approach. We focus on niche keywords, rising searches, and long-tail search queries."
 	/>
+	<meta property="og:type" content="article" />
+	<meta property="og:title" content="Not the Best SEO Agency | Wild SEO" />
+	<meta property="og:url" content="https://wild-seo.com/about-us" />
+	<meta
+		property="og:image"
+		content="https://imagedelivery.net/usYhDnhJIpKLEgUtJMbggw/f79c910e-5592-491f-bc43-0d94bc864e00/small"
+	/>
+	<meta
+		property="og:description"
+		content="Get a glimpse on who runs Wild SEO and why we don't compete with the highest ranked keywords - tl;dr it's a costly approach. We focus on niche keywords, rising searches, and long-tail search queries."
+	/>
+	<script type="application/ld+json">
+		{
+			"@context": "https://schema.org/",
+			"@type": "BreadcrumbList",
+			"itemListElement": [
+				{
+					"@type": "ListItem",
+					"position": 1,
+					"name": "Home",
+					"item": "https://wild-seo.com"
+				},
+				{
+					"@type": "ListItem",
+					"position": 2,
+					"name": "About Us",
+					"item": "https://wild-seo.com/about-us"
+				}
+			]
+		}
+	</script>
 </svelte:head>
 
 <div class="w-screen overflow-clip lg:!grid lg:!grid-cols-6">
@@ -112,24 +143,24 @@
 					</div>
 					<section>
 						<div class="flex items-center justify-between gap-4 md:justify-end">
-							<p class="font-bebas text-3xl tracking-wide">Your SEO partner</p>
+							<h1 class="font-bebas text-3xl tracking-wide">Your SEO partner</h1>
 							<HammerIcon class="h-8 w-8 text-wild-beige" />
 						</div>
-						<p class="text-nowrap font-platNomor text-xl tracking-wide opacity-90 md:text-2xl">
+						<h2 class="text-nowrap font-platNomor text-xl tracking-wide opacity-90 md:text-2xl">
 							On-page & Technical Specialisation
-						</p>
+						</h2>
 					</section>
 					<div class="mt-2 w-full border-t border-dashed border-wild-beige/80"></div>
 					<div
 						class="px-2 py-6 font-folks text-base font-normal leading-relaxed tracking-wide md:px-4 md:py-4"
 					>
-						<p>
+						<h3>
 							We provide a boutique service focused on delivering quick, impactful <GoogleIcon
 								class="inline text-4xl"
 							/> search results that rise in rankings
 							<span class="ml-[1px] font-bebas !text-lg tracking-wider">fast</span>
 							and <span class="ml-[1px] font-bebas !text-lg tracking-wider">continue to grow.</span>
-						</p>
+						</h3>
 						<div class="grid">
 							<p
 								class="mb-1 mt-2 w-fit place-self-start bg-[#86c000]/80 px-2 py-1 font-bold text-white md:place-self-end"
@@ -137,9 +168,9 @@
 								exclusively on-page & technical SEO.
 							</p>
 						</div>
-						<p class="mt-2 opacity-80">
+						<h3 class="mt-2 opacity-80">
 							This means no off-page work like social media, backlink marketing, or guest posting.
-						</p>
+						</h3>
 					</div>
 				</div>
 			</div>
@@ -222,7 +253,7 @@
 										> {companyValue.value}
 									</p>
 								</div>
-								<p class="mb-3 p-4">{companyValue.message}</p>
+								<h4 class="mb-3 p-4">{companyValue.message}</h4>
 							</div>
 						{/each}
 					</div>
@@ -318,14 +349,14 @@
 			</div>
 			<div class="p-6 pt-0">
 				<p class="font-bebas text-3xl font-bold tracking-wide">Grow organically.</p>
-				<p class="font-folks tracking-wide">
+				<h3 class="font-folks tracking-wide">
 					No-cost, invisible but crucial code elements like schemas & OGs, often missed by no-code
 					business owners, can <span
 						class="!text-base underline decoration-wild-beige underline-offset-2"
 					>
 						significantly boost website rankings
 					</span>
-				</p>
+				</h3>
 			</div>
 			<div class="grid grid-cols-3">
 				<!-- Heron -->
