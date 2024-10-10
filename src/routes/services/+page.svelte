@@ -22,6 +22,11 @@
 
 <svelte:head>
 	<script async src="https://js.stripe.com/v3/pricing-table.js"></script>
+	<title>SEO Packages for Website Traffic | Wild SEO</title>
+	<meta
+		name="description"
+		content="Contact us with your business details to get started ranking your website higher on Google. Guidelines on how an SEO project with Wild SEO will function."
+	/>
 </svelte:head>
 
 <div class="w-screen">
@@ -121,10 +126,8 @@
 		</div>
 	</section>
 
-	<div
-		class="mb-4 grid grid-cols-1 gap-0 bg-black/80 py-2 md:gap-2 md:bg-black/90 md:py-4 lg:!gap-4"
-	>
-		{#each detailServices as { name, titleType, roadmapItems, finishedProductItems, animalId, animal, packageHighlight, imgUrl, imgAlt, imgSrc, price, hours, credit }}
+	<div class="grid grid-cols-1 gap-0 bg-black/80 py-2 md:gap-2 md:bg-black/90 md:py-4 lg:!gap-4">
+		{#each detailServices as { name, titleType, roadmapItems, finishedProductItems, animalId, animal, packageHighlight, imgUrl, imgAlt, imgSrc, price, paymentLink, hours, credit }}
 			<div
 				class="group grid scale-95 overflow-clip rounded-md border border-black shadow-md transition-all duration-[380ms] ease-in hover:rounded-lg hover:border-2 hover:shadow-xl md:grid-cols-2 lg:!scale-100 lg:!rounded-none hover:lg:!scale-[.965]"
 				transition:fade
@@ -221,7 +224,7 @@
 													Find New Horizons <SunriseIcon class="inline text-amber-500" /> Roadmap
 												</p>
 											{/if}
-											<div class="my-3"></div>
+											<div class="mb-4"></div>
 											<ul class="rightArrowList list-inside">
 												{#each roadmapItems as { item, hours, hour, minutes, showGoogleMeetIcon, showSemrushIcon }}
 													<li>
@@ -258,9 +261,9 @@
 											>
 												What's Included
 											</p>
-											<div class="my-2"></div>
+											<div class="mb-4"></div>
 											<div
-												class="grid grid-cols-2 items-center gap-3 text-sm leading-8 lg:!leading-10"
+												class="grid max-h-fit grid-cols-2 items-center gap-3 text-sm leading-relaxed"
 											>
 												{#each finishedProductItems as { item, number }}
 													<p class="col-span-1 lowercase">
@@ -278,11 +281,13 @@
 					<footer
 						class="card-footer mt-4 flex flex-col items-center justify-between gap-4 md:flex-row"
 					>
-						<button
-							class="w-full border-2 border-wild-funblue p-2 font-bebas text-2xl tracking-wider text-wild-funblue transition-all duration-150 ease-in hover:border-l-4 hover:border-r-4 hover:border-blue-300 hover:border-b-blue-400 hover:border-t-blue-400 hover:bg-blue-600 hover:text-white hover:shadow-md md:w-1/2"
-						>
-							REQUEST SEO
-						</button>
+						<a href={paymentLink} class="w-full">
+							<button
+								class="w-full border-2 border-wild-funblue p-2 font-bebas text-2xl tracking-wider text-wild-funblue transition-all duration-150 ease-in hover:border-l-4 hover:border-r-4 hover:border-blue-300 hover:border-b-blue-400 hover:border-t-blue-400 hover:bg-blue-600 hover:text-white hover:shadow-md md:w-1/2"
+							>
+								REQUEST SEO
+							</button>
+						</a>
 						<div class="text-end">
 							<p class="mb-1 font-platNomor">
 								approx. <span class="font-semibold">{hours}</span> hours

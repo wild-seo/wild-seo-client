@@ -292,7 +292,11 @@
 				<Icon icon="pixelarticons:bug" class="mx-auto h-6 w-6 text-white" />
 				<p class="mt-2 text-center font-bebas text-xs font-medium text-white">Contact</p>
 			</a>
-			<a href="/services" class="flex flex-col bg-black/20 p-2">
+			<a
+				href="https://www.linkedin.com/company/wild-seo"
+				target="_blank"
+				class="flex flex-col bg-black/20 p-2"
+			>
 				<Icon icon="skill-icons:linkedin" class="mx-auto h-6 w-6 text-white" />
 				<p class="mt-2 text-center font-bebas text-xs font-medium text-white">Linkedin</p>
 			</a>

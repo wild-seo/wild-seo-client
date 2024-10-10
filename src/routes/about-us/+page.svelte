@@ -39,6 +39,14 @@
 	];
 </script>
 
+<svelte:head>
+	<title>Not the Best SEO Agency | About Wild SEO</title>
+	<meta
+		name="description"
+		content="Get a glimpse on who runs Wild SEO and why we don't compete with the highest ranked keywords - tl;dr it's a costly approach. We focus on niche keywords, rising searches, and long-tail search queries."
+	/>
+</svelte:head>
+
 <div class="w-screen overflow-clip lg:!grid lg:!grid-cols-6">
 	<section class="md:col-span-4 md:border-r md:border-black">
 		<div
@@ -95,10 +103,11 @@
 							>
 								Wild SEO
 							</h1>
-
-							<LinkedInLogo
-								class="absolute right-0 top-1 h-8 w-8 translate-x-8 rounded-sm bg-white shadow-sm"
-							/>
+							<a href="https://www.linkedin.com/company/wild-seo">
+								<LinkedInLogo
+									class="absolute right-0 top-1 h-8 w-8 translate-x-8 rounded-sm bg-white shadow-sm"
+								/>
+							</a>
 						</div>
 					</div>
 					<section>

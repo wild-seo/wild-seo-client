@@ -11,6 +11,7 @@
 	import { countries } from 'countries-list';
 	import getUnicodeFlagIcon from 'country-flag-icons/unicode';
 	import ServiceNavigation from './ServiceNavigation.svelte';
+	import { checkSEO, checkMetric, checkSitePurpose } from './checked.js';
 
 	export let form;
 
@@ -50,8 +51,37 @@
 		{ formName: 'competitor-analysis', serviceName: 'Competitor Analysis' },
 		{ formName: 'site-audit', serviceName: 'Site Audit Sweep' }
 	];
+
+	let sitePurposes = [
+		'Generate Leads',
+		'Community Building',
+		'E-Commerce',
+		'Brand Awareness',
+		'Portfolio',
+		'Customer Support'
+	];
+
+	let keyMetrics = [
+		'Traffic Growth',
+		'Google Page Rankings',
+		'Conversion Rate',
+		'Bounce Rate',
+		'On-site Dwell Time',
+		'Local Search Visibility',
+		'Page Load Speed'
+	];
+
+	let selectedSitePurpose = '';
 	let selectedServices = [];
 </script>
+
+<svelte:head>
+	<title>Page 1 on Google Starts Here | Contact Wild SEO</title>
+	<meta
+		name="description"
+		content="Contact us with your business details to get started ranking your website higher on Google. Guidelines on how an SEO project with Wild SEO will function."
+	/>
+</svelte:head>
 
 <section class="no-scrollbar grid h-screen overflow-scroll lg:!grid-cols-2">
 	<div
@@ -155,7 +185,7 @@
 			<ServiceNavigation />
 			<!-- Business CONTACT -->
 			<div
-				class="group z-0 mx-auto my-10 max-w-lg overflow-clip border-[0.5px] bg-white/60 shadow-md backdrop-blur-md transition-all duration-1000 hover:max-w-xl hover:border-[1] lg:!rounded-lg lg:!border-wild-brown"
+				class="group z-0 mx-auto my-10 max-w-xl overflow-clip border-[0.5px] bg-white/60 shadow-md backdrop-blur-md transition-all duration-1000 hover:max-w-[37rem] hover:border-[1] lg:!rounded-lg lg:!border-wild-brown"
 				class:pinkShadow={businessSendHover}
 			>
 				<div class="h-2 w-full border-b border-wild-brown/20 bg-wild-green"></div>
@@ -191,12 +221,12 @@
 					>
 						<div class="grid grid-cols-2 gap-4">
 							<!-- NAME FIELD -->
-							<div>
+							<div class="col-span-2 md:col-span-1">
 								<label class="contactFormLabel"
 									>Name
 									<input
 										name="name"
-										class="contactFormInput rounded-lg"
+										class="contactFormInput mt-2 rounded-lg"
 										autocomplete="name"
 										value={form?.name ?? ''}
 										required
@@ -206,40 +236,40 @@
 							</div>
 
 							<!-- EMAIL FIELD -->
-							<div>
+							<div class="col-span-2 md:col-span-1">
 								<label class="contactFormLabel"
 									>Email
 									<input
 										name="email"
-										class="contactFormInput rounded-lg"
+										class="contactFormInput mt-2 rounded-lg"
 										autocomplete="email"
 										value={form?.email ?? ''}
 										required
+										placeholder="example@email.com"
 										disabled={sending}
 									/>
 								</label>
 							</div>
 
 							<!-- BUSINESS NAME FIELD -->
-							<div>
+							<div class="col-span-2 md:col-span-1">
 								<label class="contactFormLabel"
 									>Business Name <span class="text-xs opacity-70">- optional</span>
 									<input
 										name="organization"
-										class="contactFormInput rounded-lg"
+										class="contactFormInput mt-2 rounded-lg"
 										autocomplete="organization"
 										value={form?.organization ?? ''}
-										required
 										disabled={sending}
 									/>
 								</label>
 							</div>
 
 							<!-- LOCATION FIELD -->
-							<div>
+							<div class="col-span-2 md:col-span-1">
 								<label class="contactFormLabel">
 									Business Locale
-									<select class="w-full rounded-lg" name="country" id="country">
+									<select class="mt-2 w-full rounded-lg" name="country" id="country">
 										{#each myCountryDictionary as { code, country }}
 											<option
 												value={country}
@@ -256,39 +286,89 @@
 
 							<!-- SERVICE FIELD -->
 							<div class="col-span-2">
-								<label class="contactFormLabel"
-									>SEO Service to perform
-
-									<div
-										class="no-scrollbar mt-2 flex w-full items-end gap-2 overflow-x-scroll rounded-lg bg-wild-green/40 p-2"
-									>
-										<div class="no-scrollbar flex gap-3 overflow-x-scroll">
-											{#each seoServices as { formName, serviceName }}
-												<label
-													class="cursor-pointer whitespace-nowrap rounded-md bg-wild-darkgreen px-2 py-1 font-bebas tracking-wide text-white transition-all hover:bg-[#356736] hover:shadow-md"
-												>
-													<input
-														type="checkbox"
-														name={formName}
-														id={formName}
-														value={formName}
-														checked={formName === 'keyword'}
-														class="mr-2 rounded-full text-wild-green ring ring-[#4b774b]"
-													/>
-													<span> {serviceName}</span>
-												</label>
-											{/each}
-										</div>
+								<p class="contactFormLabel">SEO Service of interest</p>
+								<div
+									class="mt-2 flex w-full items-end gap-2 rounded-lg border border-[#1E3163] bg-[#F8F8F8] p-3"
+								>
+									<div class="no-scrollbar flex gap-3 overflow-x-scroll">
+										{#each seoServices as { formName, serviceName }}
+											<label
+												class="standardBg cursor-pointer whitespace-nowrap rounded-sm px-2 py-1 font-bebas text-lg tracking-wide text-[#F8F8F8] transition-all hover:bg-green-500 hover:shadow-md"
+												style="filter: drop-shadow(4px 3px 0px #F037A5)"
+											>
+												<input
+													type="checkbox"
+													use:checkSEO
+													name="seoService"
+													id={formName}
+													disabled={sending}
+													value={formName}
+													checked={formName === 'keyword'}
+													class="mr-2 rounded-full text-wild-green ring ring-[#495E57]/60"
+												/>
+												<span> {serviceName}</span>
+											</label>
+										{/each}
 									</div>
-								</label>
+								</div>
+							</div>
+
+							<!-- METRIC FIELD -->
+							<div class="col-span-2">
+								<p class="contactFormLabel">Key Metric of interest</p>
+
+								<div
+									class="mt-2 flex w-full gap-2 rounded-lg border border-[#1E3163] bg-[#F8F8F8] p-2"
+								>
+									<div class="flex flex-wrap gap-3">
+										{#each keyMetrics as metric}
+											<label
+												class="standardBg -rotate-1 cursor-pointer whitespace-nowrap rounded-sm px-2 py-1 font-bebas text-lg tracking-wide text-[#F8F8F8] transition-all hover:bg-orange-500 hover:shadow-md"
+												style="filter: drop-shadow(4px 3px 0px #F037A5);"
+											>
+												<input
+													use:checkMetric
+													type="checkbox"
+													name="metric"
+													id={metric}
+													disabled={sending}
+													value={metric}
+													checked={metric === 'Traffic Growth'}
+													class="mr-2 rounded-full text-green-500 ring ring-white/60"
+												/>
+												<span> {metric}</span>
+											</label>
+										{/each}
+									</div>
+								</div>
 							</div>
 						</div>
+
+						<!-- SEO INFO FIELD -->
+						<div>
+							<label class="contactFormLabel"
+								>What industry is your business in ?
+								<div
+									class="input-group input-group-divider mb-1 mt-2 flex rounded-lg border border-wild-brown bg-white focus-within:border-wild-funblue"
+								>
+									<input
+										name="industry"
+										class="contactFormInput"
+										placeholder="Real Estate, Non-Profit, Automotive..."
+										value={form?.industry ?? ''}
+										required
+										disabled={sending}
+									/>
+								</div>
+							</label>
+						</div>
+
 						<!-- WEBSITE FIELD -->
 						<div>
 							<label class="contactFormLabel"
-								>Website
+								>Your Website
 								<div
-									class="input-group input-group-divider mb-1 flex rounded-lg border border-wild-brown bg-white focus-within:border-wild-funblue"
+									class="input-group input-group-divider mb-1 mt-2 flex rounded-lg border border-wild-brown bg-white focus-within:border-wild-funblue"
 								>
 									<div
 										class="pointer-events-none max-w-fit bg-stone-100 p-2 font-courier text-sm text-black/80 shadow-lg"
@@ -308,25 +388,39 @@
 							</label>
 						</div>
 
-						<!-- INTRO FIELD -->
+						<!-- SITE PURPOSE FIELD -->
 						<div>
-							<label class="contactFormLabel">
-								Your vision of what your website should achieve
-
-								<textarea
-									name="websiteVision"
-									class="contactFormInput"
-									placeholder="My site should bring in more visitors..."
-									value={form?.websiteVision ?? ''}
-									required
-									disabled={sending}
-								/>
-							</label>
+							<p class="contactFormLabel">Primary purpose of your site</p>
+							<div
+								class="mt-3 flex w-full gap-2 rounded-lg border border-[#1E3163] bg-[#F8F8F8] p-2"
+							>
+								<div class="flex flex-wrap gap-3">
+									{#each sitePurposes as sitePurpose}
+										<label
+											class="-rotate-1 cursor-pointer whitespace-nowrap rounded-sm bg-[#2D46B9] px-2 py-1 font-bebas text-lg tracking-wider text-[#F8F8F8] transition-all hover:bg-wild-funblue hover:shadow-md"
+											style="filter: drop-shadow(4px 3px 0px #F037A5)"
+											for={sitePurpose}
+										>
+											<input
+												use:checkSitePurpose
+												type="radio"
+												name="sitePurpose"
+												id={sitePurpose}
+												disabled={sending}
+												value={sitePurpose}
+												checked={sitePurpose === 'Generate Leads'}
+												class="mr-2 rounded-full text-wild-green ring ring-white/60"
+											/>
+											<span> {sitePurpose}</span>
+										</label>
+									{/each}
+								</div>
+							</div>
 						</div>
 
 						<button
 							type="submit"
-							class="w-full rounded-md bg-wild-darkgreen/80 px-4 py-2 text-center font-bebas text-2xl tracking-wider text-white shadow-sm transition-all duration-75 ease-out hover:border-r-4 hover:border-wild-green hover:bg-wild-darkgreen hover:shadow-md md:max-w-fit md:text-start"
+							class="mb-1 mt-4 w-full rounded-md bg-wild-darkgreen/80 px-4 py-2 text-center font-bebas text-2xl tracking-wide text-white shadow-sm transition-all duration-75 ease-out hover:border-r-4 hover:border-wild-green hover:bg-wild-darkgreen hover:shadow-md md:max-w-fit md:text-start"
 							on:mouseover={() => {
 								businessSendHover = true;
 							}}
@@ -366,6 +460,18 @@
 </section>
 
 <style>
+	:global(label.standardBg) {
+		background: #2d46b9;
+	}
+	:global(label.checkedBgSEO) {
+		background: #22c55e;
+	}
+	:global(label.checkedBgMetric) {
+		background: #f97316;
+	}
+	:global(label.checkedBgSitePurpose) {
+		background: #2192ff;
+	}
 	.contactFormLabel {
 		margin-bottom: 4px;
 		font-family: 'Courier', 'sans';

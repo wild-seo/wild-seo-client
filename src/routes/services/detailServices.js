@@ -5,6 +5,7 @@ export let detailServices = [
 		animal: 'Andean Bear',
 		packageHighlight: ['20+ Optimised Keywords', 'FREE Site-wide revamp', 'Lock-in goal rankings'],
 		price: 64,
+		paymentLink: 'https://buy.stripe.com/14k4gQfHDcjWfT2144',
 		hours: 55,
 		imgUrl:
 			'https://cdn.shopify.com/s/files/1/0518/4241/6818/files/andean-bear-services.png?v=1726475196',
@@ -36,7 +37,7 @@ export let detailServices = [
 			{ item: 'Post-SEO monthly tracking Report', number: 3 },
 			{ item: 'SEO Robot-friendly website', number: 1 },
 			{ item: 'coding & research hours', number: 55 },
-			{ item: 'better SEO', number: 54 },
+			{ item: 'better SEO (%)', number: 54 },
 			{ item: 'notable ui/ux tweaks', number: 1 },
 			{ item: 'OG sharing links (for Facebook, Instagram, Reddit)', number: 1 },
 			{ item: 'SEO keyword placements (on-page)', number: 20 },
@@ -49,6 +50,7 @@ export let detailServices = [
 		animal: 'Pygmy Marmoset',
 		packageHighlight: ['Catch 100% error links', '1-on-1 debrief', 'Faster website speeds'],
 		price: 64,
+		paymentLink: 'https://buy.stripe.com/aEU8x6fHDabOdKU145',
 		hours: 35,
 		imgUrl:
 			'https://cdn.shopify.com/s/files/1/0518/4241/6818/files/pygmy-marmoset-services.png?v=1726475196',
@@ -76,7 +78,7 @@ export let detailServices = [
 		finishedProductItems: [
 			{ item: 'SEO Robot-friendly website', number: 1 },
 			{ item: 'coding & research hours', number: 35 },
-			{ item: 'better SEO', number: 28 },
+			{ item: 'better SEO (%)', number: 28 },
 			{ item: 'minimal ui/ux tweaks', number: 1 },
 			{ item: 'Detailed Site Audit report', number: 1 },
 			{ item: 'SEO keyword placements (on-page)', number: 5 },
@@ -93,6 +95,7 @@ export let detailServices = [
 			'Rank ahead of your peers'
 		],
 		price: 64,
+		paymentLink: 'https://buy.stripe.com/5kAdRq0MJ97K8qA8wy',
 		hours: 25,
 		imgUrl:
 			'https://cdn.shopify.com/s/files/1/0518/4241/6818/files/gray-heron-services.png?v=1726475196',
@@ -127,9 +130,9 @@ export let detailServices = [
 			}
 		],
 		finishedProductItems: [
-			{ item: 'SEO Robot-friendly website', number: 1 },
+			{ item: 'seo competitive website', number: 1 },
 			{ item: 'coding & research hours', number: 25 },
-			{ item: 'better SEO', number: 16 },
+			{ item: 'better SEO (%)', number: 16 },
 			{ item: 'SEO keyword placements (on-page)', number: 5 },
 			{ item: 'Wild SEO Competitor Report', number: 1 }
 		]

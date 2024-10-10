@@ -1,3 +1,11 @@
+<svelte:head>
+	<title>Privacy Policy | Wild SEO</title>
+	<meta
+		name="description"
+		content="Read the privacy policy that applies to users who contacts Wild SEO (for higher SEO website traffic rankings) via the website and those using the free Wild SEO search preview tool."
+	/>
+</svelte:head>
+
 <div class="mx-auto my-10 max-w-3xl p-4">
 	<h1 class="text-2xl font-bold">Wild SEO Privacy Policy</h1>
 	<p class="my-2"><b>Effective Date:</b> 25 September 2024</p>

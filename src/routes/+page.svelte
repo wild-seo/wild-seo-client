@@ -87,6 +87,14 @@
 	];
 </script>
 
+<svelte:head>
+	<title>Wild SEO | Rank Your Website Higher On Google</title>
+	<meta
+		name="description"
+		content="A boutique SEO agency specializing in on-page and technical SEO. Based in Kuala Lumpur, Malaysia. Rank your website higher on Google search result rankings with our SEO services."
+	/>
+</svelte:head>
+
 <div class="overflow-clip">
 	<section class="p-4 lg:!p-8">
 		<section class="mx-auto grid max-w-5xl items-center gap-8 p-0 lg:!grid-cols-2 lg:!p-4">
