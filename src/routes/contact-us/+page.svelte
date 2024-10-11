@@ -248,12 +248,7 @@
 					</div>
 
 					<div class="mb-4 mt-2 w-full border-b border-wild-brown/80"></div>
-					{#if form?.error}
-						<p class="error">{form.error}</p>
-					{/if}
-					{#if sending}
-						<p class="text-gray-500">Sending email...</p>
-					{/if}
+
 					<form
 						method="POST"
 						action="?/contact"
@@ -468,7 +463,7 @@
 
 						<button
 							type="submit"
-							class="mb-1 mt-4 w-full rounded-md bg-wild-darkgreen/80 px-4 py-2 text-center font-bebas text-2xl tracking-wide text-white shadow-sm transition-all duration-75 ease-out hover:border-r-4 hover:border-wild-green hover:bg-wild-darkgreen hover:shadow-md md:max-w-fit md:text-start"
+							class="mb-1 mt-2 w-full rounded-md bg-wild-darkgreen/80 px-4 py-2 text-center font-bebas text-2xl tracking-wide text-white shadow-sm transition-all duration-75 ease-out hover:border-r-4 hover:border-wild-green hover:bg-wild-darkgreen hover:shadow-md md:max-w-fit md:text-start"
 							on:mouseover={() => {
 								businessSendHover = true;
 							}}
@@ -477,6 +472,12 @@
 								businessSendHover = false;
 							}}>Send Message</button
 						>
+						{#if form?.error}
+							<p class="error">{form.error}</p>
+						{/if}
+						{#if sending}
+							<p class="text-gray-500">Sending email...</p>
+						{/if}
 					</form>
 				</section>
 			</div>
