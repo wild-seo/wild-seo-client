@@ -3,6 +3,7 @@
 	import FlipIcon from '~icons/mdi/rotate-360';
 	import OpenBookIcon from '~icons/gis/map-book';
 	import ClosedBookIcon from '~icons/game-icons/secret-book';
+	import StarIcon from '~icons/solar/star-shine-bold-duotone';
 
 	let serviceSelected;
 	let factShowing = false;
@@ -20,7 +21,7 @@
 
 <div>
 	<section class="mx-auto my-10 grid max-w-6xl grid-cols-1 gap-10 p-4 md:gap-5 lg:!grid-cols-3">
-		{#each services as { id, name, animalId, actionWord, heroPoints, iconSrc, iconAlt, bullets, description, animalFact, price, hours }, index}
+		{#each services as { id, name, animalId, actionWord, heroPoints, iconSrc, iconAlt, bullets, description, tagline, animalFact, price, hours }, index}
 			<div
 				class="relative self-start rounded-lg bg-wild-darkgreen shadow-md"
 				class:lg:!scale-[1.08]={index === 1}
@@ -42,13 +43,16 @@
 								</p>
 							</div>
 						</div>
-						<a href="/services/#{animalId}">
-							<p
-								class="px-3 py-2 text-end font-courier transition-all hover:scale-105"
+						<a href="/services/#{animalId}" class="relative">
+							<div
+								class="relative flex items-end justify-end px-3 py-2 text-end font-courier transition-all hover:scale-105"
 								style="transform-origin: 100% 50%;"
 							>
-								RM{price}<span class="text-sm opacity-80">/hour</span>
-							</p>
+								<p class="max-w-fit rounded-md bg-white/10 px-2 py-0.5 text-sm tracking-wide">
+									{tagline}
+								</p>
+								<StarIcon class="absolute right-1 top-0 rotate-12 text-yellow-500" />
+							</div>
 						</a>
 					</div>
 
@@ -87,13 +91,19 @@
 												</ol>
 											{/each}
 										{/if}
-										<a href="/services/#{animalId}">
+										<a
+											href="/services/#{animalId}"
+											class="mt-3 flex flex-col items-end justify-end text-end"
+										>
 											<p
-												class="mt-3 text-end font-platNomor font-bold transition-all hover:scale-105"
+												class="font-platNomor font-bold transition-all hover:scale-105"
 												style="transform-origin: 100% 50%;"
 											>
 												<span class="text-xs tracking-wider text-wild-darkgreen/70">approx.</span>
 												{hours} hours
+											</p>
+											<p class="max-w-fit bg-wild-darkgreen/90 px-2 text-sm text-white">
+												RM{price}<span class="text-xs opacity-80">/hour</span>
 											</p>
 										</a>
 									</div>

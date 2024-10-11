@@ -159,7 +159,7 @@
 			<img
 				src="https://cdn.shopify.com/s/files/1/0518/4241/6818/files/Camping_Illustration.png?v=1726236736"
 				alt="Wild SEO Campsite with Tree Illustration with Google, Amazon, Youtube, Bing, and Yahoo! logos hanging out together"
-				class="transform-gpu animate-wind transition-all duration-300"
+				class="transform-gpu animate-wind px-10 lg:!p-0"
 			/>
 			<div class="text-center lg:!text-start">
 				<h1 class="text-3xl font-bold leading-tight lg:!text-5xl">
@@ -467,7 +467,7 @@
 								</p>
 							</div>
 						</div>
-						<div class="grid flex-shrink grid-cols-2 content-end items-end md:block">
+						<div class="grid max-h-fit flex-shrink grid-cols-2 content-end items-end md:block">
 							<div
 								class="h-full w-full -skew-x-3 self-center md:mr-2"
 								style="filter: drop-shadow(7px 5px 0px rgba(0,0,0,0.9));"

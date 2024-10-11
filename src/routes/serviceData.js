@@ -7,6 +7,7 @@ export const services = [
 		iconSrc:
 			'https://cdn.shopify.com/s/files/1/0518/4241/6818/files/grey_heron_package.png?v=1725853925',
 		iconAlt: 'A grey heron flapping his wings standing over a lake',
+		tagline: 'Most Savings',
 		price: 64,
 		hours: 25,
 		actionWord: 'GET',
@@ -32,6 +33,7 @@ export const services = [
 		iconSrc:
 			'https://cdn.shopify.com/s/files/1/0518/4241/6818/files/spectacled_bear_package.png?v=1725853925',
 		iconAlt: 'An andean bear on a hill with tall grass around',
+		tagline: 'Expert Value',
 		price: 64,
 		hours: 55,
 		actionWord: 'ADD',
@@ -53,6 +55,7 @@ export const services = [
 		iconSrc:
 			'https://cdn.shopify.com/s/files/1/0518/4241/6818/files/pygmy_marmoset_package.png?v=1725853925',
 		iconAlt: 'A pygmy marmoset on a banana',
+		tagline: 'Client Favorite',
 		price: 64,
 		hours: 35,
 		actionWord: 'FIND',
