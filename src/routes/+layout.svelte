@@ -31,6 +31,11 @@
 	};
 </script>
 
+<svelte:head>
+	<link rel="alternate" href={$page.url} hreflang="x-default" />
+	<link rel="alternate" href={$page.url} hreflang="en" />
+</svelte:head>
+
 <Analytics />
 
 <Modal />
