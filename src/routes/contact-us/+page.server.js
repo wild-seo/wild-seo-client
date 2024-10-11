@@ -29,23 +29,26 @@ export const actions = {
 
 		const apiURL = new URL('https://wild-seo-server-87fb94c91999.herokuapp.com/contact');
 
-		await fetch(apiURL, {
-			method: 'POST',
-			headers: {
-				Accept: 'application/json',
-				'Content-Type': 'application/json'
-			},
-			body: JSON.stringify(enquiryData)
-		})
-			.then((res) => res.json())
-			.then((data) => console.log(data));
+		try {
+			await fetch(apiURL, {
+				method: 'POST',
+				headers: {
+					Accept: 'application/json',
+					'Content-Type': 'application/json'
+				},
+				body: JSON.stringify(enquiryData)
+			})
+				.then((res) => res.json())
+				.then((data) => console.log(data));
 
-		// try {
-		// 	data.get('email');
-		// 	return { message: 'success' };
-		// } catch (error) {
-		// 	// @ts-ignore
-		// 	return fail(422, { description: data.get('email'), error: error.message });
-		// }
+			return {
+				success: true,
+				miniMessage:
+					"We've received your business details (and sent you a copy). Our team will be in contact shortly!"
+			};
+		} catch (error) {
+			// @ts-ignore
+			return fail(422, { description: data.get('email'), error: error.message });
+		}
 	}
 };

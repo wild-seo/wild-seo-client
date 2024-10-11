@@ -18,7 +18,6 @@
 	import { AppRail, AppRailTile, AppRailAnchor, AppBar } from '@skeletonlabs/skeleton';
 	// Svelte
 	import { page } from '$app/stores';
-	import Analytics from '$lib/analytics.svelte';
 
 	initializeStores();
 
@@ -35,8 +34,6 @@
 	<link rel="alternate" href={$page.url} hreflang="x-default" />
 	<link rel="alternate" href={$page.url} hreflang="en" />
 </svelte:head>
-
-<Analytics />
 
 <Modal />
 
@@ -184,7 +181,7 @@
 						</div>
 					</div>
 				</div>
-				<div class="flex flex-col gap-6 p-6 md:flex-row">
+				<div class="flex flex-col gap-6 p-6 lg:!flex-row">
 					<div
 						class="card mb-3 h-fit flex-grow rounded-lg bg-wild-funblue/50 p-4 text-center font-bold shadow-md backdrop-blur-sm"
 					>
@@ -262,8 +259,8 @@
 		gridColumns="grid-cols-3"
 		gap="gap-2"
 		padding=""
-		slotLead="items-start justify-evenly gap-2"
-		slotTrail="justify-end items-end"
+		slotLead="justify-evenly gap-2 mx-2"
+		slotTrail="justify-evenly gap-2 mx-2"
 		class="sticky bottom-0 left-0 z-50 grid h-fit w-screen backdrop-blur-md lg:!hidden"
 	>
 		<svelte:fragment slot="lead">
@@ -287,7 +284,7 @@
 
 		<div class="px-2">
 			<a href="/">
-				<img src={coloredLogo} alt="Wild SEO logo colored" class=" mx-auto" />
+				<img src={coloredLogo} alt="Wild SEO logo colored" class="mx-auto max-h-16 p-2" />
 			</a>
 		</div>
 

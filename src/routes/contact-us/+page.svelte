@@ -1,11 +1,17 @@
 <script>
 	import { enhance } from '$app/forms';
-	import { fly, slide } from 'svelte/transition';
+	import { fly, slide, blur, fade } from 'svelte/transition';
+	// Import Icons
 	import BirdIcon from '~icons/fa6-solid/dove';
 	import TurtleIcon from '~icons/noto/turtle';
 	import QuestionMarkIcon from '~icons/octicon/question-16';
 	import CheckMarkIcon from '~icons/octicon/check-circle-16';
 	import CampingTentIcon from '~icons/lucide/tent-tree';
+	import RobotIcon from '~icons/teenyicons/robot-solid';
+	import WindIcon from '~icons/solar/wind-bold';
+	import StarIcon from '~icons/flowbite/star-solid';
+	// Components
+	import { ConicGradient } from '@skeletonlabs/skeleton';
 	import CertificationMarquee from '../CertificationMarquee.svelte';
 	import { ListBox, ListBoxItem } from '@skeletonlabs/skeleton';
 	import { countries } from 'countries-list';
@@ -73,6 +79,21 @@
 
 	let selectedSitePurpose = '';
 	let selectedServices = [];
+
+	const conicStops = [
+		{ color: 'transparent', start: 0, end: 10 },
+		{ color: 'rgb(var(--color-success-50))', start: 10, end: 20 },
+		{ color: 'transparent', start: 20, end: 30 },
+		{ color: 'rgb(var(--color-success-100))', start: 30, end: 40 },
+		{ color: 'transparent', start: 40, end: 50 },
+		{ color: 'rgb(var(--color-success-200))', start: 50, end: 60 },
+		{ color: 'transparent', start: 60, end: 70 },
+		{ color: 'rgb(var(--color-success-300))', start: 70, end: 80 },
+		{ color: 'transparent', start: 80, end: 85 },
+		{ color: 'rgb(var(--color-success-400))', start: 85, end: 90 },
+		{ color: 'transparent', start: 90, end: 95 },
+		{ color: 'rgb(var(--color-success-500))', start: 95, end: 100 }
+	];
 </script>
 
 <svelte:head>
@@ -115,9 +136,9 @@
 	</script>
 </svelte:head>
 
-<section class="no-scrollbar grid h-screen overflow-scroll lg:!grid-cols-2">
+<section class="no-scrollbar grid overflow-scroll lg:!h-screen lg:!grid-cols-2">
 	<div
-		class="order-last grid w-full grid-flow-row grid-rows-6 md:sticky md:top-0 md:order-first md:h-screen"
+		class="order-last grid w-full grid-flow-row grid-rows-6 md:sticky md:top-0 lg:!order-first lg:!h-screen"
 	>
 		<div
 			class="row-span-4 h-full overflow-y-scroll border-b-2 border-r-2 border-black bg-[#1b7ede] shadow-md"
@@ -252,12 +273,14 @@
 					<form
 						method="POST"
 						action="?/contact"
-						use:enhance={() => {
+						use:enhance={({ submitter }) => {
+							submitter.className += 'disabled';
 							sending = true;
 
 							return async ({ update }) => {
-								await update();
 								sending = false;
+								submitter.classList.remove('disabled');
+								await update();
 							};
 						}}
 						class="flex flex-col gap-3"
@@ -269,7 +292,7 @@
 									>Name
 									<input
 										name="name"
-										class="contactFormInput mt-2 rounded-lg"
+										class="contactFormInput mt-2 rounded-lg font-folks tracking-wider text-black"
 										autocomplete="name"
 										value={form?.name ?? ''}
 										required
@@ -284,7 +307,7 @@
 									>Email
 									<input
 										name="email"
-										class="contactFormInput mt-2 rounded-lg"
+										class="contactFormInput mt-2 rounded-lg font-folks tracking-wider text-black"
 										autocomplete="email"
 										value={form?.email ?? ''}
 										required
@@ -300,7 +323,7 @@
 									>Business Name <span class="text-xs opacity-70">- optional</span>
 									<input
 										name="organization"
-										class="contactFormInput mt-2 rounded-lg"
+										class="contactFormInput mt-2 rounded-lg font-folks tracking-wider text-black"
 										autocomplete="organization"
 										value={form?.organization ?? ''}
 										disabled={sending}
@@ -396,7 +419,7 @@
 								>
 									<input
 										name="industry"
-										class="contactFormInput"
+										class="contactFormInput font-folks tracking-wider text-black"
 										placeholder="Real Estate, Non-Profit, Automotive..."
 										value={form?.industry ?? ''}
 										required
@@ -420,7 +443,7 @@
 									</div>
 									<input
 										name="website"
-										class="contactFormInput"
+										class="contactFormInput font-folks tracking-wide text-black"
 										placeholder="www.example.com"
 										autocomplete="url"
 										value={form?.website ?? ''}
@@ -470,14 +493,64 @@
 							on:focus
 							on:mouseleave={() => {
 								businessSendHover = false;
-							}}>Send Message</button
+							}}
 						>
-						{#if form?.error}
-							<p class="error">{form.error}</p>
-						{/if}
-						{#if sending}
-							<p class="text-gray-500">Sending email...</p>
-						{/if}
+							{#if sending}
+								<div in:fade>
+									<ConicGradient stops={conicStops} spin width="w-8" class="mr-2" />
+								</div>
+							{/if}
+							{#if !sending}
+								<span in:blur>Send Message</span>
+							{/if}
+						</button>
+						<div class="my-0.5">
+							{#if form?.error}
+								<div class="flex items-center gap-1">
+									<p
+										in:blur
+										class="max-w-fit rounded-sm bg-red-500 px-2 py-1 font-folks text-base tracking-wide text-white/90 shadow-md"
+									>
+										{form.error}
+									</p>
+									<div in:blur={{ delay: 300 }}>
+										<RobotIcon
+											class="h-7 w-7 flex-shrink-0 text-red-500 transition-all hover:scale-110"
+										/>
+									</div>
+								</div>
+							{/if}
+							{#if sending}
+								<div class="flex items-center gap-1">
+									<p
+										in:fly
+										class="max-w-fit rounded-sm bg-[#2D46B9] px-2 py-1 font-folks text-base tracking-wide text-white/90 shadow-md"
+									>
+										Sending email...
+									</p>
+									<div in:fly={{ x: -100, opacity: 0.5 }}>
+										<WindIcon
+											class="h-7 w-7 flex-shrink-0 text-wild-funblue transition-all hover:scale-110"
+										/>
+									</div>
+								</div>
+							{/if}
+							{#if form?.success}
+								<div class="flex items-center gap-3">
+									<p
+										in:blur
+										class="max-w-fit rounded-sm border-4 border-double border-wild-green bg-green-600/90 px-2 py-1 font-folks text-base tracking-wide text-white/90 shadow-md"
+									>
+										{form?.miniMessage ?? 'Thank you for your message!'}
+									</p>
+									<div in:fly={{ delay: 300, x: 200, y: 200, opacity: 0.5 }}>
+										<StarIcon
+											class="h-7 w-7 flex-shrink-0 text-amber-500 transition-all hover:scale-110"
+										/>
+									</div>
+								</div>
+							{/if}
+						</div>
 					</form>
 				</section>
 			</div>
@@ -530,10 +603,9 @@
 		text-transform: lowercase;
 	}
 	.contactFormInput {
-		font-family: 'Courier', 'sans';
-		opacity: 0.85;
+		opacity: 0.95;
 		width: 100%;
-		box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+		box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 4px 0px;
 		font-size: 0.875rem /* 14px */;
 		line-height: 1.25rem;
 	}
