@@ -6,7 +6,7 @@ export const services = [
 		animalId: 'gray-heron',
 		iconSrc:
 			'https://cdn.shopify.com/s/files/1/0518/4241/6818/files/grey_heron_package.png?v=1725853925',
-		iconAlt: '',
+		iconAlt: 'A grey heron flapping his wings standing over a lake',
 		price: 64,
 		hours: 25,
 		actionWord: 'GET',
@@ -31,7 +31,7 @@ export const services = [
 		animalId: 'andean-bear',
 		iconSrc:
 			'https://cdn.shopify.com/s/files/1/0518/4241/6818/files/spectacled_bear_package.png?v=1725853925',
-		iconAlt: '',
+		iconAlt: 'An andean bear on a hill with tall grass around',
 		price: 64,
 		hours: 55,
 		actionWord: 'ADD',
@@ -52,7 +52,7 @@ export const services = [
 		animalId: 'pygmy-marmoset',
 		iconSrc:
 			'https://cdn.shopify.com/s/files/1/0518/4241/6818/files/pygmy_marmoset_package.png?v=1725853925',
-		iconAlt: '',
+		iconAlt: 'A pygmy marmoset on a banana',
 		price: 64,
 		hours: 35,
 		actionWord: 'FIND',

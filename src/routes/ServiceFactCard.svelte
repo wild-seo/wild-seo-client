@@ -55,9 +55,9 @@
 					<div
 						class="rounded-b-lg border border-wild-darkgreen bg-wild-mossgreen p-5 font-courier text-white"
 					>
-						<p class="text-base text-wild-darkgreen">
+						<h3 class="text-base text-wild-darkgreen">
 							<span class="font-bold">{actionWord} </span>{description}
-						</p>
+						</h3>
 
 						<div class="my-2 border-t border-dashed border-white/70"></div>
 						<!-- FLIP CARD -->

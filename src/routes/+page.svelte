@@ -88,22 +88,31 @@
 </script>
 
 <svelte:head>
-	<title>Wild SEO | Rank Your Website Higher On Google</title>
+	<!-- Google tag (gtag.js) -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-R11J5F2RYM"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag() {
+			dataLayer.push(arguments);
+		}
+		gtag('js', new Date());
+
+		gtag('config', 'G-R11J5F2RYM');
+	</script>
+	<link rel="“canonical”" href="“https://www.wild-seo.com”" />
+	<title>Wild SEO | Rank Your Website Higher On Google Search</title>
 	<meta
 		name="description"
 		content="A boutique SEO agency specializing in on-page and technical SEO - based in Kuala Lumpur, Malaysia. Rank your website higher on Google search result rankings with our affordable SEO services."
 	/>
 	<meta property="og:type" content="article" />
-	<meta property="og:title" content="Wild SEO | Rank Your Website Higher On Google" />
+	<meta property="og:title" content="Wild SEO | Rank Your Website Higher On Google Search" />
 	<meta property="og:url" content="https://wild-seo.com" />
 	<meta
 		property="og:image"
 		content="https://cdn.shopify.com/s/files/1/0518/4241/6818/files/Camping_Illustration.png?v=1726236736"
 	/>
-	<meta
-		property="og:description"
-		content="A boutique SEO agency specializing in on-page and technical SEO - based in Kuala Lumpur, Malaysia. Rank your website higher on Google search result rankings with our affordable SEO services."
-	/>
+	<meta property="og:description" content=" ." />
 	<script type="application/ld+json">
 		{
 			"@context": "https://schema.org/",
@@ -265,7 +274,7 @@
 	<ServiceFactCard />
 
 	<!-- Sustainability Image section -->
-	<section class="mt-8 grid h-fit lg:!grid-cols-2">
+	<section class="mt-8 grid max-h-fit lg:!grid-cols-2">
 		<div class="relative">
 			<img
 				src="https://cdn.shopify.com/s/files/1/0518/4241/6818/files/siargao-wild-seo.jpg?v=1725720499"
@@ -280,7 +289,7 @@
 		</div>
 		<!-- A11y: on:mouseover must be accompanied by on:focus -->
 		<div
-			class="group relative content-center overflow-clip bg-black/90"
+			class="group relative max-h-fit content-center overflow-clip bg-black/90"
 			on:focus
 			on:mouseleave={() => {
 				mouseHovering = false;
@@ -310,7 +319,7 @@
 			></div>
 
 			<!-- END -->
-			<div class="mx-auto grid grid-flow-row gap-4 p-6 md:max-w-fit">
+			<div class="mx-auto grid max-h-fit grid-flow-row gap-4 p-6 md:max-w-fit">
 				<section>
 					<h3 class="mb-1 font-courier text-xs tracking-wider text-white md:text-sm">
 						HOW CAN SEO HELP YOUR BUSINESS ?

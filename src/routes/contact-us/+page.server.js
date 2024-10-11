@@ -20,9 +20,9 @@ export const actions = {
 			email,
 			organization,
 			country,
-			website,
 			keyMetric,
 			industry,
+			website,
 			sitePurpose,
 			seoService
 		};

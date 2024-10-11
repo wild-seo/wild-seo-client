@@ -21,6 +21,18 @@
 </script>
 
 <svelte:head>
+	<!-- Google tag (gtag.js) -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-R11J5F2RYM"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag() {
+			dataLayer.push(arguments);
+		}
+		gtag('js', new Date());
+
+		gtag('config', 'G-R11J5F2RYM');
+	</script>
+	<link rel="“canonical”" href="“https://www.wild-seo.com/services”" />
 	<script async src="https://js.stripe.com/v3/pricing-table.js"></script>
 	<title>SEO Packages for Website Traffic | Wild SEO</title>
 	<meta
@@ -125,7 +137,7 @@
 								text="Heron"
 								secondaryText="Competitor Analysis"
 								imgSrc="https://cdn.shopify.com/s/files/1/0518/4241/6818/files/grey_heron_package.png?v=1725853925"
-								imgAlt="Grey Heron"
+								imgAlt="A grey heron flapping his wings standing over a lake"
 							/>
 						</a>
 						<a href="#andean-bear">
@@ -133,7 +145,7 @@
 								text="Bear"
 								secondaryText="Keyword Forage"
 								imgSrc="https://cdn.shopify.com/s/files/1/0518/4241/6818/files/spectacled_bear_package.png?v=1725853925"
-								imgAlt="Andean (Spectacled) Bear"
+								imgAlt="An andean bear on a hill with tall grass around"
 							/>
 						</a>
 						<a href="#pygmy-marmoset">
@@ -141,7 +153,7 @@
 								text="Marmoset"
 								secondaryText="Site Sweep"
 								imgSrc="https://cdn.shopify.com/s/files/1/0518/4241/6818/files/pygmy_marmoset_package.png?v=1725853925"
-								imgAlt="Pygmy Marmoset on a banana"
+								imgAlt="A pygmy marmoset on a banana"
 							/>
 						</a>
 					</div>

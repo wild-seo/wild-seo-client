@@ -6,49 +6,49 @@
 		// CAPSTONE
 		{
 			src: 'https://cdn.shopify.com/s/files/1/0518/4241/6818/files/uc-davis-seo-capstone-project-logo.png?v=1726391178',
-			alt: '',
+			alt: 'UC Davis SEO Capstone Project logo',
 			title: ''
 		},
 		// BEAR
 		{
 			src: 'https://imagedelivery.net/usYhDnhJIpKLEgUtJMbggw/1febe119-6490-489f-4c0a-b87cee743e00/public',
-			alt: '',
+			alt: 'An andean bear illustration',
 			title: ''
 		},
 		// MDA
 		{
 			src: 'https://cdn.shopify.com/s/files/1/0518/4241/6818/files/mda-cert.png?v=1726416453',
-			alt: '',
+			alt: 'Malaysia Digital Association logo',
 			title: ''
 		},
 		// SEMRUSH
 		{
 			src: 'https://cdn.shopify.com/s/files/1/0518/4241/6818/files/SEMRush-Cert.png?v=1726416643',
-			alt: '',
+			alt: 'SEMRush academy stamp',
 			title: ''
 		},
 		// HERON
 		{
 			src: 'https://imagedelivery.net/usYhDnhJIpKLEgUtJMbggw/0cf1e3ab-f789-4693-a6b0-0c7c869e0a00/public',
-			alt: '',
+			alt: 'A grey reron flying',
 			title: ''
 		},
 		// AHREFS
 		{
 			src: 'https://imagedelivery.net/usYhDnhJIpKLEgUtJMbggw/713b9c9c-4540-4378-5ba5-2ef899911900/public',
-			alt: '',
+			alt: 'ahrefs logo',
 			title: ''
 		},
 		// PYGMY 02
 		{
 			src: 'https://imagedelivery.net/usYhDnhJIpKLEgUtJMbggw/882fd64e-17be-4bbb-270f-89c3f3aa7800/public',
-			alt: '',
+			alt: 'Pygmy marmoset sitting down',
 			title: ''
 		},
 		// SEMRUSH
 		{
 			src: 'https://imagedelivery.net/usYhDnhJIpKLEgUtJMbggw/b9782345-931e-44b4-c6a0-5193e9afb900/public',
-			alt: '',
+			alt: 'Semrush logo',
 			title: ''
 		}
 	];
