@@ -40,17 +40,6 @@
 </script>
 
 <svelte:head>
-	<!-- Google tag (gtag.js) -->
-	<script async src="https://www.googletagmanager.com/gtag/js?id=G-R11J5F2RYM"></script>
-	<script>
-		window.dataLayer = window.dataLayer || [];
-		function gtag() {
-			dataLayer.push(arguments);
-		}
-		gtag('js', new Date());
-
-		gtag('config', 'G-R11J5F2RYM');
-	</script>
 	<link rel="“canonical”" href="“https://www.wild-seo.com/about-us" />
 	<title>Not the Best SEO Agency | About Wild SEO</title>
 	<meta
@@ -132,6 +121,7 @@
 							on:mouseover={() => {
 								mouseHovering = true;
 							}}
+							on:focus
 							on:mouseleave={() => {
 								mouseHovering = false;
 							}}
@@ -292,6 +282,7 @@
 								on:mouseover={() => {
 									devHovering = name;
 								}}
+								on:focus
 							>
 								<a
 									class="devLogoTile mb-1 bg-white/90 hover:bg-white"
@@ -317,6 +308,7 @@
 								on:mouseover={() => {
 									devHovering = name;
 								}}
+								on:focus
 							>
 								<a
 									class="devLogoTile mb-1 bg-white/90 hover:bg-white"
@@ -375,6 +367,7 @@
 				<div class="">
 					<img
 						src="https://imagedelivery.net/usYhDnhJIpKLEgUtJMbggw/6c2016ec-842c-4cd7-1878-92900cf98500/public"
+						alt="A grey heron moments after catching a fish with its beak, standing over a lake"
 						class="h-full w-full object-cover transition-all duration-200 hover:-translate-y-2 hover:shadow-lg"
 					/>
 				</div>
@@ -382,6 +375,7 @@
 				<div>
 					<img
 						src="https://imagedelivery.net/usYhDnhJIpKLEgUtJMbggw/9b741710-cfe9-4b37-555e-72d52f731f00/public"
+						alt="A mother spectacled bear with 2 baby cubs hanging around a fallen tree trunk"
 						class="h-full w-full object-cover transition-all duration-200 hover:-translate-y-2 hover:shadow-lg"
 					/>
 				</div>
@@ -389,6 +383,7 @@
 				<div>
 					<img
 						src="https://imagedelivery.net/usYhDnhJIpKLEgUtJMbggw/78f7ac0f-f7a4-43fd-638e-a01c19254400/public"
+						alt="A pygmy marmoset standing on a tree branch eating a piece of fruit"
 						class="h-full w-full object-cover transition-all duration-200 hover:-translate-y-2 hover:shadow-lg"
 					/>
 				</div>

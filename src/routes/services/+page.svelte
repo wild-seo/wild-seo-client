@@ -21,17 +21,6 @@
 </script>
 
 <svelte:head>
-	<!-- Google tag (gtag.js) -->
-	<script async src="https://www.googletagmanager.com/gtag/js?id=G-R11J5F2RYM"></script>
-	<script>
-		window.dataLayer = window.dataLayer || [];
-		function gtag() {
-			dataLayer.push(arguments);
-		}
-		gtag('js', new Date());
-
-		gtag('config', 'G-R11J5F2RYM');
-	</script>
 	<link rel="“canonical”" href="“https://www.wild-seo.com/services”" />
 	<script async src="https://js.stripe.com/v3/pricing-table.js"></script>
 	<title>SEO Packages for Website Traffic | Wild SEO</title>

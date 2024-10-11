@@ -18,6 +18,7 @@
 	import { AppRail, AppRailTile, AppRailAnchor, AppBar } from '@skeletonlabs/skeleton';
 	// Svelte
 	import { page } from '$app/stores';
+	import Analytics from '$lib/analytics.svelte';
 
 	initializeStores();
 
@@ -29,6 +30,8 @@
 		placement: 'top'
 	};
 </script>
+
+<Analytics />
 
 <Modal />
 

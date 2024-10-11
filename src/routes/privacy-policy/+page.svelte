@@ -1,15 +1,4 @@
 <svelte:head>
-	<!-- Google tag (gtag.js) -->
-	<script async src="https://www.googletagmanager.com/gtag/js?id=G-R11J5F2RYM"></script>
-	<script>
-		window.dataLayer = window.dataLayer || [];
-		function gtag() {
-			dataLayer.push(arguments);
-		}
-		gtag('js', new Date());
-
-		gtag('config', 'G-R11J5F2RYM');
-	</script>
 	<link rel="“canonical”" href="“https://www.wild-seo.com/privacy-policy" />
 	<title>Privacy Policy | Wild SEO</title>
 	<meta
